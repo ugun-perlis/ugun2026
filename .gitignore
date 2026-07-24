@@ -1,6 +1,9 @@
 # Google Drive shortcut metadata is local-only.
 *.gsheet
 
+# Private project maintenance notes.
+README.private.md
+
 # Local OS/editor artifacts.
 .DS_Store
 Thumbs.db

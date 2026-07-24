@@ -1,47 +1,22 @@
 # UGUN Summer Camp 2026
 
-Official static website for UGUN Summer Camp 2026, hosted by UiTM Cawangan Perlis.
+UGUN Summer Camp 2026 is an international programme hosted by UiTM Cawangan Perlis under the UiTM-Global University Network.
 
-## Website
+**10–18 October 2026 · Perlis, Malaysia**
 
-- Live site: <https://ugun-perlis.github.io/ugun2026/>
-- GitHub organization: <https://github.com/ugun-perlis>
-- Repository: <https://github.com/ugun-perlis/ugun2026>
+The programme brings students together for academic exchange, innovation, entrepreneurship exposure, cultural experiences, community engagement, and international friendship.
 
-## Project structure
+## Programme highlights
 
-- `index.html` — main UGUN Summer Camp 2026 landing page
-- `assets/` — shared images and other static files
-- `events/` — reserved for additional pages related to this event
-- `.github/workflows/pages.yml` — automated GitHub Pages deployment
+- P2P Publishing
+- Commercialization and Entrepreneur Module
+- Innovation and Creativity Symposium (SIC) 2026
+- Cultural Stride and Carnival
+- Community Engagement
+- Perlis Cultural Run 2026 — Pesona Nusantara
 
-Future UGUN editions should use separate repositories in the same organization:
+Participant fees include accommodation, meals, activities, programme kit, and a certificate of participation.
 
-```text
-ugun-perlis/ugun2026
-ugun-perlis/ugun2028
-ugun-perlis/ugun2030
-```
+## Official website
 
-This preserves previous event websites while giving each edition its own address.
-
-## Local preview
-
-Open `index.html` directly, or run a local static server:
-
-```powershell
-python -m http.server 8000
-```
-
-Then visit <http://localhost:8000>.
-
-## Deployment
-
-GitHub Actions automatically deploys the site to GitHub Pages whenever the
-`main` branch is updated. The publishing source is configured as **GitHub
-Actions** in the repository's Pages settings.
-
-## Local-only files
-
-Google Drive shortcut metadata (`*.gsheet`) is excluded through `.gitignore`
-and must not be committed to the public repository.
+Visit <https://ugun-perlis.github.io/ugun2026/> for programme information, important dates, registration guidance, and contact details.
