@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The 16th Symposium on Innovation and Creativity (SIC) 2026, hosted by UiTM Cawangan Perlis.">
+  <title>SIC 2026 | Symposium on Innovation and Creativity</title>
+  <style>
+    :root {
+      --navy-950: #070d2b;
+      --navy-900: #0c1643;
+      --navy-800: #14245c;
+      --violet-700: #5636a8;
+      --violet-600: #6f4ec7;
+      --violet-100: #eee9ff;
+      --blue-500: #3995e9;
+      --cyan-300: #81e3f4;
+      --red-500: #ef334f;
+      --gold-500: #e7aa2d;
+      --green-500: #38a56c;
+      --paper: #f8f9ff;
+      --white: #ffffff;
+      --ink: #111b45;
+      --muted: #647099;
+      --line: rgba(27, 43, 101, .13);
+      --shadow: 0 24px 70px rgba(10, 21, 67, .14);
+      --container: 1160px;
+      --side: clamp(18px, 4vw, 36px);
+      --radius-xl: clamp(26px, 4vw, 44px);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(128, 228, 244, .23), transparent 24rem),
+        radial-gradient(circle at 90% 2%, rgba(111, 78, 199, .16), transparent 28rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    sup {
+      position: relative;
+      top: -.28em;
+      font-size: .54em;
+      line-height: 0;
+      letter-spacing: 0;
+      vertical-align: baseline;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: calc(var(--container) + var(--side) + var(--side));
+      margin-inline: auto;
+      padding-inline: var(--side);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 50;
+      top: 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background: rgba(7, 13, 43, .88);
+      color: white;
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      padding: 6px;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,.16);
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 1px;
+    }
+
+    .brand-copy strong {
+      font-size: .94rem;
+      letter-spacing: .02em;
+    }
+
+    .brand-copy span {
+      color: rgba(255,255,255,.62);
+      font-size: .72rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: rgba(255,255,255,.72);
+      font-size: .82rem;
+      font-weight: 750;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255,255,255,.1);
+      color: white;
+      outline: none;
+    }
+    .nav-links .nav-template {
+      border: 1px solid rgba(255,92,111,.34);
+      color: white;
+      background: rgba(239,51,79,.16);
+    }
+
+    .nav-links .nav-template:hover,
+    .nav-links .nav-template:focus-visible {
+      background: var(--red-500);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      color: white;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(130deg, rgba(7,13,43,.98), rgba(17,31,88,.94) 48%, rgba(83,48,164,.9)),
+        var(--navy-950);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .15;
+      background-image:
+        linear-gradient(rgba(129,227,244,.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(129,227,244,.4) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to right, black, transparent 78%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      right: -260px;
+      top: -260px;
+      border: 1px solid rgba(129,227,244,.22);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 90px rgba(111,78,199,.08),
+        0 0 0 180px rgba(57,149,233,.05);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+      gap: clamp(38px, 7vw, 92px);
+      align-items: center;
+      padding-block: clamp(72px, 10vw, 118px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      color: var(--cyan-300);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1 {
+      max-width: 790px;
+      margin: 0;
+      font-size: clamp(3.25rem, 7.5vw, 7.1rem);
+      line-height: .89;
+      letter-spacing: -.075em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 14px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.48);
+      font-size: .34em;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy > p {
+      max-width: 670px;
+      margin: 28px 0 0;
+      color: rgba(255,255,255,.72);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 900;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--red-500), #ff5c6f);
+      color: white;
+      box-shadow: 0 16px 34px rgba(239,51,79,.28);
+    }
+
+    .button-secondary {
+      border-color: rgba(255,255,255,.24);
+      background: rgba(255,255,255,.08);
+      color: white;
+    }
+    .button-template {
+      border-color: rgba(129,227,244,.34);
+      background: linear-gradient(135deg, rgba(129,227,244,.18), rgba(111,78,199,.22));
+      color: white;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 38px;
+    }
+
+    .hero-fact {
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 17px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero-fact span,
+    .hero-fact strong {
+      display: block;
+    }
+
+    .hero-fact span {
+      margin-bottom: 6px;
+      color: rgba(255,255,255,.52);
+      font-size: .67rem;
+      font-weight: 850;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .hero-fact strong {
+      font-size: .9rem;
+      line-height: 1.35;
+    }
+
+    .identity-stage {
+      position: relative;
+      min-height: 510px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orbit {
+      position: absolute;
+      width: min(100%, 470px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(129,227,244,.24);
+      border-radius: 50%;
+      animation: rotate 26s linear infinite;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: var(--cyan-300);
+      box-shadow: 0 0 24px var(--cyan-300);
+    }
+
+    .orbit::before {
+      width: 10px;
+      height: 10px;
+      left: 12%;
+      top: 16%;
+    }
+
+    .orbit::after {
+      width: 7px;
+      height: 7px;
+      right: 5%;
+      bottom: 28%;
+    }
+
+    .official-logo-wrap {
+      position: relative;
+      z-index: 2;
+      width: min(76vw, 350px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: clamp(32px, 4vw, 42px);
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 32%, #ffffff, #f6f7ff 72%);
+      box-shadow: 0 30px 80px rgba(0,0,0,.34), 0 0 0 12px rgba(255,255,255,.055);
+    }
+    .official-logo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      z-index: -1;
+      border: 1px solid rgba(129,227,244,.26);
+      border-radius: 50%;
+    }
+    .official-sic-logo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      transform: scale(.94);
+      transform-origin: center;
+      filter: drop-shadow(0 8px 16px rgba(10,21,67,.12));
+    }
+    .section {
+      padding-block: clamp(72px, 9vw, 118px);
+    }
+
+    .section-soft {
+      background: white;
+    }
+
+    .section-dark {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(111,78,199,.28), transparent 26rem),
+        var(--navy-950);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--violet-600);
+      font-size: .75rem;
+      font-weight: 950;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .section-dark .kicker {
+      color: var(--cyan-300);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--navy-950);
+      font-size: clamp(2.25rem, 5vw, 4.6rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .section-dark h2 {
+      color: white;
+    }
+
+    .section-heading p {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.75;
+    }
+
+    .section-dark .section-heading p {
+      color: rgba(255,255,255,.62);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 22px;
+    }
+
+    .overview-card,
+    .quick-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: white;
+      box-shadow: 0 14px 45px rgba(15,29,81,.07);
+    }
+
+    .overview-card {
+      padding: clamp(26px, 4vw, 42px);
+    }
+
+    .overview-card p {
+      margin: 0;
+      color: #4f5b83;
+      font-size: clamp(1.08rem, 2vw, 1.3rem);
+      line-height: 1.8;
+    }
+
+    .overview-card strong {
+      color: var(--navy-900);
+    }
+
+    .quick-card {
+      display: grid;
+      overflow: hidden;
+    }
+
+    .quick-row {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quick-row:last-child {
+      border-bottom: 0;
+    }
+
+    .quick-icon {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      border-radius: 21px;
+      background: linear-gradient(145deg, var(--navy-800), var(--violet-600));
+      color: white;
+      font-size: 1.45rem;
+      font-weight: 950;
+      letter-spacing: -.04em;
+      box-shadow: 0 12px 24px rgba(56, 48, 143, .2);
+    }
+
+    .quick-row div > span,
+    .quick-row strong {
+      display: block;
+    }
+
+    .quick-row div > span {
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .quick-row strong {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .template-section {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 92% 12%, rgba(239,51,79,.12), transparent 18rem),
+        linear-gradient(180deg, #f5f7fc, #eef1fa);
+    }
+
+    .template-shell {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(26px, 5vw, 58px);
+      align-items: center;
+      overflow: hidden;
+      padding: clamp(30px, 6vw, 62px);
+      border: 1px solid rgba(22,31,76,.15);
+      border-radius: var(--radius-xl);
+      color: white;
+      background:
+        radial-gradient(circle at 100% 0, rgba(239,51,79,.3), transparent 18rem),
+        repeating-linear-gradient(135deg, transparent 0 25px, rgba(255,255,255,.025) 25px 26px),
+        linear-gradient(145deg, #303136, var(--navy-950) 66%, #2e255e);
+      box-shadow: var(--shadow);
+    }
+
+    .template-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: linear-gradient(var(--red-500), #ff7184);
+    }
+
+    .template-intro,
+    .template-grid {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .template-intro .kicker {
+      color: #ff8090;
+    }
+
+    .template-intro h2 {
+      color: white;
+      font-size: clamp(2.1rem, 4.3vw, 4rem);
+    }
+
+    .template-intro p {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.66);
+      line-height: 1.7;
+    }
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .template-card {
+      position: relative;
+      min-width: 0;
+      min-height: 246px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 24px 7px 24px 7px;
+      color: var(--navy-950);
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 18px 38px rgba(4,9,32,.2);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .template-card:hover,
+    .template-card:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 46px rgba(4,9,32,.28);
+      outline: 3px solid rgba(129,227,244,.42);
+      outline-offset: 2px;
+    }
+
+    .template-document {
+      width: 68px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 18px 5px 18px 5px;
+      color: var(--red-500);
+      background: linear-gradient(145deg, #fff0f2, #f7e3e7);
+      box-shadow: inset 0 0 0 1px rgba(239,51,79,.12);
+    }
+
+    .template-document svg {
+      width: 43px;
+      height: 49px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.65;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .template-card > span {
+      color: var(--red-500);
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .template-card h3 {
+      margin: 8px 0 0;
+      font-size: clamp(1.12rem, 2vw, 1.38rem);
+      line-height: 1.2;
+    }
+
+    .template-card p {
+      margin: 7px 0 20px;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+
+    .template-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      color: var(--violet-700);
+      font-size: .78rem;
+      font-weight: 900;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .category-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 28px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .category-card::before {
+      content: "";
+      height: 5px;
+      background: var(--category);
+    }
+
+    .category-head {
+      padding: 24px 24px 18px;
+    }
+
+    .category-label {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      background: var(--category);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 950;
+    }
+
+    .category-head h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .category-head p {
+      margin: 10px 0 0;
+      color: rgba(255,255,255,.62);
+      font-size: .9rem;
+      line-height: 1.62;
+    }
+
+    .category-body {
+      flex: 1;
+      padding: 0 24px 24px;
+    }
+
+    .category-body ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .category-body li {
+      position: relative;
+      padding: 8px 0 8px 18px;
+      color: rgba(255,255,255,.72);
+      font-size: .83rem;
+      line-height: 1.48;
+    }
+
+    .category-body li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--category);
+    }
+
+    .fees {
+      margin: auto 24px 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .fees > span {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,.42);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .fee-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .fee-grid-single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .fee-grid-single .fee {
+      text-align: center;
+    }
+
+    .fee-grid-single .fee small {
+      min-height: 0;
+    }
+
+    .fee {
+      padding: 11px;
+      border-radius: 13px;
+      background: rgba(255,255,255,.07);
+    }
+
+    .fee small,
+    .fee strong {
+      display: block;
+    }
+
+    .fee small {
+      min-height: 30px;
+      color: rgba(255,255,255,.48);
+      font-size: .65rem;
+      line-height: 1.3;
+    }
+
+    .fee strong {
+      margin-top: 4px;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .timeline-item {
+      position: relative;
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 12px 34px rgba(15,29,81,.06);
+    }
+
+    .timeline-item.highlight {
+      color: white;
+      background: linear-gradient(145deg, var(--violet-700), var(--navy-800));
+      border-color: transparent;
+    }
+
+    .timeline-step {
+      display: inline-flex;
+      margin-bottom: 25px;
+      color: var(--violet-600);
+      font-size: .67rem;
+      font-weight: 950;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .highlight .timeline-step {
+      color: var(--cyan-300);
+    }
+
+    .timeline-item time {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy-900);
+      font-size: 1.12rem;
+      font-weight: 950;
+    }
+
+    .highlight time {
+      color: white;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.55;
+    }
+
+    .highlight p {
+      color: rgba(255,255,255,.65);
+    }
+
+    .tentative-shell {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .tentative-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, .78fr) minmax(0, 1.22fr);
+      min-width: 0;
+    }
+
+    .tentative-overview {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 48px);
+      color: white;
+      background: linear-gradient(145deg, var(--navy-950), var(--violet-700));
+    }
+
+    .tentative-overview::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -130px;
+      bottom: -120px;
+      border: 1px solid rgba(129,227,244,.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 38px rgba(129,227,244,.04);
+    }
+
+    .tentative-overview h3 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3.25rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .tentative-overview > p {
+      margin: 16px 0 0;
+      color: rgba(255,255,255,.64);
+      line-height: 1.65;
+    }
+
+    .tentative-meta {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .tentative-meta div {
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      background: rgba(255,255,255,.07);
+    }
+
+    .tentative-meta span,
+    .tentative-meta strong {
+      display: block;
+    }
+
+    .tentative-meta span {
+      margin-bottom: 4px;
+      color: var(--cyan-300);
+      font-size: .65rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .tentative-meta strong {
+      font-size: .92rem;
+      line-height: 1.4;
+    }
+
+    .tentative-status {
+      display: inline-flex;
+      margin-top: 20px;
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      color: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.08);
+      font-size: .68rem;
+      font-weight: 850;
+    }
+
+    .schedule-list {
+      display: grid;
+      align-content: center;
+      padding: clamp(16px, 3vw, 30px) clamp(22px, 4vw, 38px);
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .schedule-row:last-child {
+      border-bottom: 0;
+    }
+
+    .schedule-row time {
+      color: var(--violet-700);
+      font-size: .82rem;
+      font-weight: 950;
+      letter-spacing: .02em;
+    }
+
+    .schedule-row strong,
+    .schedule-row span {
+      display: block;
+    }
+
+    .schedule-row strong {
+      color: var(--navy-900);
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+
+    .schedule-row span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+
+    .schedule-row.featured {
+      margin-inline: -12px;
+      padding-inline: 12px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, rgba(111,78,199,.08), transparent);
+    }
+    .award-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .medal-panel,
+    .receivable-panel {
+      padding: clamp(26px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: white;
+      box-shadow: 0 16px 48px rgba(15,29,81,.07);
+    }
+
+    .medals {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .medal {
+      position: relative;
+      min-height: 230px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 9px;
+      overflow: hidden;
+      padding: 30px 10px 22px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--medal) 18%, white), transparent 48%),
+        linear-gradient(180deg, #ffffff, #f4f6ff);
+    }
+
+    .medal::before {
+      content: "";
+      position: absolute;
+      width: 116px;
+      height: 116px;
+      top: 22px;
+      border: 1px solid color-mix(in srgb, var(--medal) 30%, transparent);
+      border-radius: 50%;
+      box-shadow: 0 0 0 14px color-mix(in srgb, var(--medal) 6%, transparent);
+    }
+
+    .medal-ribbon {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      justify-items: center;
+      padding-bottom: 26px;
+    }
+
+    .medal-ribbon::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 58px;
+      height: 58px;
+      top: 52px;
+      background: linear-gradient(135deg, var(--navy-800), var(--violet-600));
+      clip-path: polygon(0 0, 100% 0, 83% 100%, 50% 76%, 17% 100%);
+    }
+
+    .medal-icon {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      border: 7px solid color-mix(in srgb, var(--medal) 60%, white);
+      border-radius: 50%;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--medal) 70%, white), var(--medal));
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 950;
+      text-shadow: 0 2px 6px rgba(0,0,0,.18);
+      box-shadow: 0 12px 22px color-mix(in srgb, var(--medal) 28%, transparent);
+    }
+
+    .medal strong {
+      position: relative;
+      z-index: 3;
+      color: var(--navy-900);
+      font-size: .88rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .medal small {
+      position: relative;
+      z-index: 3;
+      color: var(--muted);
+      font-size: .68rem;
+    }
+
+    .receivable-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .receivable {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      min-height: 112px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #fbfcff, #f2f3ff);
+    }
+
+    .award-object {
+      position: relative;
+      width: 76px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+    }
+
+    .certificate-object {
+      border: 2px solid #aeb8d7;
+      border-radius: 6px;
+      background: white;
+      box-shadow: 0 10px 18px rgba(24, 38, 89, .12);
+    }
+
+    .certificate-object::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid #d6dbec;
+      border-radius: 3px;
+    }
+
+    .certificate-object::after {
+      content: "✓";
+      position: absolute;
+      right: 7px;
+      bottom: 6px;
+      width: 19px;
+      height: 19px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--violet-600);
+      color: white;
+      font-size: .65rem;
+      font-weight: 950;
+    }
+
+    .plaque-object {
+      height: 62px;
+      margin-bottom: 8px;
+      border: 7px solid #39280f;
+      border-radius: 7px;
+      background: linear-gradient(145deg, #ffe59b, #c79024);
+      box-shadow: 0 10px 18px rgba(57, 40, 15, .2);
+    }
+
+    .plaque-object::before {
+      content: '★';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #694913;
+      font-size: 1.35rem;
+      text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+
+    .plaque-object::after {
+      content: "";
+      position: absolute;
+      width: 88px;
+      height: 10px;
+      left: 50%;
+      bottom: -14px;
+      transform: translateX(-50%);
+      border-radius: 3px 3px 8px 8px;
+      background: #2a1d0d;
+    }
+
+    .receivable strong,
+    .receivable span {
+      display: block;
+    }
+
+    .receivable span {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+
+    .entitlement-note {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 24px 26px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--navy-900), var(--violet-700));
+      color: white;
+      box-shadow: 0 18px 40px rgba(24, 35, 93, .18);
+    }
+
+    .entitlement-note-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 18px;
+      background: rgba(255,255,255,.1);
+      color: var(--cyan-300);
+      font-size: 1.4rem;
+      font-weight: 950;
+    }
+
+    .entitlement-note strong,
+    .entitlement-note p,
+    .entitlement-note small {
+      display: block;
+    }
+
+    .entitlement-note strong {
+      margin-bottom: 5px;
+      color: var(--cyan-300);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .entitlement-note p {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 850;
+      line-height: 1.5;
+    }
+
+    .entitlement-note small {
+      margin-top: 6px;
+      color: rgba(255,255,255,.52);
+      line-height: 1.4;
+    }
+
+    .registration {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(120deg, rgba(7,13,43,.98), rgba(86,54,168,.94)),
+        var(--navy-950);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .registration::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: -220px;
+      border: 1px solid rgba(129,227,244,.25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 60px rgba(129,227,244,.05);
+    }
+
+    .registration-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 36px;
+      align-items: center;
+      padding: clamp(30px, 6vw, 64px);
+    }
+
+    .registration h2 {
+      color: white;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+    }
+
+    .registration p {
+      max-width: 670px;
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.65);
+      line-height: 1.7;
+    }
+
+    .registration-actions {
+      display: grid;
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    .button-disabled {
+      cursor: not-allowed;
+      background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.65);
+    }
+
+    .site-footer {
+      padding-block: 30px;
+      background: var(--navy-950);
+      color: rgba(255,255,255,.58);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .organizer {
+      text-align: right;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 920px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .overview-grid,
+      .template-shell,
+      .tentative-layout,
+      .award-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-copy,
+      .identity-stage,
+      .overview-card,
+      .quick-card,
+      .section-heading {
+        min-width: 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .identity-stage {
+        min-height: 430px;
+      }
+
+      .category-grid,
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .category-card:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .registration-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .registration-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand-copy span {
+        display: none;
+      }
+
+      .back-link {
+        padding-inline: 12px;
+      }
+
+      .back-link span {
+        display: none;
+      }
+
+      .hero-grid {
+        padding-top: 56px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-facts,
+      .template-grid,
+      .category-grid,
+      .timeline,
+      .registration-actions {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      h1 span,
+      h2,
+      .hero-copy > p,
+      .section-heading p {
+        overflow-wrap: anywhere;
+      }
+
+      .category-card:first-child {
+        grid-column: auto;
+      }
+
+      .schedule-row {
+        grid-template-columns: 78px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .identity-stage {
+        min-height: 360px;
+      }
+
+      .orbit {
+        width: 340px;
+      }
+
+
+
+      .medals {
+        gap: 7px;
+      }
+
+      .medal {
+        padding-inline: 5px;
+      }
+
+      .footer-row {
+        display: grid;
+      }
+
+      .organizer {
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../../index.html" aria-label="Return to the main programme website">
+        <span class="brand-mark"><img src="../../assets/sic-logo.png" alt=""></span>
+        <span class="brand-copy">
+          <strong>SIC 2026</strong>
+          <span>Innovation · Creativity · Impact</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="SIC page navigation">
+        <a href="#overview">Overview</a>
+        <a href="#categories">Categories</a>
+        <a class="nav-template" href="#templates">Templates</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#tentative">Tentative</a>
+        <a href="#awards">Awards</a>
+      </nav>
+      <a class="back-link" href="../../index.html"><b>←</b><span>Main programme</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Innovation · Creativity · Impact</span>
+          <h1>SIC 2026 <span>The 16<sup>th</sup> Symposium on Innovation and Creativity</span></h1>
+          <p>A focused platform for emerging ideas, working innovations, creative problem-solving, and connections between innovators across universities and the wider innovation community.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#categories">Explore categories →</a>
+            <a class="button button-template" href="#templates">Download templates ↓</a>
+            <a class="button button-secondary" href="#timeline">View important dates</a>
+          </div>
+          <div class="hero-facts" aria-label="SIC 2026 quick facts">
+            <div class="hero-fact"><span>Date</span><strong>15<sup>th</sup> October 2026</strong></div>
+            <div class="hero-fact"><span>Venue</span><strong>Lecture Theatre 6</strong></div>
+            <div class="hero-fact"><span>Location</span><strong>UiTM Cawangan Perlis</strong></div>
+          </div>
+        </div>
+
+        <div class="identity-stage" aria-label="Official SIC identity">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="official-logo-wrap">
+            <img class="official-sic-logo" src="../../assets/sic-logo.png" alt="Symposium on Innovation and Creativity logo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="overview">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">About the symposium</span>
+          <h2>Ideas move forward when they are made visible.</h2>
+          <p>SIC 2026 creates a clear route for participants at different stages—from early concepts to tested innovations with commercialization potential.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-card reveal">
+            <p>The symposium brings UiTM innovators, students, UGUN participants, non-UiTM participants, and associated institutions into one structured showcase. Participants can enter through a dedicated UGUN category, present novice-stage concepts, or demonstrate advanced innovations ready for wider use.</p>
+          </article>
+          <aside class="quick-card reveal" aria-label="SIC organization information">
+            <div class="quick-row">
+              <span class="quick-icon">03</span>
+              <div><span>Categories</span><strong>UGUN, Novice, and Advanced Innovation</strong></div>
+            </div>
+            <div class="quick-row">
+              <span class="quick-icon">16</span>
+              <div><span>Edition</span><strong>16<sup>th</sup> Symposium on Innovation and Creativity</strong></div>
+            </div>
+            <div class="quick-row">
+              <span class="quick-icon">02</span>
+              <div><span>Participant groups</span><strong>UiTM and non-UiTM participants</strong></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="categories">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Categories and fees</span>
+          <h2>Choose the stage that matches your innovation.</h2>
+          <p>Three entry routes keep evaluation relevant to the participant community and the maturity of each idea.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card reveal" style="--category: var(--violet-600);">
+            <div class="category-head">
+              <span class="category-label">A</span>
+              <h3>UGUN</h3>
+              <p>UiTM-Global University Network</p>
+            </div>
+            <div class="category-body">
+              <ul>
+                <li>Dedicated participation route for UGUN participants.</li>
+                <li>Designed for the symposium's international network community.</li>
+              </ul>
+            </div>
+            <div class="fees">
+              <span>Participation fee</span>
+              <div class="fee-grid fee-grid-single">
+                <div class="fee"><small>UGUN participants</small><strong>Refer organiser</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="category-card reveal" style="--category: var(--blue-500);">
+            <div class="category-head">
+              <span class="category-label">B</span>
+              <h3>Novice Innovation</h3>
+              <p>For ideas and concepts still in development.</p>
+            </div>
+            <div class="category-body">
+              <ul>
+                <li>A fully functioning prototype is not mandatory.</li>
+                <li>Sketches, models, storyboards, mock-ups, simulations, or initial prototypes are accepted.</li>
+                <li>No comprehensive user validation is required.</li>
+                <li>The innovation has not been used in actual operations.</li>
+              </ul>
+            </div>
+            <div class="fees">
+              <span>Participation fees</span>
+              <div class="fee-grid">
+                <div class="fee"><small>UiTM participants</small><strong>RM35</strong></div>
+                <div class="fee"><small>Non-UiTM participants</small><strong>RM50</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="category-card reveal" style="--category: var(--green-500);">
+            <div class="category-head">
+              <span class="category-label">C</span>
+              <h3>Advanced Innovation</h3>
+              <p>For tested work with wider application potential.</p>
+            </div>
+            <div class="category-body">
+              <ul>
+                <li>Has a working prototype or application.</li>
+                <li>Has undergone user testing or validation.</li>
+                <li>Shows potential for industrial use or commercialization.</li>
+                <li>May include intellectual property protection.</li>
+              </ul>
+            </div>
+            <div class="fees">
+              <span>Participation fees</span>
+              <div class="fee-grid">
+                <div class="fee"><small>UiTM participants</small><strong>RM50</strong></div>
+                <div class="fee"><small>Non-UiTM participants</small><strong>RM80</strong></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section template-section" id="templates">
+      <div class="container">
+        <div class="template-shell reveal">
+          <div class="template-intro">
+            <span class="kicker">Submission resources</span>
+            <h2>Start with the correct template.</h2>
+            <p>Download the editable Microsoft Word template that matches your submission format before preparing your SIC 2026 paper.</p>
+          </div>
+          <div class="template-grid">
+            <a class="template-card" href="downloads/sic-2026-abstract-template.docx" download>
+              <span>Submission document 01</span>
+              <div class="template-document" aria-hidden="true">
+                <svg viewBox="0 0 48 54"><path d="M10 3h19l9 9v39H10Z"/><path d="M29 3v10h9M16 23h16M16 29h16M16 35h11"/><circle cx="34" cy="42" r="8"/><path d="m31 42 2 2 4-5"/></svg>
+              </div>
+              <h3>Abstract Template</h3>
+              <p>Microsoft Word document · DOCX</p>
+              <strong class="template-download">Download abstract template <b>↓</b></strong>
+            </a>
+            <a class="template-card" href="downloads/sic-2026-extended-abstract-template.docx" download>
+              <span>Submission document 02</span>
+              <div class="template-document" aria-hidden="true">
+                <svg viewBox="0 0 48 54"><path d="M10 3h19l9 9v39H10Z"/><path d="M29 3v10h9M16 22h16M16 28h16M16 34h16M16 40h10"/><path d="M31 43h10M36 38v10"/></svg>
+              </div>
+              <h3>Extended Abstract Template</h3>
+              <p>Microsoft Word document · DOCX</p>
+              <strong class="template-download">Download extended template <b>↓</b></strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Important dates</span>
+          <h2>From registration to the grand final.</h2>
+          <p>A single timeline keeps submission, payment, judging, and post-event deliverables easy to follow.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-step">Step 01</span>
+            <time datetime="2026-06-06">6<sup>th</sup> June 2026</time>
+            <p>Registration opens.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-step">Step 02</span>
+            <time datetime="2026-08-30">30<sup>th</sup> August 2026</time>
+            <p>Registration closes.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-step">Step 03</span>
+            <time datetime="2026-09-07">7<sup>th</sup> September 2026</time>
+            <p>Participation fee payment deadline.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-step">Step 04</span>
+            <time datetime="2026-09-21">21<sup>st</sup>–30<sup>th</sup> September 2026</time>
+            <p>Jury in session.</p>
+          </article>
+          <article class="timeline-item highlight reveal">
+            <span class="timeline-step">Grand final</span>
+            <time datetime="2026-10-15">15<sup>th</sup> October 2026</time>
+            <p>SIC 2026 Grand Final at Lecture Theatre 6, UiTM Cawangan Perlis.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-step">Step 06</span>
+            <time datetime="2026-10-22">22<sup>nd</sup> October 2026</time>
+            <p>Publication submission, e-certificate correction, and gift delivery deadline, where applicable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="tentative">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Tentative programme</span>
+          <h2>A focused morning of pitching and recognition.</h2>
+          <p>The current programme paperwork outlines the following running order for the SIC 2026 event day.</p>
+        </div>
+        <div class="tentative-shell reveal">
+          <div class="tentative-layout">
+            <div class="tentative-overview">
+              <span class="eyebrow">Event day</span>
+              <h3>Thursday,<br>15<sup>th</sup> October 2026</h3>
+              <p>Pitching sessions lead into the official launch and announcement of symposium results.</p>
+              <div class="tentative-meta">
+                <div><span>Programme time</span><strong>8:30 AM–1:30 PM</strong></div>
+                <div><span>Venue</span><strong>Lecture Theatre 6, UiTM Cawangan Perlis</strong></div>
+              </div>
+              <span class="tentative-status">Tentative · Subject to change</span>
+            </div>
+            <div class="schedule-list" aria-label="SIC 2026 tentative schedule">
+              <div class="schedule-row"><time datetime="2026-10-15T08:30">8:30 AM</time><div><strong>Participant Registration</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T09:00">9:00 AM</time><div><strong>Welcoming Remarks</strong><span>Programme Chair</span></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T09:10">9:10 AM</time><div><strong>Pitching Session I</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T10:15">10:15 AM</time><div><strong>Refreshment Break</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T10:30">10:30 AM</time><div><strong>Pitching Session II</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T12:40">12:40 PM</time><div><strong>Rector’s Arrival</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T12:45">12:45 PM</time><div><strong>Rector’s Address</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T12:55">12:55 PM</time><div><strong>Official Launch of SIC 16</strong></div></div>
+              <div class="schedule-row featured"><time datetime="2026-10-15T13:00">1:00 PM</time><div><strong>Results Announcement</strong><span>Gold, Silver and Bronze awards, plus first-to-third pitching winners across all three categories.</span></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T13:30">1:30 PM</time><div><strong>Group Photography and Dismissal</strong></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Awards and entitlements</span>
+          <h2>Recognition for ideas that move forward.</h2>
+          <p>Participants are recognized through medal awards and symposium deliverables.</p>
+        </div>
+        <div class="award-grid">
+          <article class="medal-panel reveal">
+            <span class="kicker">Awards</span>
+            <div class="medals" aria-label="Gold, silver, and bronze awards">
+              <div class="medal" style="--medal:#dba51f;">
+                <span class="medal-ribbon" aria-hidden="true"><span class="medal-icon">★</span></span>
+                <strong>Gold</strong><small>Innovation Award</small>
+              </div>
+              <div class="medal" style="--medal:#98a2b3;">
+                <span class="medal-ribbon" aria-hidden="true"><span class="medal-icon">★</span></span>
+                <strong>Silver</strong><small>Innovation Award</small>
+              </div>
+              <div class="medal" style="--medal:#a86d41;">
+                <span class="medal-ribbon" aria-hidden="true"><span class="medal-icon">★</span></span>
+                <strong>Bronze</strong><small>Innovation Award</small>
+              </div>
+            </div>
+          </article>
+          <article class="receivable-panel reveal">
+            <span class="kicker">Entitlements</span>
+            <div class="receivable-list">
+              <div class="receivable">
+                <span class="award-object certificate-object" aria-hidden="true"></span>
+                <div><strong>E-certificate</strong><span>Digital recognition for symposium participation.</span></div>
+              </div>
+              <div class="receivable">
+                <span class="award-object plaque-object" aria-hidden="true"></span>
+                <div><strong>Custom plaque</strong><span>One custom plaque for each participating group.</span></div>
+              </div>
+            </div>
+          </article>
+          <div class="entitlement-note reveal">
+            <span class="entitlement-note-icon" aria-hidden="true">✓</span>
+            <div>
+              <strong>Important entitlement note</strong>
+              <p>Participants will receive an E-certificate and a Custom Plaque (1 for each group).</p>
+              <small>Visual placeholders are shown until the official award artwork is supplied.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="registration reveal">
+          <div class="registration-grid">
+            <div>
+              <span class="eyebrow">Registration</span>
+              <h2>Bring your innovation into the conversation.</h2>
+              <p>The official poster includes a QR registration route. A confirmed registration URL and the official SIC identity will be added here when supplied.</p>
+            </div>
+            <div class="registration-actions">
+              <span class="button button-disabled" aria-disabled="true">Registration link pending</span>
+              <a class="button button-secondary" href="../../index.html">Return to main programme</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© 2026 Symposium on Innovation and Creativity · UiTM Cawangan Perlis</div>
+      <div class="organizer">Organized by the Innovation &amp; Expertise Unit (UPIK),<br>Research &amp; Industrial Linkage (PJI), UiTM Cawangan Perlis</div>
+    </div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
