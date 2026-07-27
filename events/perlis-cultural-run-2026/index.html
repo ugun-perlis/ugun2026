@@ -1091,6 +1091,165 @@
     }
 
 
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
+      gap: clamp(28px, 5vw, 68px);
+      align-items: center;
+      margin-top: 24px;
+      padding: clamp(30px, 5vw, 56px);
+      border: 1px solid rgba(242, 207, 120, .26);
+      border-radius: 40px 6px 40px 6px;
+      background: linear-gradient(105deg, rgba(7, 72, 45, .72), rgba(8, 14, 11, .96) 58%), var(--black);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel::after {
+      content: "";
+      position: absolute;
+      right: -72px;
+      bottom: -126px;
+      width: 330px;
+      height: 220px;
+      border: 32px solid rgba(242, 207, 120, .07);
+      border-right: 0;
+      border-radius: 180px 0 0 0;
+      transform: rotate(-8deg);
+      pointer-events: none;
+    }
+
+    .contact-organiser,
+    .contact-list {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-organiser h3 {
+      max-width: 650px;
+      margin: 12px 0 22px;
+      color: white;
+      font-family: var(--display);
+      font-size: clamp(2.35rem, 4vw, 4.25rem);
+      font-style: italic;
+      letter-spacing: -.025em;
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .organiser-label {
+      display: block;
+      margin-bottom: 7px;
+      color: rgba(244, 234, 214, .55);
+      font-size: .62rem;
+      font-weight: 950;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .organiser-name {
+      display: block;
+      max-width: 620px;
+      color: var(--gold-light);
+      font-size: clamp(.98rem, 1.7vw, 1.25rem);
+      line-height: 1.45;
+    }
+
+    .organiser-name span {
+      display: block;
+      color: rgba(244, 234, 214, .8);
+      font-size: .78em;
+      font-weight: 750;
+    }
+
+    .contact-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 184px;
+      display: grid;
+      align-content: space-between;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 22px 4px 22px 4px;
+      color: white;
+      text-decoration: none;
+      background: rgba(1, 9, 5, .56);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--green-bright));
+    }
+
+    .contact-card:hover,
+    .contact-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: rgba(242, 207, 120, .58);
+      background: rgba(7, 72, 45, .68);
+    }
+
+    .contact-index {
+      position: absolute;
+      right: 12px;
+      top: 14px;
+      color: rgba(242, 207, 120, .13);
+      font-family: var(--display);
+      font-size: 4.5rem;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .contact-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-copy small,
+    .contact-copy strong,
+    .contact-copy b {
+      display: block;
+    }
+
+    .contact-copy small {
+      color: rgba(244, 234, 214, .5);
+      font-size: .58rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .contact-copy strong {
+      margin-top: 7px;
+      font-size: 1.25rem;
+    }
+
+    .contact-copy b {
+      margin-top: 3px;
+      color: var(--gold-light);
+      font-size: .88rem;
+      letter-spacing: .02em;
+    }
+
+    .contact-action {
+      position: relative;
+      z-index: 1;
+      color: rgba(244, 234, 214, .58);
+      font-size: .62rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
     .site-footer {
       padding-block: 30px;
       color: rgba(244, 234, 214, .52);
@@ -1130,7 +1289,8 @@
       .manifesto-grid,
       .kit-gallery,
       .schedule-layout,
-      .fee-shell {
+      .fee-shell,
+      .contact-panel {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -1200,7 +1360,8 @@
       .hero-actions,
       .hero-facts,
       .experience-grid,
-      .price-board {
+      .price-board,
+      .contact-list {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -1270,7 +1431,8 @@
       h2,
       .section-heading p,
       .schedule-item,
-      .fee-shell {
+      .fee-shell,
+      .contact-panel {
         overflow-wrap: anywhere;
       }
     }
@@ -1310,6 +1472,7 @@
         <a href="#race-kit">Race kit</a>
         <a href="#tentative">Tentative</a>
         <a href="#fees">Fees</a>
+        <a href="#contact">Contact</a>
       </nav>
       <a class="back-link" href="../../index.html"><b>←</b><span>Main programme</span></a>
     </div>
@@ -1521,6 +1684,37 @@
             <!-- Internal reference: Connect the official online registration link when supplied by the organiser. -->
           </div>
         </div>
+        <section class="contact-panel reveal" id="contact" aria-labelledby="contact-title">
+          <div class="contact-organiser">
+            <span class="eyebrow">Organiser &amp; race contacts</span>
+            <h3 id="contact-title">Your race-day crew.</h3>
+            <span class="organiser-label">Organised by</span>
+            <strong class="organiser-name">
+              Fakulti Sains Sukan dan Rekreasi
+              <span>UiTM Cawangan Perlis</span>
+            </strong>
+          </div>
+          <div class="contact-list" aria-label="Culture Stride contact persons">
+            <a class="contact-card" href="tel:+60192539049">
+              <span class="contact-index" aria-hidden="true">01</span>
+              <span class="contact-copy">
+                <small>Contact person</small>
+                <strong>Haikal</strong>
+                <b>019-253 9049</b>
+              </span>
+              <span class="contact-action">Tap to call &#8599;</span>
+            </a>
+            <a class="contact-card" href="tel:+60183736794">
+              <span class="contact-index" aria-hidden="true">02</span>
+              <span class="contact-copy">
+                <small>Contact person</small>
+                <strong>Isaiah</strong>
+                <b>018-373 6794</b>
+              </span>
+              <span class="contact-action">Tap to call &#8599;</span>
+            </a>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -1529,7 +1723,7 @@
     <div class="container footer-row">
       <div><strong>Culture Stride</strong> · Perlis Cultural Run 2026</div>
       <!-- Internal reference: Event information is based on the latest promotional artwork. -->
-      <div>UiTM Perlis · Perlis, Malaysia</div>
+      <div>Organised by <strong>Fakulti Sains Sukan dan Rekreasi, UiTM Cawangan Perlis</strong></div>
     </div>
   </footer>
 

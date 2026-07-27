@@ -4,6 +4,9 @@
 # Private project maintenance notes.
 README.private.md
 
+# Local reference materials used to build the public website.
+/posters/
+
 # Local OS/editor artifacts.
 .DS_Store
 Thumbs.db
