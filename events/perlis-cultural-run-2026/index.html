@@ -737,10 +737,9 @@
 
     .kit-section::before {
       inset: 0;
-      opacity: .18;
-      background:
-        repeating-radial-gradient(circle at 100% 0, transparent 0 17px, rgba(214, 167, 69, .5) 18px 19px, transparent 20px 36px);
-      mask-image: linear-gradient(90deg, transparent 48%, black);
+      opacity: .52;
+      background: url("../../assets/culture-stride-ornamental-frame.jpg") center / cover no-repeat;
+      mix-blend-mode: screen;
     }
 
     .kit-section::after {
@@ -760,6 +759,11 @@
 
     .kit-section .section-heading p {
       color: rgba(244, 234, 214, .62);
+    }
+
+    .kit-section > .container {
+      position: relative;
+      z-index: 2;
     }
 
     .kit-gallery {
@@ -848,11 +852,36 @@
 
 
     .schedule-section {
+      overflow: hidden;
+      background: var(--cream-soft);
+    }
+
+    .schedule-section::before,
+    .schedule-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .schedule-section::before {
       background:
-        linear-gradient(90deg, rgba(214, 167, 69, .1) 1px, transparent 1px),
-        linear-gradient(rgba(214, 167, 69, .1) 1px, transparent 1px),
-        var(--cream-soft);
+        linear-gradient(90deg, rgba(248, 247, 222, .9), rgba(248, 247, 222, .7) 48%, rgba(248, 247, 222, .84)),
+        url("../../assets/culture-stride-race-panorama.jpg") center / cover no-repeat;
+    }
+
+    .schedule-section::after {
+      opacity: .48;
+      background:
+        linear-gradient(90deg, rgba(214, 167, 69, .12) 1px, transparent 1px),
+        linear-gradient(rgba(214, 167, 69, .12) 1px, transparent 1px);
       background-size: 36px 36px;
+      mask-image: linear-gradient(90deg, rgba(0, 0, 0, .42), black 58%, rgba(0, 0, 0, .58));
+    }
+
+    .schedule-section > .container {
+      position: relative;
+      z-index: 2;
     }
 
     .schedule-layout {
@@ -871,8 +900,8 @@
       border-radius: 5px 34px 5px 34px;
       color: var(--cream);
       background:
-        linear-gradient(145deg, rgba(8, 116, 66, .96), rgba(4, 24, 15, .98)),
-        var(--forest);
+        linear-gradient(145deg, rgba(8, 116, 66, .88), rgba(4, 24, 15, .96)),
+        url("../../assets/culture-stride-race-panorama.jpg") 38% center / cover no-repeat;
       box-shadow: var(--shadow);
     }
 
@@ -979,10 +1008,26 @@
     }
 
     .fee-section {
+      overflow: hidden;
       color: var(--cream);
       background:
         linear-gradient(115deg, rgba(8, 116, 66, .2), transparent 45%),
         var(--black);
+    }
+
+    .fee-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .46;
+      background: url("../../assets/culture-stride-ornamental-frame.jpg") center / cover no-repeat;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .fee-section > .container {
+      position: relative;
+      z-index: 2;
     }
 
     .fee-shell {
