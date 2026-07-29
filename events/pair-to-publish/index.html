@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pair to Publish (P2P), a focused half-day publication programme by the Publication and Excellence Unit, UiTM Perlis, on 14 October 2026.">
+  <meta name="theme-color" content="#071f4f">
+  <title>Pair to Publish 2026 | UiTM Perlis</title>
+  <style>
+    :root {
+      --navy-950: #061936;
+      --navy-900: #071f4f;
+      --navy-800: #0c3267;
+      --purple-800: #4d075f;
+      --purple-700: #641078;
+      --magenta-600: #9e1f72;
+      --gold-500: #f3c42e;
+      --gold-300: #f9dd70;
+      --paper: #fbf8f2;
+      --paper-deep: #f3eee6;
+      --white: #ffffff;
+      --ink: #0c2145;
+      --muted: #61708a;
+      --line: rgba(7, 31, 79, .13);
+      --shadow: 0 28px 80px rgba(7, 31, 79, .14);
+      --container: 1180px;
+      --side: clamp(20px, 4vw, 40px);
+      --radius-xl: clamp(26px, 4vw, 46px);
+      --radius-lg: 28px;
+      --radius-md: 19px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 2%, rgba(243, 196, 46, .14), transparent 23rem),
+        radial-gradient(circle at 94% 22%, rgba(158, 31, 114, .1), transparent 28rem),
+        var(--paper);
+      font-family: Inter, Aptos, "Segoe UI", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      background-image: radial-gradient(rgba(7, 31, 79, .12) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: .19;
+      content: "";
+      pointer-events: none;
+      mask-image: linear-gradient(90deg, #000, transparent 18%, transparent 82%, #000);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    sup {
+      position: relative;
+      top: -.34em;
+      font-size: .54em;
+      line-height: 0;
+      vertical-align: baseline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: calc(var(--container) + var(--side) + var(--side));
+      margin-inline: auto;
+      padding-inline: var(--side);
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 50;
+      top: 0;
+      border-bottom: 1px solid rgba(7, 31, 79, .09);
+      background: rgba(251, 248, 242, .9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      min-height: 78px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+
+    .brand-symbol {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 14px 5px 14px 5px;
+      color: var(--white);
+      background: linear-gradient(140deg, var(--navy-900), var(--purple-700));
+      box-shadow: 6px 6px 0 var(--gold-500);
+    }
+
+    .brand-symbol svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-copy small {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .67rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-links > a {
+      padding: 11px 13px;
+      border-radius: 999px;
+      color: #344762;
+      font-size: .88rem;
+      font-weight: 750;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav-links > a:hover {
+      color: var(--navy-900);
+      background: rgba(7, 31, 79, .07);
+    }
+
+    .nav-links .nav-cta {
+      margin-left: 8px;
+      padding-inline: 18px;
+      color: var(--white);
+      background: var(--purple-700);
+    }
+
+    .nav-links .nav-cta:hover {
+      color: var(--navy-950);
+      background: var(--gold-500);
+    }
+
+    .menu-button {
+      display: none;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      border: 0;
+      border-radius: 14px;
+      color: var(--white);
+      background: var(--navy-900);
+      cursor: pointer;
+    }
+
+    .menu-button svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .hero {
+      position: relative;
+      padding: clamp(48px, 7vw, 94px) 0 clamp(70px, 9vw, 118px);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      top: 5%;
+      right: -100px;
+      width: clamp(210px, 31vw, 520px);
+      aspect-ratio: 1;
+      border: 38px solid rgba(158, 31, 114, .075);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      bottom: 9%;
+      left: -82px;
+      width: 230px;
+      height: 36px;
+      background: var(--gold-500);
+      content: "";
+      transform: skewX(-36deg);
+      opacity: .55;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      align-items: center;
+      grid-template-columns: minmax(0, 1.08fr) minmax(380px, .92fr);
+      column-gap: clamp(44px, 7vw, 90px);
+      row-gap: clamp(20px, 3vw, 36px);
+      isolation: isolate;
+    }
+
+    .hero-grid::before {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      width: min(86vw, 940px);
+      height: min(58vw, 500px);
+      background: url("../../assets/p2p-logo.png") center / contain no-repeat;
+      content: "";
+      filter: grayscale(1);
+      opacity: .045;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--purple-700);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 34px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--gold-500);
+      content: "";
+    }
+
+
+    .hero h1 {
+      max-width: 770px;
+      margin: 0;
+      font-family: "Arial Narrow", Impact, Haettenschweiler, sans-serif;
+      font-size: clamp(2.7rem, 6vw, 6rem);
+      font-stretch: condensed;
+      font-weight: 900;
+      letter-spacing: -.045em;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: var(--purple-700);
+    }
+
+    .hero-lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: #42536f;
+      font-size: clamp(1.04rem, 1.6vw, 1.2rem);
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 2px solid transparent;
+      border-radius: 16px 5px 16px 5px;
+      font-size: .93rem;
+      font-weight: 900;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--purple-700);
+      box-shadow: 8px 8px 0 var(--gold-500);
+    }
+
+    .button-primary:hover {
+      box-shadow: 5px 5px 0 var(--gold-500);
+    }
+
+    .button-secondary {
+      border-color: rgba(7, 31, 79, .18);
+      color: var(--navy-900);
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .button svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 12px;
+      border-radius: 40px 12px 40px 12px;
+      background: linear-gradient(145deg, var(--navy-900), var(--purple-800));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before {
+      position: absolute;
+      z-index: -1;
+      inset: -13px 22px 20px -13px;
+      border: 3px solid var(--gold-500);
+      border-radius: inherit;
+      content: "";
+    }
+
+    .event-ticket {
+      position: relative;
+      min-height: 510px;
+      padding: clamp(28px, 4vw, 48px);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 31px 8px 31px 8px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(243, 196, 46, .2), transparent 14rem),
+        linear-gradient(150deg, rgba(255, 255, 255, .08), transparent 46%);
+      overflow: hidden;
+    }
+
+    .event-ticket::after {
+      position: absolute;
+      right: -28px;
+      bottom: -22px;
+      width: 190px;
+      height: 190px;
+      background-image: radial-gradient(rgba(255, 255, 255, .36) 2px, transparent 2px);
+      background-size: 17px 17px;
+      content: "";
+      transform: rotate(-13deg);
+      opacity: .55;
+    }
+
+    .ticket-kicker {
+      display: block;
+      margin-bottom: 34px;
+      color: var(--gold-300);
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .ticket-date {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .date-number {
+      font-family: "Arial Narrow", Impact, sans-serif;
+      color: var(--gold-500);
+      font-size: clamp(4.8rem, 9vw, 7.3rem);
+      letter-spacing: -.06em;
+      line-height: .75;
+    }
+
+    .date-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .date-copy strong {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      text-transform: uppercase;
+    }
+
+    .date-copy span {
+      color: rgba(255, 255, 255, .68);
+      font-weight: 700;
+    }
+
+    .ticket-details {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 18px;
+      padding-top: 28px;
+    }
+
+    .ticket-detail {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .ticket-icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: 14px 4px 14px 4px;
+      color: var(--gold-500);
+      background: rgba(255, 255, 255, .09);
+    }
+
+    .ticket-icon svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .ticket-detail small {
+      display: block;
+      margin-bottom: 3px;
+      color: rgba(255, 255, 255, .58);
+      font-size: .69rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .ticket-detail strong {
+      font-size: 1rem;
+    }
+
+    .fee-seal {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      margin-top: 31px;
+      align-items: baseline;
+      gap: 8px;
+      padding: 13px 18px;
+      border: 2px solid var(--gold-500);
+      border-radius: 999px;
+      color: var(--gold-300);
+      font-weight: 850;
+    }
+
+    .fee-seal strong {
+      color: var(--white);
+      font-size: 1.55rem;
+    }
+
+    .programme-divider {
+      position: relative;
+      display: grid;
+      min-height: 68px;
+      grid-template-columns: minmax(40px, 1fr) auto minmax(40px, 1fr);
+      align-items: center;
+      gap: clamp(16px, 3vw, 34px);
+      padding-inline: var(--side);
+      background: var(--navy-900);
+      overflow: hidden;
+    }
+
+    .programme-divider::before,
+    .programme-divider::after {
+      position: absolute;
+      top: 0;
+      width: clamp(75px, 13vw, 190px);
+      height: 100%;
+      background: linear-gradient(135deg, var(--purple-700) 0 44%, var(--gold-500) 44% 55%, transparent 55%);
+      content: "";
+      opacity: .9;
+    }
+
+    .programme-divider::before {
+      left: 0;
+    }
+
+    .programme-divider::after {
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .divider-line {
+      position: relative;
+      z-index: 1;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-500));
+    }
+
+    .divider-line:last-child {
+      background: linear-gradient(90deg, var(--gold-500), transparent);
+    }
+
+    .divider-mark {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 58px;
+      height: 42px;
+      place-items: center;
+      border: 2px solid var(--gold-500);
+      border-radius: 15px 4px 15px 4px;
+      color: var(--gold-300);
+      background: var(--purple-800);
+      box-shadow: 5px 5px 0 rgba(243, 196, 46, .18);
+    }
+
+    .divider-mark svg {
+      width: 29px;
+      height: 29px;
+    }
+    .section {
+      position: relative;
+      padding: clamp(82px, 10vw, 140px) 0;
+    }
+
+    .section-soft {
+      background: rgba(243, 238, 230, .72);
+    }
+
+    .section-dark {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 10% 16%, rgba(243, 196, 46, .12), transparent 24rem),
+        radial-gradient(circle at 92% 90%, rgba(158, 31, 114, .24), transparent 26rem),
+        var(--navy-950);
+    }
+
+    .section-head {
+      display: grid;
+      max-width: 820px;
+      gap: 14px;
+      margin-bottom: clamp(38px, 5vw, 62px);
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-head.center .section-kicker {
+      justify-content: center;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--magenta-600);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      width: 32px;
+      height: 4px;
+      background: var(--gold-500);
+      content: "";
+      transform: skewX(-24deg);
+    }
+
+    .section-dark .section-kicker {
+      color: var(--gold-300);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-family: "Arial Narrow", Impact, Haettenschweiler, sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5.1rem);
+      font-weight: 900;
+      letter-spacing: -.035em;
+      line-height: .98;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.13rem);
+      line-height: 1.75;
+    }
+
+    .section-dark .section-intro {
+      color: rgba(255, 255, 255, .67);
+    }
+
+    .overview-grid {
+      display: grid;
+      align-items: stretch;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 22px;
+    }
+
+    .statement-card {
+      position: relative;
+      min-height: 440px;
+      padding: clamp(30px, 5vw, 58px);
+      border-radius: var(--radius-xl) 12px var(--radius-xl) 12px;
+      color: var(--white);
+      background:
+        linear-gradient(150deg, rgba(255, 255, 255, .08), transparent 60%),
+        var(--purple-700);
+      overflow: hidden;
+    }
+
+    .statement-card::before,
+    .statement-card::after {
+      position: absolute;
+      border: 2px solid rgba(255, 255, 255, .18);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .statement-card::before {
+      right: -70px;
+      bottom: -70px;
+      width: 270px;
+      height: 270px;
+    }
+
+    .statement-card::after {
+      right: 18px;
+      bottom: 18px;
+      width: 110px;
+      height: 110px;
+      border-color: var(--gold-500);
+    }
+
+    .statement-number {
+      display: block;
+      color: var(--gold-500);
+      font-family: "Arial Narrow", Impact, sans-serif;
+      font-size: clamp(5.7rem, 11vw, 9rem);
+      letter-spacing: -.08em;
+      line-height: .7;
+      opacity: .95;
+    }
+
+    .statement-card h3 {
+      position: relative;
+      z-index: 1;
+      max-width: 510px;
+      margin: 35px 0 18px;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+    }
+
+    .statement-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0;
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.75;
+    }
+
+    .overview-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .overview-row {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 27px 28px;
+      border: 1px solid var(--line);
+      border-radius: 10px var(--radius-lg) 10px var(--radius-lg);
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 13px 36px rgba(7, 31, 79, .06);
+    }
+
+    .overview-icon {
+      display: grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border-radius: 18px 5px 18px 5px;
+      color: var(--navy-900);
+      background: var(--gold-500);
+    }
+
+    .overview-icon svg {
+      width: 29px;
+      height: 29px;
+    }
+
+    .overview-row h3 {
+      margin: 2px 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .overview-row p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .speaker-card {
+      display: grid;
+      min-height: 650px;
+      grid-template-rows: 410px 1fr;
+      border: 1px solid rgba(255, 255, 255, .11);
+      border-radius: var(--radius-xl) 10px var(--radius-xl) 10px;
+      background: rgba(255, 255, 255, .055);
+      overflow: hidden;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, .2);
+    }
+
+    .speaker-photo {
+      position: relative;
+      display: grid;
+      place-items: end center;
+      padding: 14px 24px 0;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .speaker-photo::before {
+      display: none;
+    }
+
+    .speaker-photo img {
+      position: absolute;
+      z-index: 1;
+      inset: 14px 24px 0;
+      width: calc(100% - 48px);
+      height: calc(100% - 14px);
+      max-width: none;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .speaker-copy {
+      padding: clamp(26px, 4vw, 39px);
+    }
+
+    .speaker-track {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border: 1px solid rgba(243, 196, 46, .35);
+      border-radius: 999px;
+      color: var(--gold-300);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .speaker-copy h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      letter-spacing: -.035em;
+    }
+
+    .speaker-role {
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, .55);
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .session-title {
+      margin: 0;
+      padding-top: 19px;
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      color: rgba(255, 255, 255, .82);
+      font-size: 1.03rem;
+      line-height: 1.58;
+    }
+
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .editor-card {
+      position: relative;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 28px 8px 28px 8px;
+      background: rgba(255, 255, 255, .8);
+      box-shadow: 0 18px 44px rgba(7, 31, 79, .08);
+      overflow: hidden;
+    }
+
+    .editor-photo {
+      position: relative;
+      height: 280px;
+      border-radius: 20px 4px 20px 4px;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .editor-photo::after {
+      display: none;
+    }
+
+    .editor-photo img {
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .editor-copy {
+      min-height: 235px;
+      padding: 25px 20px 23px;
+    }
+
+    .editor-label {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--magenta-600);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .editor-copy h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.28rem, 2vw, 1.62rem);
+      letter-spacing: -.025em;
+      line-height: 1.1;
+    }
+
+    .editor-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .journal-mark {
+      display: inline-flex;
+      margin-top: 20px;
+      padding: 8px 11px;
+      border-radius: 8px 2px 8px 2px;
+      color: var(--white);
+      background: var(--navy-900);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .outcome-card {
+      position: relative;
+      min-height: 310px;
+      padding: 29px 24px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 24px 6px 24px 6px;
+      background: rgba(255, 255, 255, .055);
+      overflow: hidden;
+    }
+
+    .outcome-card::after {
+      position: absolute;
+      right: -25px;
+      bottom: -30px;
+      color: rgba(255, 255, 255, .035);
+      font-family: "Arial Narrow", Impact, sans-serif;
+      font-size: 9rem;
+      font-weight: 900;
+      line-height: 1;
+      content: attr(data-number);
+    }
+
+    .outcome-icon {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 68px;
+      height: 68px;
+      margin-bottom: 28px;
+      place-items: center;
+      border: 2px solid var(--gold-500);
+      border-radius: 21px 5px 21px 5px;
+      color: var(--gold-300);
+    }
+
+    .outcome-icon svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .outcome-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      font-size: 1.13rem;
+      line-height: 1.25;
+    }
+
+    .outcome-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: rgba(255, 255, 255, .63);
+      font-size: .92rem;
+      line-height: 1.62;
+    }
+
+    .registration-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      border-radius: var(--radius-xl) 12px var(--radius-xl) 12px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .registration-main {
+      padding: clamp(38px, 6vw, 72px);
+    }
+
+    .registration-main h2 {
+      max-width: 620px;
+      font-size: clamp(2.5rem, 4.8vw, 4rem);
+    }
+
+    .registration-main > p {
+      max-width: 600px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .registration-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 30px 0 34px;
+    }
+
+    .registration-detail {
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 16px 5px 16px 5px;
+      background: var(--paper);
+    }
+
+    .registration-detail small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .registration-detail strong {
+      color: var(--navy-900);
+      font-size: 1rem;
+    }
+
+    .registration-side {
+      display: grid;
+      min-height: 520px;
+      align-content: center;
+      padding: clamp(35px, 5vw, 60px);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 14%, rgba(243, 196, 46, .24), transparent 13rem),
+        linear-gradient(150deg, var(--purple-700), var(--navy-900));
+    }
+
+    .registration-side .price {
+      margin: 0;
+      color: var(--gold-500);
+      font-family: "Arial Narrow", Impact, sans-serif;
+      font-size: clamp(5.8rem, 10vw, 9rem);
+      letter-spacing: -.075em;
+      line-height: .8;
+    }
+
+    .registration-side .price-note {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .68);
+      font-weight: 750;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 17px;
+      margin-top: 46px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .contact-link {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      align-items: center;
+      gap: 13px;
+      color: rgba(255, 255, 255, .88);
+      font-size: .92rem;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link span:first-child {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: 13px 4px 13px 4px;
+      color: var(--navy-900);
+      background: var(--gold-500);
+    }
+
+    .contact-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .site-footer {
+      padding: 37px 0;
+      color: rgba(255, 255, 255, .72);
+      background: var(--navy-950);
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-grid strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--white);
+    }
+
+    .footer-grid p {
+      margin: 0;
+      font-size: .85rem;
+      line-height: 1.6;
+    }
+
+    .footer-back {
+      color: var(--gold-300);
+      font-size: .87rem;
+      font-weight: 850;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1020px) {
+      .nav-links {
+        position: fixed;
+        top: 78px;
+        right: var(--side);
+        left: var(--side);
+        display: none;
+        padding: 15px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: grid;
+      }
+
+      .nav-links .nav-cta {
+        margin: 5px 0 0;
+        text-align: center;
+      }
+
+      .menu-button {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .overview-grid,
+      .registration-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 820px;
+      }
+
+      .hero-panel {
+        width: min(100%, 620px);
+        margin-inline: auto;
+      }
+
+      .editor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .outcome-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .brand-copy small {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .event-ticket {
+        min-height: 0;
+        padding: 28px 23px 34px;
+      }
+
+      .ticket-date {
+        grid-template-columns: 88px 1fr;
+        gap: 13px;
+      }
+
+      .date-number {
+        font-size: 5.25rem;
+      }
+
+      .speaker-grid,
+      .editor-grid,
+      .outcome-grid,
+      .registration-details {
+        grid-template-columns: 1fr;
+      }
+
+      .speaker-card {
+        min-height: 0;
+        grid-template-rows: 380px 1fr;
+      }
+
+      .editor-photo {
+        height: 310px;
+      }
+
+      .outcome-card {
+        min-height: 255px;
+      }
+
+      .registration-side {
+        min-height: 430px;
+      }
+
+      .footer-grid {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Pair to Publish home">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 5.5c3.6 0 6.3 1 8 3v10c-1.7-2-4.4-3-8-3z"/>
+            <path d="M20 5.5c-3.6 0-6.3 1-8 3v10c1.7-2 4.4-3 8-3z"/>
+            <path d="m15.5 10 3-3 1.5 1.5-3 3-2 .5z"/>
+          </svg>
+        </span>
+        <span class="brand-copy">P2P 2026<small>UiTM Perlis</small></span>
+      </a>
+      <nav class="nav-links" id="site-menu" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#editors">Editors</a>
+        <a href="#outcomes">Outcomes</a>
+        <a class="nav-cta" href="#register">Register</a>
+      </nav>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Publication and Excellence Unit · UiTM Perlis</span>
+
+          <h1>Turn your research into <span>published impact.</span></h1>
+          <p class="hero-lead">A focused publication programme connecting researchers with experienced speakers and UiTM Perlis journal chief editors—sharing knowledge, joining forces, and succeeding together.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://shorturl.at/p2puitmps" target="_blank" rel="noopener">
+              Register now
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5"/>
+              </svg>
+            </a>
+            <a class="button button-secondary" href="#speakers">Meet the experts</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Event information">
+          <div class="event-ticket">
+            <span class="ticket-kicker">Your publication pathway starts here</span>
+            <div class="ticket-date">
+              <span class="date-number">14<sup>th</sup></span>
+              <span class="date-copy">
+                <strong>October 2026</strong>
+                <span>Wednesday</span>
+              </span>
+            </div>
+            <div class="ticket-details">
+              <div class="ticket-detail">
+                <span class="ticket-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/>
+                  </svg>
+                </span>
+                <span><small>Programme time</small><strong>8:30 AM – 1:00 PM</strong></span>
+              </div>
+              <div class="ticket-detail">
+                <span class="ticket-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 5.5c3.6 0 6.3 1 8 3v10c-1.7-2-4.4-3-8-3z"/>
+                    <path d="M20 5.5c-3.6 0-6.3 1-8 3v10c1.7-2 4.4-3 8-3z"/>
+                  </svg>
+                </span>
+                <span><small>Format</small><strong>Expert talks + editor engagement</strong></span>
+              </div>
+            </div>
+            <div class="fee-seal"><span>Participation fee</span><strong>RM50</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="programme-divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M4 5.5c3.6 0 6.3 1 8 3v10c-1.7-2-4.4-3-8-3z"/>
+          <path d="M20 5.5c-3.6 0-6.3 1-8 3v10c1.7-2 4.4-3 8-3z"/>
+          <path d="m15.5 10 3-3 1.5 1.5-3 3-2 .5z"/>
+        </svg>
+      </span>
+      <span class="divider-line"></span>
+    </div>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Programme overview</span>
+          <h2>One focused morning. A clearer route to publication.</h2>
+          <p class="section-intro">Pair to Publish brings practical publication guidance and direct editorial perspectives into one collaborative programme for researchers who want to strengthen their manuscripts and publication strategy.</p>
+        </div>
+        <div class="overview-grid">
+          <article class="statement-card reveal">
+            <span class="statement-number">P2P</span>
+            <h3>From research potential to a stronger, more publishable manuscript.</h3>
+            <p>Learn with experienced academics, understand what journal editors look for, and build the connections that help research move forward.</p>
+          </article>
+          <div class="overview-stack">
+            <article class="overview-row reveal">
+              <span class="overview-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 19V8l7-4 7 4v11"/><path d="M8 19v-5h8v5M4 19h16"/>
+                </svg>
+              </span>
+              <div><h3>Organised by UiTM Perlis</h3><p>Publication and Excellence Unit, Universiti Teknologi MARA Perlis Branch.</p></div>
+            </article>
+            <article class="overview-row reveal">
+              <span class="overview-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1z"/>
+                  <path d="M8 13h3M13 13h3M8 17h3"/>
+                </svg>
+              </span>
+              <div><h3>Wednesday, 14<sup>th</sup> October 2026</h3><p>A compact half-day programme running from 8:30 AM to 1:00 PM.</p></div>
+            </article>
+            <article class="overview-row reveal">
+              <span class="overview-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="8.5"/><path d="M15.3 8.7c-.8-.7-1.8-1.1-3-1.1-1.6 0-2.8.8-2.8 2s1.1 1.7 3 2c1.9.4 3 1 3 2.4s-1.3 2.4-3.2 2.4c-1.4 0-2.7-.5-3.6-1.4M12 5.7v12.6"/>
+                </svg>
+              </span>
+              <div><h3>RM50 participation fee</h3><p>Access the expert sessions, editorial perspectives, and publication networking experience.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="speakers">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Invited speakers</span>
+          <h2>Two fields. Two expert perspectives.</h2>
+          <p class="section-intro">Explore publication strategy across science and technology, Islamic scholarship, and the social sciences with two invited academics.</p>
+        </div>
+        <div class="speaker-grid">
+          <article class="speaker-card reveal">
+            <div class="speaker-photo">
+              <img src="../../assets/dr abu hassan nordin.png" alt="Dr Abu Hassan Nordin" loading="lazy">
+            </div>
+            <div class="speaker-copy">
+              <span class="speaker-track">Science &amp; Technology</span>
+              <h3>Dr Abu Hassan Nordin</h3>
+              <p class="speaker-role">Invited Speaker</p>
+              <p class="session-title">“High-Impact Publication Strategies in Science and Technology”</p>
+            </div>
+          </article>
+          <article class="speaker-card reveal">
+            <div class="speaker-photo">
+              <img src="../../assets/dr marina abu bakar.png" alt="Dr Marina Abu Bakar" loading="lazy">
+            </div>
+            <div class="speaker-copy">
+              <span class="speaker-track">Social Sciences</span>
+              <h3>Dr Marina Abu Bakar</h3>
+              <p class="speaker-role">Invited Speaker</p>
+              <p class="session-title">“Academic Writing and Publishing in Islamic Studies &amp; Social Sciences: Effective Approaches”</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="editors">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-kicker">Meet the editorial desk</span>
+          <h2>Three UiTM Perlis chief editors.</h2>
+          <p class="section-intro">Gain editorial perspectives from the chief editors of three UiTM Perlis journals, each representing a distinct research community.</p>
+        </div>
+        <div class="editor-grid">
+          <article class="editor-card reveal">
+            <div class="editor-photo"><img src="../../assets/dr jeyashelly andas.png" alt="Dr Jeyashelly Andas" loading="lazy"></div>
+            <div class="editor-copy">
+              <span class="editor-label">Chief Editor</span>
+              <h3>Dr Jeyashelly Andas</h3>
+              <p>Scientific Research Journal</p>
+              <span class="journal-mark">SRJ</span>
+            </div>
+          </article>
+          <article class="editor-card reveal">
+            <div class="editor-photo"><img src="../../assets/dr siti zulaiha ahmad.png" alt="Dr Siti Zulaiha Ahmad" loading="lazy"></div>
+            <div class="editor-copy">
+              <span class="editor-label">Chief Editor</span>
+              <h3>Dr Siti Zulaiha Ahmad</h3>
+              <p>Journal of Computing Research and Innovation</p>
+              <span class="journal-mark">JCRINN</span>
+            </div>
+          </article>
+          <article class="editor-card reveal">
+            <div class="editor-photo"><img src="../../assets/prof madya dr mahyudin ahmad.png" alt="Associate Professor Dr Mahyudin Ahmad" loading="lazy"></div>
+            <div class="editor-copy">
+              <span class="editor-label">Chief Editor</span>
+              <h3>Associate Prof. Dr Mahyudin Ahmad</h3>
+              <p>Jurnal Intelek</p>
+              <span class="journal-mark">JI</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="outcomes">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">What you will gain</span>
+          <h2>Practical value beyond the room.</h2>
+          <p class="section-intro">Leave with stronger publication thinking, relevant editorial insights, and new opportunities to collaborate.</p>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome-card reveal" data-number="01">
+            <span class="outcome-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M7.5 15.5c-2.8.7-4.5 2.2-4.5 4.5h9"/><circle cx="8.5" cy="8.5" r="3.5"/>
+                <path d="m14 16 2.2 2.2L21 13.5M15 4h6M18 1v6"/>
+              </svg>
+            </span>
+            <h3>Experienced guidance</h3>
+            <p>Learn directly with invited speakers and experienced journal chief editors.</p>
+          </article>
+          <article class="outcome-card reveal" data-number="02">
+            <span class="outcome-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M5 3.5h10l4 4V21H5z"/><path d="M15 3.5V8h4M8 12h8M8 16h6"/>
+                <path d="m15.5 18.5 3.8-3.8 1.2 1.2-3.8 3.8-1.7.5z"/>
+              </svg>
+            </span>
+            <h3>Practical strategies</h3>
+            <p>Take away current, applicable approaches to academic writing and publication.</p>
+          </article>
+          <article class="outcome-card reveal" data-number="03">
+            <span class="outcome-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="12" cy="17" r="3"/>
+                <path d="m9.2 9.2 1.5 4.8M14.8 9.2 13.3 14M10 7h4"/>
+              </svg>
+            </span>
+            <h3>Research connections</h3>
+            <p>Create space for new collaboration and a stronger research network.</p>
+          </article>
+          <article class="outcome-card reveal" data-number="04">
+            <span class="outcome-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/><path d="M15 7h4v4"/>
+              </svg>
+            </span>
+            <h3>Indexed publication potential</h3>
+            <p>Improve manuscript quality and publication opportunities in Scopus- and WoS-indexed journals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="register">
+      <div class="container">
+        <div class="registration-card reveal">
+          <div class="registration-main">
+            <span class="section-kicker">Registration</span>
+            <h2>Ready to pair your research with publication insight?</h2>
+            <p>Join Pair to Publish for a concentrated morning of expert guidance, editorial perspective, and research networking.</p>
+            <div class="registration-details">
+              <div class="registration-detail"><small>Date</small><strong>14<sup>th</sup> October 2026</strong></div>
+              <div class="registration-detail"><small>Time</small><strong>8:30 AM – 1:00 PM</strong></div>
+              <div class="registration-detail"><small>Day</small><strong>Wednesday</strong></div>
+              <div class="registration-detail"><small>Fee</small><strong>RM50 per participant</strong></div>
+            </div>
+            <a class="button button-primary" href="https://shorturl.at/p2puitmps" target="_blank" rel="noopener">
+              Open registration form
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5"/>
+              </svg>
+            </a>
+          </div>
+          <aside class="registration-side">
+            <p class="price">RM50</p>
+            <p class="price-note">Participation fee</p>
+            <div class="contact-list" aria-label="Contact information">
+              <a class="contact-link" href="tel:+6049882094">
+                <span aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M7 3h3l1.2 4-2 1.5a14 14 0 0 0 6.3 6.3l1.5-2 4 1.2v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4z"/>
+                  </svg>
+                </span>
+                <span>04-988 2094</span>
+              </a>
+              <a class="contact-link" href="mailto:pjiuitmps@uitm.edu.my">
+                <span aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M3 5h18v14H3z"/><path d="m4 7 8 6 8-6"/>
+                  </svg>
+                </span>
+                <span>pjiuitmps@uitm.edu.my</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Pair to Publish (P2P) 2026</strong>
+        <p>Organised by the Publication and Excellence Unit, UiTM Perlis Branch.</p>
+      </div>
+      <a class="footer-back" href="../../index.html">← Return to UGUN 2026</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const menu = document.querySelector(".nav-links");
+
+    menuButton?.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    });
+
+    menu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+        menuButton?.setAttribute("aria-expanded", "false");
+        menuButton?.setAttribute("aria-label", "Open menu");
+      });
+    });
+
+    const observer = "IntersectionObserver" in window
+      ? new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 })
+      : null;
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      if (observer) observer.observe(element);
+      else element.classList.add("visible");
+    });
+  </script>
+</body>
+</html>
