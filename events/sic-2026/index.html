@@ -1200,6 +1200,298 @@
       color: rgba(255,255,255,.65);
     }
 
+    .journey-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(57,149,233,.12), transparent 24rem),
+        radial-gradient(circle at 92% 84%, rgba(111,78,199,.13), transparent 26rem),
+        white;
+    }
+
+    .journey-section::before {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      top: -210px;
+      right: -120px;
+      border: 1px solid rgba(57,149,233,.14);
+      border-radius: 50%;
+      box-shadow: 0 0 0 54px rgba(111,78,199,.035), 0 0 0 108px rgba(57,149,233,.025);
+      pointer-events: none;
+    }
+
+    .journey-flow {
+      --journey-node: 64px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: clamp(10px, 1.5vw, 18px);
+      margin: clamp(38px, 6vw, 64px) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .journey-flow::before {
+      content: "";
+      position: absolute;
+      top: calc((var(--journey-node) / 2) - 2px);
+      left: 9%;
+      right: 9%;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue-500), var(--violet-600) 68%, var(--red-500));
+      box-shadow: 0 4px 16px rgba(57,149,233,.18);
+    }
+
+    .journey-step {
+      position: relative;
+      min-width: 0;
+      display: grid;
+      grid-template-rows: var(--journey-node) 1fr;
+      gap: 18px;
+    }
+
+    .journey-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 26px;
+      right: calc(clamp(10px, 1.5vw, 18px) / -2 - 4px);
+      width: 10px;
+      height: 10px;
+      border-top: 3px solid white;
+      border-right: 3px solid white;
+      transform: rotate(45deg);
+    }
+
+    .journey-node {
+      position: relative;
+      z-index: 2;
+      width: var(--journey-node);
+      height: var(--journey-node);
+      display: grid;
+      place-items: center;
+      justify-self: center;
+      border: 5px solid white;
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(145deg, var(--blue-500), var(--navy-800));
+      box-shadow: 0 12px 28px rgba(15,29,81,.22);
+      font-size: 1.05rem;
+      font-weight: 950;
+      letter-spacing: .02em;
+    }
+
+    .journey-step:nth-child(2) .journey-node,
+    .journey-step:nth-child(3) .journey-node {
+      background: linear-gradient(145deg, var(--violet-600), var(--navy-800));
+    }
+
+    .journey-step.is-result .journey-node {
+      background: linear-gradient(145deg, var(--red-500), #b41639);
+    }
+
+    .journey-step.is-optional .journey-node {
+      color: var(--violet-700);
+      background: white;
+      border-color: rgba(111,78,199,.22);
+      box-shadow: 0 12px 28px rgba(111,78,199,.14);
+    }
+
+    .journey-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      padding: 23px 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 15px 38px rgba(15,29,81,.075);
+    }
+
+    .journey-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue-500), var(--violet-600));
+    }
+
+    .journey-step-label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--violet-600);
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .journey-card h3 {
+      margin: 0;
+      color: var(--navy-900);
+      font-size: clamp(1.02rem, 1.7vw, 1.24rem);
+      line-height: 1.18;
+      letter-spacing: -.025em;
+    }
+
+    .journey-card p {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.58;
+    }
+
+    .journey-action {
+      width: 100%;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      padding: 10px 12px;
+      border: 1px solid rgba(57,149,233,.2);
+      border-radius: 12px;
+      color: var(--navy-900);
+      background: rgba(57,149,233,.08);
+      font-size: .74rem;
+      font-weight: 900;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .journey-card p + .journey-action {
+      margin-top: 20px;
+    }
+
+    a.journey-action {
+      color: white;
+      background: linear-gradient(135deg, var(--blue-500), var(--violet-600));
+      border-color: transparent;
+      box-shadow: 0 10px 22px rgba(57,149,233,.18);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    a.journey-action:hover,
+    a.journey-action:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(57,149,233,.26);
+      outline: none;
+    }
+
+    .journey-action.is-pending {
+      color: #747c96;
+      border-style: dashed;
+      border-color: rgba(116,124,150,.28);
+      background: rgba(116,124,150,.07);
+    }
+    .journey-step.is-result .journey-card {
+      color: white;
+      border-color: transparent;
+      background: linear-gradient(150deg, var(--navy-900), var(--violet-700));
+      box-shadow: 0 18px 42px rgba(15,29,81,.2);
+    }
+
+    .journey-step.is-result .journey-card::before {
+      background: var(--red-500);
+    }
+
+    .journey-step.is-result .journey-step-label {
+      color: var(--cyan-300);
+    }
+
+    .journey-step.is-result .journey-card h3 {
+      color: white;
+    }
+
+    .journey-step.is-result .journey-card p {
+      color: rgba(255,255,255,.68);
+    }
+
+    .journey-step.is-result .journey-action.is-pending {
+      color: rgba(255,255,255,.7);
+      border-color: rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08);
+    }
+    .journey-step.is-optional .journey-card {
+      border: 2px dashed rgba(111,78,199,.28);
+      background: linear-gradient(145deg, rgba(245,242,255,.96), white);
+      box-shadow: none;
+    }
+
+    .journey-step.is-optional .journey-card::before {
+      background: linear-gradient(90deg, var(--violet-600), var(--cyan-400));
+    }
+
+    .journey-note {
+      max-width: 760px;
+      margin: 26px auto 0;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .journey-flow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        margin-top: 36px;
+      }
+
+      .journey-flow::before {
+        top: 2px;
+        bottom: 20px;
+        left: 30px;
+        right: auto;
+        width: 4px;
+        height: auto;
+        background: linear-gradient(180deg, var(--blue-500), var(--violet-600) 68%, var(--red-500));
+      }
+
+      .journey-step {
+        grid-template-columns: var(--journey-node) minmax(0, 1fr);
+        grid-template-rows: auto;
+        gap: 18px;
+        padding-bottom: 18px;
+      }
+
+      .journey-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .journey-node {
+        align-self: start;
+      }
+
+      .journey-card {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .journey-flow {
+        --journey-node: 56px;
+      }
+
+      .journey-flow::before {
+        left: 26px;
+      }
+
+      .journey-step {
+        gap: 12px;
+      }
+
+      .journey-card {
+        padding: 21px 18px 20px;
+      }
+    }
+
     .tentative-shell {
       overflow: hidden;
       border: 1px solid var(--line);
@@ -1943,10 +2235,11 @@
       </a>
       <nav class="nav-links" aria-label="SIC page navigation">
         <a href="#overview">Overview</a>
+        <a href="#journey">How to join</a>
 
         <a href="#categories">Categories</a>
         <a class="nav-template" href="#templates">Templates</a>
-        <a href="#timeline">Timeline</a>
+        <a href="#timeline">Dates</a>
         <a href="#tentative">Tentative</a>
         <a href="#awards">Awards</a>
       </nav>
@@ -2029,6 +2322,63 @@
 
           </div>
         </div>
+      </div>
+    </section>
+    <section class="section journey-section" id="journey">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">How to participate</span>
+          <h2>Your SIC 2026 participation journey.</h2>
+          <p>Follow these five stages from initial registration through the optional publication pathway after the results are announced.</p>
+        </div>
+        <ol class="journey-flow" aria-label="Five-step SIC 2026 participation process">
+          <li class="journey-step reveal">
+            <span class="journey-node" aria-hidden="true">01</span>
+            <div class="journey-card">
+              <span class="journey-step-label">Begin</span>
+              <h3>Registration</h3>
+              <p>Select the appropriate conference track and participation category, then complete the official SIC 2026 registration.</p>
+              <a class="journey-action" href="https://training.uitmtechnoventure.com.my/symposium-of-innovative-and-creativity-2026/" target="_blank" rel="noopener">Register for SIC 2026 &rarr;</a>
+            </div>
+          </li>
+          <li class="journey-step reveal">
+            <span class="journey-node" aria-hidden="true">02</span>
+            <div class="journey-card">
+              <span class="journey-step-label">Prepare</span>
+              <h3>Payment &amp; Abstract Submission</h3>
+              <p>Complete the participation fee payment and submit the compulsory abstract using the official template.</p>
+              <span class="journey-action is-pending">Payment and submission link to be provided</span>
+            </div>
+          </li>
+          <li class="journey-step reveal">
+            <span class="journey-node" aria-hidden="true">03</span>
+            <div class="journey-card">
+              <span class="journey-step-label">Submit</span>
+              <h3>Google Form &amp; Video Submission</h3>
+              <p>Complete the Google Form provided by the organiser and submit the required 3-minute innovation video.</p>
+              <span class="journey-action is-pending">Google Form and video link to be provided</span>
+            </div>
+          </li>
+          <li class="journey-step is-result reveal">
+            <span class="journey-node" aria-hidden="true">04</span>
+            <div class="journey-card">
+              <span class="journey-step-label">Results</span>
+              <h3>Winner Announcement</h3>
+              <p>Results and award recipients will be announced during the SIC 2026 Grand Final.</p>
+              <span class="journey-action is-pending">Results link to be provided</span>
+            </div>
+          </li>
+          <li class="journey-step is-optional reveal">
+            <span class="journey-node" aria-hidden="true">05</span>
+            <div class="journey-card">
+              <span class="journey-step-label">Optional pathway</span>
+              <h3>Extended Abstract Submission</h3>
+              <p>Participants may submit an extended abstract for publication with an e-ISBN.</p>
+              <span class="journey-action is-pending">Extended abstract link to be provided</span>
+            </div>
+          </li>
+        </ol>
+        <p class="journey-note reveal">The abstract is compulsory for every participant. The extended abstract in Step 05 remains optional.</p>
       </div>
     </section>
     <section class="section section-dark" id="categories">
