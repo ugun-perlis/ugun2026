@@ -770,7 +770,7 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      grid-template-columns: minmax(0, 1.12fr) minmax(300px, .88fr);
       gap: 20px;
       margin-top: 58px;
       align-items: start;
@@ -1136,6 +1136,50 @@
     }
 
 
+    .registration-status {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 17px 18px;
+      border: 1px dashed rgba(242, 207, 120, .42);
+      border-radius: 16px 4px 16px 4px;
+      color: var(--cream);
+      background: rgba(2, 10, 6, .42);
+    }
+
+    .registration-status strong,
+    .registration-status span { display: block; }
+
+    .registration-status strong {
+      color: var(--gold-light);
+      font-size: .78rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .registration-status span {
+      margin-top: 4px;
+      color: rgba(244, 234, 214, .66);
+      font-size: .75rem;
+      line-height: 1.5;
+    }
+
+    .registration-contact-link {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 12px 3px 12px 3px;
+      color: var(--black);
+      background: var(--gold-light);
+      font-size: .72rem;
+      font-weight: 950;
+      text-align: center;
+    }
     .contact-panel {
       position: relative;
       overflow: hidden;
@@ -1438,6 +1482,12 @@
         min-height: 0;
       }
 
+      .registration-status {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .registration-contact-link { width: 100%; }
       .kit-label {
         align-items: start;
         flex-direction: column;
@@ -1527,18 +1577,18 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Perlis Cultural Run 2026 · Pesona Nusantara</span>
+          <span class="eyebrow">Let&rsquo;s run. Let&rsquo;s unite. &middot; Perlis Cultural Run 2026</span>
           <h1 aria-label="Culture Stride">
             <span class="title-culture">Culture</span>
             <span class="title-stride">Stride</span>
           </h1>
-          <p class="hero-tagline"><strong>Stride with unity. Shine with diversity.</strong><br>A public 5KM celebration where movement, cultural expression, and community energy share one starting line.</p>
+          <p class="hero-tagline"><strong>Stride with unity. Shine with diversity.</strong><br>A vibrant public 5KM where movement, art, cultural expression, and community energy share one starting line.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#race-kit">Reveal the race kit →</a>
-            <a class="button button-secondary" href="#tentative">View tentative programme</a>
+            <a class="button button-primary" href="https://kakirunning.my/event/culture-stride-run-2026/" target="_blank" rel="noopener noreferrer">Register now &nearr;</a>
+            <a class="button button-secondary" href="#race-kit">Reveal the race kit</a>
           </div>
           <div class="hero-facts" aria-label="Culture Stride event information">
-            <div class="hero-fact"><span>Date</span><strong>Saturday, 10<sup>th</sup> October 2026</strong></div>
+            <div class="hero-fact"><span>Date</span><strong>Saturday, 17<sup>th</sup> October 2026</strong></div>
             <div class="hero-fact"><span>Time</span><strong>7:00 AM–10:00 AM</strong></div>
             <div class="hero-fact"><span>Venue</span><strong>Sport Complex, UiTM Perlis</strong></div>
           </div>
@@ -1566,11 +1616,11 @@
           <div class="manifesto-copy section-heading reveal">
             <span class="kicker">The Culture Stride experience</span>
             <h2>One route.<br>Many cultures.</h2>
-            <p>Culture Stride turns a 5KM community run into a vivid meeting point for sport, friendship, and Malaysian cultural expression. It is designed to feel welcoming at the start, electric on the route, and memorable at the finish.</p>
+            <p>Culture Stride turns a 5KM community run into a vivid meeting point for sport, friendship, art, and Malaysian cultural expression. Whether you are a seasoned runner or joining for a relaxed fun run, the experience is designed to feel welcoming at the start, electric on the route, and memorable at the finish.</p>
           </div>
           <aside class="manifesto-panel reveal">
             <strong>Move<br>as one.</strong>
-            <p>Whether you run, jog, or enjoy the route at your own rhythm, the day is built around shared momentum and an open community spirit.</p>
+            <p>Run, jog, or enjoy the route at your own rhythm&mdash;then bring your friends, family, and running crew into one shared celebration.</p>
           </aside>
         </div>
 
@@ -1634,21 +1684,21 @@
           <span class="kicker">Race kit reveal</span>
           <h2>Wear the story.<br>Earn the finish.</h2>
           <!-- Internal reference: Race-kit details and artwork are based on the current promotional poster. -->
-          <p>The event shirt and dedicated 5KM finisher medal carry the same cultural linework and sweeping race motif.</p>
+          <p>Every participant receives an exclusive event shirt with elegant batik and ethnic-inspired motifs, plus a distinctive 5KM finisher medal designed as a lasting race-day collectible.</p>
         </div>
 
         <div class="kit-gallery">
           <figure class="kit-card shirt-card reveal">
-            <img src="../../assets/culture-stride-shirt-front-back.jpg" alt="Front and back views of the black Culture Stride event shirt with green, gold, and batik-inspired graphics">
+            <img src="../../assets/culture-stride-kit.jpeg" alt="Official Culture Stride event shirt kit featuring front and back views with batik and ethnic-inspired graphics">
             <figcaption class="kit-label">
-              <div><span>Event apparel</span><strong>Front + back shirt</strong></div>
+              <div><span>Exclusive event apparel</span><strong>Batik-inspired shirt &middot; front + back</strong></div>
               <b>Black · forest green · antique gold</b>
             </figcaption>
           </figure>
           <figure class="kit-card medal-card reveal">
-            <img src="../../assets/culture-stride-medal.jpg" alt="Culture Stride 5KM finisher medal and patterned lanyard shown in the promotional artwork">
+            <img src="../../assets/culture-stride-medal.jpeg" alt="Official Culture Stride 5KM finisher medal with its patterned lanyard">
             <figcaption class="kit-label">
-              <div><span>Finish-line keepsake</span><strong>5KM medal</strong></div>
+              <div><span>Collectible finish-line keepsake</span><strong>5KM finisher medal</strong></div>
               <b>Finisher edition</b>
             </figcaption>
           </figure>
@@ -1660,46 +1710,34 @@
     <section class="section schedule-section" id="tentative">
       <div class="container">
         <div class="section-heading reveal">
-          <span class="kicker">Tentative programme</span>
-          <h2>The rhythm of<br>race morning.</h2>
-          <!-- Internal reference: The programme paperwork is the source for this provisional running order. -->
-          <p>Registration, flag-off, finish-line arrivals, celebration activities, prizes, and closing shape the race-day programme.</p>
+          <span class="kicker">Race-morning programme</span>
+          <h2>Three hours of<br>movement and culture.</h2>
+          <!-- Internal reference: The updated promotion confirms a 7:00 AM–10:00 AM event window; detailed running order still requires organiser confirmation. -->
+          <p>The confirmed race-morning window runs from 7:00 AM to 10:00 AM. The sequence below keeps only the event beats supported by the latest promotion and existing programme materials.</p>
         </div>
-
         <div class="schedule-layout">
           <aside class="schedule-intro reveal">
-            <!-- Internal reference: Schedule remains provisional. -->
             <span class="eyebrow">Race-day schedule</span>
             <h3>From warm-up<br>to celebration.</h3>
-            <p>Six programme beats carry the event from arrival through to the closing moment.</p>
-            <!-- Internal reference: Paperwork lists 17 October, 7:30 AM–12:30 PM; the latest poster advertises 10 October, 7:00 AM–10:00 AM. The site currently follows the poster's 10 October 5KM details pending final alignment. -->
-
+            <p>Four race-morning beats carry the event from arrival through to the finish-line celebration.</p>
+            <!-- Internal reference: Exact flag-off and finish-line times remain provisional pending an updated official tentative. -->
           </aside>
-
-          <div class="schedule-list reveal" aria-label="Perlis Cultural Run tentative programme">
+          <div class="schedule-list reveal" aria-label="Perlis Cultural Run race-morning programme">
             <article class="schedule-item">
-              <time datetime="07:30">7:30 AM</time>
-              <div><strong>Participant registration and light exercise</strong><span>Arrival, registration, and a community warm-up before the route opens.</span></div>
+              <time datetime="07:00">7:00 AM</time>
+              <div><strong>Participant registration and warm-up</strong><span>Arrival, registration, and light exercise before the route opens.</span></div>
             </article>
             <article class="schedule-item">
               <time datetime="08:00">8:00 AM</time>
-              <div><strong>Perlis Cultural Run flag-off</strong><span>Participants begin the event route together.</span></div>
+              <div><strong>5KM Culture Stride flag-off</strong><span>Participants begin the fun-run route together.</span></div>
             </article>
             <article class="schedule-item">
               <time datetime="09:30">9:30 AM</time>
-              <div><strong>Finish-line arrivals</strong><span>Participants complete the route and gather at the finish area.</span></div>
+              <div><strong>Finish-line arrivals</strong><span>Participants complete the route and receive their 5KM finisher recognition.</span></div>
             </article>
             <article class="schedule-item">
               <time datetime="10:00">10:00 AM</time>
-              <div><strong>Supporting carnival activities</strong><span>Community activity continues beyond the finish line.</span></div>
-            </article>
-            <article class="schedule-item">
-              <time datetime="11:30">11:30 AM</time>
-              <div><strong>Prize presentation</strong><span>Recognition and presentation segment.</span></div>
-            </article>
-            <article class="schedule-item">
-              <time datetime="12:30">12:30 PM</time>
-              <div><strong>Programme closing</strong><span>The programme concludes.</span></div>
+              <div><strong>Finish-line celebration and programme close</strong><span>Community moments and the close of the confirmed event window.</span></div>
             </article>
           </div>
         </div>
@@ -1713,20 +1751,27 @@
             <span class="eyebrow">Registration fees</span>
             <h2>Claim your<br>starting line.</h2>
             <!-- Internal reference: Fees are taken from the current promotional poster. -->
-            <p>Culture Stride is open to the public, with early-bird and normal registration rates for the 5KM event.</p>
+            <p>Culture Stride is open to the public. Secure the limited RM45 early-bird rate before slots fill, or join later at the normal RM55 registration rate.</p>
           </div>
           <div class="price-board">
             <div class="price featured">
               <span>Early bird</span>
               <strong>RM45</strong>
-              <small>Limited promotional rate</small>
+              <small>Limited &middot; first come, first served</small>
             </div>
             <div class="price">
               <span>Normal price</span>
               <strong>RM55</strong>
               <small>Standard registration rate</small>
             </div>
-            <!-- Internal reference: Connect the official online registration link when supplied by the organiser. -->
+            <div class="registration-status">
+              <div>
+                <strong>Online registration is open</strong>
+                <span>Reserve your Culture Stride Run 2026 slot securely through the official KakiRunning event page.</span>
+              </div>
+              <a class="registration-contact-link" href="https://kakirunning.my/event/culture-stride-run-2026/" target="_blank" rel="noopener noreferrer">Register on KakiRunning &nearr;</a>
+            </div>
+            <!-- Internal reference: Official registration is hosted on KakiRunning. -->
           </div>
         </div>
         <section class="contact-panel reveal" id="contact" aria-labelledby="contact-title">
