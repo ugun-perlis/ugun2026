@@ -2405,8 +2405,8 @@
     .event-card::before { content: ""; position: absolute; right: -50px; bottom: -80px; width: 180px; height: 180px; border: 1px solid color-mix(in srgb,var(--event-color) 26%,transparent); border-radius: 50%; box-shadow: 0 0 0 22px color-mix(in srgb,var(--event-color) 5%,transparent); }
     .event-card-top, .event-card-copy, .event-card-action { position: relative; z-index: 1; }
     .event-card-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .event-card-number { color: var(--event-color); font-size: .68rem; font-weight: 950; letter-spacing: .16em; text-transform: uppercase; }
-    .event-card-status { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.64); font-size: .6rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .event-card-number { min-width: 0; color: var(--event-color); font-size: .68rem; font-weight: 950; letter-spacing: .16em; text-transform: uppercase; }
+    .event-card-status { flex: 0 0 auto; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.64); font-size: .6rem; font-weight: 900; letter-spacing: .08em; line-height: 1; white-space: nowrap; text-transform: uppercase; }
     a.event-card .event-card-status { border-color: color-mix(in srgb,var(--event-color) 28%,transparent); color: var(--event-color); background: color-mix(in srgb,var(--event-color) 7%,white); }
     .event-card h3 { max-width: 18ch; margin: 0; color: var(--purple-950); font-size: clamp(1.35rem,2.4vw,1.9rem); line-height: 1.08; letter-spacing: -.035em; }
     .event-card p { margin: 11px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.62; }
