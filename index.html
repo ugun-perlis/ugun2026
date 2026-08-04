@@ -2368,6 +2368,13 @@
       .brand-text span { font-size: .76rem; }
       .showcase-topline { grid-template-columns: 1fr; align-items: start; }
       .showcase-badge.price-badge { justify-self: start; width: 78px; height: 78px; }
+      .dash-kicker {
+        display: block;
+        width: 100%;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        border-radius: 16px;
+      }
       .clean-outcomes,
       .dashboard-outcomes.clean-outcomes { grid-template-columns: 1fr; }
       .clean-timeline,
@@ -2468,7 +2475,7 @@
 </div>
 </button>
 <div aria-label="Quick links" class="top-actions">
-<button class="mini-link scroll-trigger" data-scroll-target="events" hidden type="button">Events</button>
+<button class="mini-link scroll-trigger" data-scroll-target="events" type="button">Events</button>
 <button class="mini-link scroll-trigger" data-scroll-target="highlights" type="button">Highlights</button>
 <a class="mini-link primary" href="https://forms.gle/Gqr7ZXFmnySTkQaG7" rel="noopener" target="_blank">Register Now</a>
 </div>
@@ -2558,7 +2565,7 @@
 </div>
 </div>
 </section>
-<section class="section event-directory" hidden id="events">
+<section class="section event-directory" id="events">
 <div class="container">
 <div class="section-header">
 <span class="section-kicker">Explore the Events</span>
