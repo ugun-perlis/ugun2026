@@ -950,6 +950,12 @@
       text-transform: uppercase;
     }
 
+    .video-point a {
+      color: var(--cyan-300);
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
     .category-resource {
       display: flex;
       align-items: center;
@@ -1143,7 +1149,7 @@
     .timeline {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 14px;
     }
 
@@ -1227,7 +1233,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: clamp(10px, 1.5vw, 18px);
       margin: clamp(38px, 6vw, 64px) 0 0;
       padding: 0;
@@ -1238,8 +1244,8 @@
       content: "";
       position: absolute;
       top: calc((var(--journey-node) / 2) - 2px);
-      left: 9%;
-      right: 9%;
+      left: 8.3%;
+      right: 8.3%;
       height: 4px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--blue-500), var(--violet-600) 68%, var(--red-500));
@@ -1286,7 +1292,8 @@
     }
 
     .journey-step:nth-child(2) .journey-node,
-    .journey-step:nth-child(3) .journey-node {
+    .journey-step:nth-child(3) .journey-node,
+    .journey-step:nth-child(4) .journey-node {
       background: linear-gradient(145deg, var(--violet-600), var(--navy-800));
     }
 
@@ -1294,7 +1301,7 @@
       background: linear-gradient(145deg, var(--red-500), #b41639);
     }
 
-    .journey-step.is-optional .journey-node {
+    .journey-step.is-post-event .journey-node {
       color: var(--violet-700);
       background: white;
       border-color: rgba(111,78,199,.22);
@@ -1390,6 +1397,22 @@
       border-color: rgba(116,124,150,.28);
       background: rgba(116,124,150,.07);
     }
+    .journey-action.is-email {
+      color: var(--navy-800);
+      border-color: rgba(57,149,233,.2);
+      background: rgba(129,227,244,.18);
+    }
+
+    .journey-deadline {
+      display: block;
+      margin-top: 13px;
+      color: var(--red-500);
+      font-size: .7rem;
+      font-weight: 950;
+      line-height: 1.35;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
     .journey-step.is-result .journey-card {
       color: white;
       border-color: transparent;
@@ -1413,18 +1436,21 @@
       color: rgba(255,255,255,.68);
     }
 
+    .journey-step.is-result .journey-deadline {
+      color: var(--cyan-300);
+    }
     .journey-step.is-result .journey-action.is-pending {
       color: rgba(255,255,255,.7);
       border-color: rgba(255,255,255,.2);
       background: rgba(255,255,255,.08);
     }
-    .journey-step.is-optional .journey-card {
+    .journey-step.is-post-event .journey-card {
       border: 2px dashed rgba(111,78,199,.28);
       background: linear-gradient(145deg, rgba(245,242,255,.96), white);
       box-shadow: none;
     }
 
-    .journey-step.is-optional .journey-card::before {
+    .journey-step.is-post-event .journey-card::before {
       background: linear-gradient(90deg, var(--violet-600), var(--cyan-400));
     }
 
@@ -1437,7 +1463,7 @@
       text-align: center;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 1100px) {
       .journey-flow {
         grid-template-columns: minmax(0, 1fr);
         gap: 0;
@@ -2146,7 +2172,13 @@
         height: 74px;
       }
 
-      .category-resource {
+      .video-point a {
+      color: var(--cyan-300);
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .category-resource {
         align-items: stretch;
         flex-direction: column;
       }
@@ -2255,7 +2287,7 @@
           <h1>SIC 2026 <span>The 16<sup>th</sup> Symposium on Innovation and Creativity</span></h1>
           <p>Researchers, academicians, innovators, and students are warmly invited to bring forward ideas, research, and creative solutions through the SIC 2026 hybrid conference.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://training.uitmtechnoventure.com.my/symposium-of-innovative-and-creativity-2026/" target="_blank" rel="noopener">Register for SIC 2026 &rarr;</a>
+            <a class="button button-primary" href="https://forms.gle/5MG5EqiJTdbB1Mxb7" target="_blank" rel="noopener">Register &amp; submit abstract &rarr;</a>
             <a class="button button-template" href="#templates">Download templates &darr;</a>
             <a class="button button-secondary" href="#timeline">View important dates</a>
           </div>
@@ -2329,56 +2361,70 @@
         <div class="section-heading reveal">
           <span class="kicker">How to participate</span>
           <h2>Your SIC 2026 participation journey.</h2>
-          <p>Follow these five stages from initial registration through the optional publication pathway after the results are announced.</p>
+          <p>Follow these six milestones from registration and abstract submission through the post-event publication pathway.</p>
         </div>
-        <ol class="journey-flow" aria-label="Five-step SIC 2026 participation process">
+        <ol class="journey-flow" aria-label="Six-step SIC 2026 participation process">
           <li class="journey-step reveal">
             <span class="journey-node" aria-hidden="true">01</span>
             <div class="journey-card">
-              <span class="journey-step-label">Begin</span>
-              <h3>Registration</h3>
-              <p>Select the appropriate conference track and participation category, then complete the official SIC 2026 registration.</p>
-              <a class="journey-action" href="https://training.uitmtechnoventure.com.my/symposium-of-innovative-and-creativity-2026/" target="_blank" rel="noopener">Register for SIC 2026 &rarr;</a>
+              <span class="journey-step-label">Register</span>
+              <h3>Registration &amp; Abstract Submission</h3>
+              <p>Register for SIC 2026 and submit the compulsory abstract through the official form.</p>
+              <time class="journey-deadline" datetime="2026-08-30">Deadline &middot; 30<sup>th</sup> August 2026</time>
+              <a class="journey-action" href="https://forms.gle/5MG5EqiJTdbB1Mxb7" target="_blank" rel="noopener">Register &amp; submit abstract &rarr;</a>
             </div>
           </li>
           <li class="journey-step reveal">
             <span class="journey-node" aria-hidden="true">02</span>
             <div class="journey-card">
-              <span class="journey-step-label">Prepare</span>
-              <h3>Payment &amp; Abstract Submission</h3>
-              <p>Complete the participation fee payment and submit the compulsory abstract using the official template.</p>
-              <span class="journey-action is-pending">Payment and submission link to be provided</span>
+              <span class="journey-step-label">Confirmation</span>
+              <h3>Acceptance Letter</h3>
+              <p>Participants will receive an official acceptance letter through their registered email address.</p>
+              <span class="journey-action is-email">Delivered via email</span>
             </div>
           </li>
           <li class="journey-step reveal">
             <span class="journey-node" aria-hidden="true">03</span>
             <div class="journey-card">
-              <span class="journey-step-label">Submit</span>
-              <h3>Google Form &amp; Video Submission</h3>
-              <p>Complete the Google Form provided by the organiser and submit the required 3-minute innovation video.</p>
-              <span class="journey-action is-pending">Google Form and video link to be provided</span>
+              <span class="journey-step-label">Payment</span>
+              <h3>Participation Fee Payment</h3>
+              <p>After receiving the acceptance letter, complete payment through the official UTV portal.</p>
+              <time class="journey-deadline" datetime="2026-08-30">Deadline &middot; 30<sup>th</sup> August 2026</time>
+              <a class="journey-action" href="https://training.uitmtechnoventure.com.my/symposium-of-innovative-and-creativity-2026/" target="_blank" rel="noopener">Proceed to payment &rarr;</a>
+            </div>
+          </li>
+          <li class="journey-step reveal">
+            <span class="journey-node" aria-hidden="true">04</span>
+            <div class="journey-card">
+              <span class="journey-step-label">Video submission</span>
+              <h3>Submit Your Innovation Video</h3>
+              <p>Submit the required 3-minute innovation video through the official Google Form.</p>
+              <time class="journey-deadline" datetime="2026-09-07">Deadline &middot; 7<sup>th</sup> September 2026</time>
+              <a class="journey-action" href="https://forms.gle/YjKHdeSufiP6yjBG8" target="_blank" rel="noopener">Submit video &rarr;</a>
             </div>
           </li>
           <li class="journey-step is-result reveal">
-            <span class="journey-node" aria-hidden="true">04</span>
+            <span class="journey-node" aria-hidden="true">05</span>
             <div class="journey-card">
               <span class="journey-step-label">Results</span>
               <h3>Winner Announcement</h3>
               <p>Results and award recipients will be announced during the SIC 2026 Grand Final.</p>
-              <span class="journey-action is-pending">Results link to be provided</span>
+              <time class="journey-deadline" datetime="2026-10-15">15<sup>th</sup> October 2026</time>
+              <span class="journey-action is-pending">Announcement link will be provided soon</span>
             </div>
           </li>
-          <li class="journey-step is-optional reveal">
-            <span class="journey-node" aria-hidden="true">05</span>
+          <li class="journey-step is-post-event reveal">
+            <span class="journey-node" aria-hidden="true">06</span>
             <div class="journey-card">
-              <span class="journey-step-label">Optional pathway</span>
-              <h3>Extended Abstract Submission</h3>
-              <p>Participants may submit an extended abstract for publication with an e-ISBN.</p>
-              <span class="journey-action is-pending">Extended abstract link to be provided</span>
+              <span class="journey-step-label">Post-event</span>
+              <h3>Post-event &amp; Extended Abstract Submission</h3>
+              <p>Complete the post-event form and submit an extended abstract for e-ISBN publication where applicable.</p>
+              <time class="journey-deadline" datetime="2026-10-22">Deadline &middot; 22<sup>nd</sup> October 2026</time>
+              <a class="journey-action" href="https://forms.gle/ya9zrXrF5mCSGApM6" target="_blank" rel="noopener">Open post-event form &rarr;</a>
             </div>
           </li>
         </ol>
-        <p class="journey-note reveal">The abstract is compulsory for every participant. The extended abstract in Step 05 remains optional.</p>
+        <p class="journey-note reveal">The initial abstract in Step 01 is compulsory for every participant. The extended abstract component in Step 06 remains optional.</p>
       </div>
     </section>
     <section class="section section-dark" id="categories">
@@ -2400,7 +2446,7 @@
             <p>All participants of the 16<sup>th</sup> Symposium on Innovation and Creativity (SIC 2026) are required to submit a concise, clear 3-minute video presentation showcasing their innovation or product.</p>
             <div class="video-points">
               <div class="video-point"><strong>What to present</strong>Highlight the innovation's key features, novelty, benefits, and potential applications.</div>
-              <div class="video-point"><strong>How to submit</strong>The video submission link and further instructions will be provided after successful registration.</div>
+              <div class="video-point"><strong>How to submit</strong><a href="https://forms.gle/YjKHdeSufiP6yjBG8" target="_blank" rel="noopener">Open the official video submission form</a> and submit by 7<sup>th</sup> September 2026.</div>
               <div class="video-point"><strong>Duration limit</strong>The presentation must not exceed the stipulated 3-minute duration.</div>
             </div>
           </div>
@@ -2526,32 +2572,37 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="kicker">Important dates</span>
-          <h2>From registration to the grand final.</h2>
-          <p>Registration, payment, and Grand Final milestones are presented in one clear sequence.</p>
+          <h2>From initial submission to post-event publication.</h2>
+          <p>Keep the registration, payment, video, results, and post-event deadlines in view.</p>
         </div>
         <div class="timeline">
           <article class="timeline-item reveal">
             <span class="timeline-step">Step 01</span>
-            <time datetime="2026-06-08">8<sup>th</sup> June 2026</time>
-            <p>Registration opens.</p>
+            <time datetime="2026-08-30">30<sup>th</sup> August 2026</time>
+            <p>Registration and compulsory abstract submission deadline.</p>
           </article>
           <article class="timeline-item reveal">
             <span class="timeline-step">Step 02</span>
             <time datetime="2026-08-30">30<sup>th</sup> August 2026</time>
-            <p>Registration deadline.</p>
+            <p>Participation fee payment deadline.</p>
           </article>
           <article class="timeline-item reveal">
             <span class="timeline-step">Step 03</span>
             <time datetime="2026-09-07">7<sup>th</sup> September 2026</time>
-            <p>Participation fee payment deadline.</p>
+            <p>Innovation video submission deadline.</p>
           </article>
           <article class="timeline-item highlight reveal">
-            <span class="timeline-step">Grand Final</span>
+            <span class="timeline-step">Step 04 &middot; Grand Final</span>
             <time datetime="2026-10-15">15<sup>th</sup> October 2026</time>
-            <p>SIC 2026 Grand Final in hybrid conference format.</p>
+            <p>Winner announcement during the SIC 2026 Grand Final.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-step">Step 05</span>
+            <time datetime="2026-10-22">22<sup>nd</sup> October 2026</time>
+            <p>Post-event form and optional extended abstract submission deadline.</p>
           </article>
         </div>
-        <!-- Internal reference: The updated announcement lists “Registration & Payment: 30 August 2026 and 7 September 2026”; these are displayed in that order as registration and payment deadlines. Previous paperwork also listed a jury session and post-event delivery date; reconfirm before restoring them publicly. -->
+        <!-- Internal reference: Milestones and links updated from the organiser's 4 August 2026 instructions. -->
       </div>
     </section>
     <section class="section section-soft" id="tentative">
@@ -2649,9 +2700,9 @@
             <div>
               <span class="eyebrow">Registration open</span>
               <h2>Bring your innovation into the conversation.</h2>
-              <p>Registration opened on 8<sup>th</sup> June 2026. Register through the official SIC 2026 portal, download the appropriate submission template, and review the deadlines before preparing your entry.</p>
+              <p>Registration and compulsory abstract submission close on 30<sup>th</sup> August 2026. Complete the official form, download the appropriate template, and review each milestone before preparing your entry.</p>
               <div class="registration-actions">
-                <a class="button button-primary" href="https://training.uitmtechnoventure.com.my/symposium-of-innovative-and-creativity-2026/" target="_blank" rel="noopener">Register for SIC 2026 &rarr;</a>
+                <a class="button button-primary" href="https://forms.gle/5MG5EqiJTdbB1Mxb7" target="_blank" rel="noopener">Register &amp; submit abstract &rarr;</a>
                 <a class="button button-secondary" href="#templates">Download templates &darr;</a>
               </div>
             </div>
