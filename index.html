@@ -2412,6 +2412,23 @@
     .event-card p { margin: 11px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.62; }
     .event-card-action { display: inline-flex; align-items: center; gap: 8px; color: var(--event-color); font-size: .74rem; font-weight: 950; letter-spacing: .04em; text-transform: uppercase; }
     .event-card.is-upcoming .event-card-action { color: #887d8c; }
+    .event-card.is-p2p {
+      --event-color: #f3c42e;
+      --event-soft: rgba(158,31,114,.2);
+      border-color: rgba(249,221,112,.42);
+      color: #fff;
+      background:
+        linear-gradient(90deg,#f3c42e 0 7px,transparent 7px),
+        radial-gradient(circle at 91% 16%,rgba(158,31,114,.42),transparent 11rem),
+        linear-gradient(145deg,#0c3267,#071f4f 62%,#4d075f);
+      box-shadow: 0 24px 60px rgba(7,31,79,.24);
+    }
+    .event-card.is-p2p::before { border-color: rgba(249,221,112,.34); box-shadow: 0 0 0 22px rgba(243,196,46,.055); }
+    .event-card.is-p2p h3 { color: #fff; }
+    .event-card.is-p2p p { color: rgba(255,255,255,.7); }
+    .event-card.is-p2p .event-card-number,
+    .event-card.is-p2p .event-card-action { color: #f9dd70; }
+    .event-card.is-p2p .event-card-status { border-color: rgba(249,221,112,.4); color: #f9dd70; background: rgba(243,196,46,.1); }
     .event-card.is-sic {
       --event-color: #ef233c;
       --event-soft: rgba(239,35,60,.16);
@@ -2578,11 +2595,11 @@
 <div class="event-card-copy"><h3>Sahabat Antarabangsa Perlis dan UiTM (SAPA)</h3><p>A hosted cultural and community experience connecting visiting participants with life in Perlis.</p></div>
 <span class="event-card-action">Website coming soon</span>
 </article>
-<article class="event-card is-upcoming">
-<div class="event-card-top"><span class="event-card-number">02 · Academic collaboration</span><span class="event-card-status">In preparation</span></div>
+<a class="event-card is-p2p" href="events/pair-to-publish/index.html">
+<div class="event-card-top"><span class="event-card-number">02 · Academic collaboration</span><span class="event-card-status">Event site live</span></div>
 <div class="event-card-copy"><h3>Pair to Publish (P2P)</h3><p>A focused pathway for research matching, manuscript planning, and international publication collaboration.</p></div>
-<span class="event-card-action">Website coming soon</span>
-</article>
+<span class="event-card-action">Enter Pair to Publish →</span>
+</a>
 <a class="event-card is-sic" href="events/sic-2026/index.html">
 
 <div class="event-card-top"><span class="event-card-number">03 · Innovation showcase</span><span class="event-card-status">Event site live</span></div>
@@ -2596,7 +2613,7 @@
 </article>
 <a class="event-card is-cultural-run" href="events/perlis-cultural-run-2026/index.html">
 <div class="event-card-top"><span class="event-card-number">05 · Public 5KM experience</span><span class="event-card-status">Event site live</span></div>
-<div class="event-card-copy"><h3>Perlis Cultural Run 2026 (Pesona Nusantara)</h3><p>Culture Stride brings movement, community, and Malaysian cultural expression onto one energetic route.</p></div>
+<div class="event-card-copy"><h3>Perlis Cultural Run 2026 (Culture Stride)</h3><p>Culture Stride brings movement, community, and Malaysian cultural expression onto one energetic route.</p></div>
 <span class="event-card-action">Enter Culture Stride →</span>
 </a>
 <article class="event-card is-upcoming">
