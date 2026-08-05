@@ -667,6 +667,143 @@
       line-height: 1.6;
     }
 
+    .past-editions-section {
+      background:
+        radial-gradient(circle at 8% 16%, rgba(57,149,233,.22), transparent 24rem),
+        radial-gradient(circle at 92% 82%, rgba(239,51,79,.16), transparent 26rem),
+        linear-gradient(145deg, var(--navy-950), #161b54 62%, #382677);
+    }
+
+    .past-editions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .past-edition-card {
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 30px 8px 30px 8px;
+      color: white;
+      background: rgba(255,255,255,.075);
+      box-shadow: 0 24px 58px rgba(3,8,34,.28);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .past-edition-card:hover,
+    .past-edition-card:focus-visible {
+      transform: translateY(-6px);
+      border-color: rgba(129,227,244,.58);
+      box-shadow: 0 30px 68px rgba(3,8,34,.4);
+      outline: none;
+    }
+
+    .past-edition-media {
+      position: relative;
+      overflow: hidden;
+      height: clamp(220px, 24vw, 300px);
+      margin: 0;
+      background: linear-gradient(145deg, var(--navy-800), var(--violet-700));
+    }
+
+    .past-edition-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(7,13,43,.82));
+      pointer-events: none;
+    }
+
+    .past-edition-media img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .past-edition-card:hover .past-edition-media img,
+    .past-edition-card:focus-visible .past-edition-media img {
+      transform: scale(1.035);
+    }
+
+    .past-edition-chip {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      bottom: 16px;
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      color: white;
+      background: rgba(7,13,43,.78);
+      backdrop-filter: blur(10px);
+      font-size: .68rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .past-edition-copy {
+      display: grid;
+      align-content: start;
+      padding: clamp(24px, 3vw, 32px);
+    }
+
+    .past-edition-source {
+      color: var(--cyan-300);
+      font-size: .68rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .past-edition-copy h3 {
+      margin: 13px 0 0;
+      color: white;
+      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      line-height: 1.1;
+      letter-spacing: -.035em;
+    }
+
+    .past-edition-copy p {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.66);
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .past-edition-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.58);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .past-edition-action {
+      flex: 0 0 auto;
+      color: var(--cyan-300);
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .past-editions-credit {
+      margin: 20px 0 0;
+      color: rgba(255,255,255,.48);
+      font-size: .72rem;
+      line-height: 1.6;
+    }
+
     .template-section {
       overflow: hidden;
       background:
@@ -2092,7 +2229,8 @@
       .template-shell,
       .tentative-layout,
       .award-grid,
-      .track-shell {
+      .track-shell,
+      .past-editions-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -2237,6 +2375,15 @@
       .contact-person {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .past-edition-media {
+        height: 220px;
+      }
+
+      .past-edition-meta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -2271,6 +2418,7 @@
       </a>
       <nav class="nav-links" aria-label="SIC page navigation">
         <a href="#overview">Overview</a>
+        <a href="#past-editions">Past editions</a>
         <a href="#journey">How to join</a>
 
         <a href="#categories">Categories</a>
@@ -2358,6 +2506,48 @@
 
           </div>
         </div>
+      </div>
+    </section>
+    <section class="section section-dark past-editions-section" id="past-editions">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Past editions &middot; External coverage</span>
+          <h2>A legacy of ideas in motion.</h2>
+          <p>Look back at the 14<sup>th</sup> and 15<sup>th</sup> editions through published coverage by Dewan Kosmik.</p>
+        </div>
+        <div class="past-editions-grid">
+          <a class="past-edition-card reveal" href="https://dewankosmik.jendeladbp.my/2024/09/23/13886/" target="_blank" rel="noopener noreferrer" aria-label="Read Dewan Kosmik coverage of SIC 14">
+            <figure class="past-edition-media">
+              <img src="https://dewankosmik.jendeladbp.my/app/uploads/sites/7/2024/09/d.jpg" alt="Dewan Kosmik preview photograph from SIC 14 at UiTM Cawangan Perlis" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+              <span class="past-edition-chip">SIC 14 &middot; 2024</span>
+            </figure>
+            <div class="past-edition-copy">
+              <span class="past-edition-source">Dewan Kosmik &middot; Published coverage</span>
+              <h3>Creativity and innovation take centre stage at SIC 14.</h3>
+              <p>Dewan Kosmik documented the 2024 edition at UiTM Perlis, where 30 entries brought together students, postgraduate researchers, and lecturers.</p>
+              <div class="past-edition-meta">
+                <time datetime="2024-09-23">23<sup>rd</sup> September 2024</time>
+                <span class="past-edition-action">Read article &nearr;</span>
+              </div>
+            </div>
+          </a>
+          <a class="past-edition-card reveal" href="https://dewankosmik.jendeladbp.my/2025/08/21/19632/" target="_blank" rel="noopener noreferrer" aria-label="Read Dewan Kosmik coverage of SIC 15">
+            <figure class="past-edition-media">
+              <img src="https://dewankosmik.jendeladbp.my/app/uploads/sites/7/2025/08/1-8.jpg" alt="Dewan Kosmik preview photograph from SIC 15 at UiTM Cawangan Perlis" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+              <span class="past-edition-chip">SIC 15 &middot; 2025</span>
+            </figure>
+            <div class="past-edition-copy">
+              <span class="past-edition-source">Dewan Kosmik &middot; Published coverage</span>
+              <h3>Innovation with commercialization potential at SIC 15.</h3>
+              <p>The 2025 edition featured 17 impactful products, three-minute presentations, and innovations identified for potential commercialization.</p>
+              <div class="past-edition-meta">
+                <time datetime="2025-08-21">21<sup>st</sup> August 2025</time>
+                <span class="past-edition-action">Read article &nearr;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <p class="past-editions-credit">Article previews and reporting are credited to Dewan Kosmik / JendelaDBP and their stated photo sources. Select a card to read the original article.</p>
       </div>
     </section>
     <section class="section journey-section" id="journey">
