@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pair to Publish (P2P), a focused half-day publication programme by the Publication and Excellence Unit, UiTM Perlis, on 14 October 2026.">
+  <meta name="description" content="Pair to Publish (P2P), a focused half-day publication programme on 14 October 2026 at Bilik Inovasi, PJI, UiTM Perlis Branch.">
   <meta name="theme-color" content="#071f4f">
   <title>Pair to Publish 2026 | UiTM Perlis</title>
   <style>
@@ -477,20 +477,50 @@
     .fee-seal {
       position: relative;
       z-index: 1;
-      display: inline-flex;
+      display: grid;
+      width: 100%;
       margin-top: 31px;
-      align-items: baseline;
-      gap: 8px;
-      padding: 13px 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       border: 2px solid var(--gold-500);
-      border-radius: 999px;
+      border-radius: 20px 6px 20px 6px;
       color: var(--gold-300);
       font-weight: 850;
+      overflow: hidden;
     }
 
-    .fee-seal strong {
+    .fee-seal-label {
+      grid-column: 1 / -1;
+      padding: 9px 14px;
+      color: var(--navy-950);
+      background: var(--gold-500);
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .fee-tier {
+      display: grid;
+      gap: 4px;
+      padding: 12px 10px 13px;
+      text-align: center;
+    }
+
+    .fee-tier + .fee-tier {
+      border-left: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .fee-tier strong {
       color: var(--white);
       font-size: 1.55rem;
+    }
+
+    .fee-tier small {
+      font-size: .61rem;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
 
     .programme-divider {
@@ -1033,19 +1063,48 @@
         linear-gradient(150deg, var(--purple-700), var(--navy-900));
     }
 
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: end;
+      gap: 18px;
+    }
+
+    .price-option + .price-option {
+      padding-left: 18px;
+      border-left: 1px solid rgba(255, 255, 255, .2);
+    }
+
     .registration-side .price {
       margin: 0;
       color: var(--gold-500);
       font-family: "Arial Narrow", Impact, sans-serif;
-      font-size: clamp(5.8rem, 10vw, 9rem);
+      font-size: clamp(3.7rem, 6vw, 6.2rem);
       letter-spacing: -.075em;
       line-height: .8;
     }
 
     .registration-side .price-note {
-      margin: 18px 0 0;
+      margin: 13px 0 0;
       color: rgba(255, 255, 255, .68);
+      font-size: .76rem;
       font-weight: 750;
+    }
+
+    .capacity-note {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: 16px;
+      padding: 9px 13px;
+      border: 1px solid rgba(249, 221, 112, .42);
+      border-radius: 999px;
+      color: var(--gold-300);
+      background: rgba(249, 221, 112, .08);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
     .contact-list {
@@ -1289,9 +1348,9 @@
           <span class="eyebrow">Publication and Excellence Unit · UiTM Perlis</span>
 
           <h1>Turn your research into <span>published impact.</span></h1>
-          <p class="hero-lead">A focused publication programme connecting researchers with experienced speakers and UiTM Perlis journal chief editors—sharing knowledge, joining forces, and succeeding together.</p>
+          <p class="hero-lead">A focused publication programme connecting researchers with experienced speakers and UiTM Perlis journal editors-in-chief—sharing knowledge, collaborating together, succeeding together.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://shorturl.at/p2puitmps" target="_blank" rel="noopener">
+            <a class="button button-primary" href="https://shorturl.at/BTq4O" target="_blank" rel="noopener noreferrer">
               Register now
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                 <path d="M5 12h14M14 7l5 5-5 5"/>
@@ -1303,7 +1362,7 @@
 
         <aside class="hero-panel reveal" aria-label="Event information">
           <div class="event-ticket">
-            <span class="ticket-kicker">Your publication pathway starts here</span>
+            <span class="ticket-kicker">Write Together, Publish with Impact</span>
             <div class="ticket-date">
               <span class="date-number">14<sup>th</sup></span>
               <span class="date-copy">
@@ -1327,10 +1386,14 @@
                     <path d="M20 5.5c-3.6 0-6.3 1-8 3v10c1.7-2 4.4-3 8-3z"/>
                   </svg>
                 </span>
-                <span><small>Format</small><strong>Expert talks + editor engagement</strong></span>
+                <span><small>Venue</small><strong>Bilik Inovasi, PJI &middot; UiTM Perlis Branch</strong></span>
               </div>
             </div>
-            <div class="fee-seal"><span>Participation fee</span><strong>RM50</strong></div>
+            <div class="fee-seal" aria-label="Registration fees">
+              <span class="fee-seal-label">Registration fee</span>
+              <span class="fee-tier"><strong>RM35</strong><small>UiTM Perlis</small></span>
+              <span class="fee-tier"><strong>RM50</strong><small>Non-UiTM Perlis</small></span>
+            </div>
           </div>
         </aside>
       </div>
@@ -1385,7 +1448,7 @@
                   <circle cx="12" cy="12" r="8.5"/><path d="M15.3 8.7c-.8-.7-1.8-1.1-3-1.1-1.6 0-2.8.8-2.8 2s1.1 1.7 3 2c1.9.4 3 1 3 2.4s-1.3 2.4-3.2 2.4c-1.4 0-2.7-.5-3.6-1.4M12 5.7v12.6"/>
                 </svg>
               </span>
-              <div><h3>RM50 participation fee</h3><p>Access the expert sessions, editorial perspectives, and publication networking experience.</p></div>
+              <div><h3>RM35 / RM50 registration fees</h3><p>RM35 for UiTM Perlis participants and RM50 for non-UiTM Perlis participants. Limited to 45 seats.</p></div>
             </article>
           </div>
         </div>
@@ -1408,7 +1471,7 @@
               <span class="speaker-track">Science &amp; Technology</span>
               <h3>Dr Abu Hassan Nordin</h3>
               <p class="speaker-role">Invited Speaker</p>
-              <p class="session-title">“High-Impact Publication Strategies in Science and Technology”</p>
+              <p class="session-title">“High-Impact Publishing Strategies in Science and Technology”</p>
             </div>
           </article>
           <article class="speaker-card reveal">
@@ -1419,7 +1482,7 @@
               <span class="speaker-track">Social Sciences</span>
               <h3>Dr Marina Abu Bakar</h3>
               <p class="speaker-role">Invited Speaker</p>
-              <p class="session-title">“Academic Writing and Publishing in Islamic Studies &amp; Social Sciences: Effective Approaches”</p>
+              <p class="session-title">“Academic Writing and Scholarly Publishing in Islamic Studies and Social Sciences: Effective Approaches”</p>
             </div>
           </article>
         </div>
@@ -1430,14 +1493,14 @@
       <div class="container">
         <div class="section-head center reveal">
           <span class="section-kicker">Meet the editorial desk</span>
-          <h2>Three UiTM Perlis chief editors.</h2>
-          <p class="section-intro">Gain editorial perspectives from the chief editors of three UiTM Perlis journals, each representing a distinct research community.</p>
+          <h2>Three UiTM Perlis editors-in-chief.</h2>
+          <p class="section-intro">Gain editorial perspectives from the editors-in-chief of three UiTM Perlis journals, each representing a distinct research community.</p>
         </div>
         <div class="editor-grid">
           <article class="editor-card reveal">
             <div class="editor-photo"><img src="../../assets/dr jeyashelly andas.png" alt="Dr Jeyashelly Andas" loading="lazy"></div>
             <div class="editor-copy">
-              <span class="editor-label">Chief Editor</span>
+              <span class="editor-label">Editor-in-Chief</span>
               <h3>Dr Jeyashelly Andas</h3>
               <p>Scientific Research Journal</p>
               <span class="journal-mark">SRJ</span>
@@ -1446,7 +1509,7 @@
           <article class="editor-card reveal">
             <div class="editor-photo"><img src="../../assets/dr siti zulaiha ahmad.png" alt="Dr Siti Zulaiha Ahmad" loading="lazy"></div>
             <div class="editor-copy">
-              <span class="editor-label">Chief Editor</span>
+              <span class="editor-label">Editor-in-Chief</span>
               <h3>Dr Siti Zulaiha Ahmad</h3>
               <p>Journal of Computing Research and Innovation</p>
               <span class="journal-mark">JCRINN</span>
@@ -1455,7 +1518,7 @@
           <article class="editor-card reveal">
             <div class="editor-photo"><img src="../../assets/prof madya dr mahyudin ahmad.png" alt="Associate Professor Dr Mahyudin Ahmad" loading="lazy"></div>
             <div class="editor-copy">
-              <span class="editor-label">Chief Editor</span>
+              <span class="editor-label">Editor-in-Chief</span>
               <h3>Associate Prof. Dr Mahyudin Ahmad</h3>
               <p>Jurnal Intelek</p>
               <span class="journal-mark">JI</span>
@@ -1481,7 +1544,7 @@
               </svg>
             </span>
             <h3>Experienced guidance</h3>
-            <p>Learn directly with invited speakers and experienced journal chief editors.</p>
+            <p>Learn directly with invited speakers and experienced journal editors-in-chief.</p>
           </article>
           <article class="outcome-card reveal" data-number="02">
             <span class="outcome-icon" aria-hidden="true">
@@ -1491,7 +1554,7 @@
               </svg>
             </span>
             <h3>Practical strategies</h3>
-            <p>Take away current, applicable approaches to academic writing and publication.</p>
+            <p>Take away practical, up-to-date approaches to academic writing and publishing.</p>
           </article>
           <article class="outcome-card reveal" data-number="03">
             <span class="outcome-icon" aria-hidden="true">
@@ -1510,7 +1573,7 @@
               </svg>
             </span>
             <h3>Indexed publication potential</h3>
-            <p>Improve manuscript quality and publication opportunities in Scopus- and WoS-indexed journals.</p>
+            <p>Enhance your chances of publishing in Scopus- and WoS-indexed journals.</p>
           </article>
         </div>
       </div>
@@ -1524,12 +1587,12 @@
             <h2>Ready to pair your research with publication insight?</h2>
             <p>Join Pair to Publish for a concentrated morning of expert guidance, editorial perspective, and research networking.</p>
             <div class="registration-details">
-              <div class="registration-detail"><small>Date</small><strong>14<sup>th</sup> October 2026</strong></div>
+              <div class="registration-detail"><small>Date</small><strong>Wednesday, 14<sup>th</sup> October 2026</strong></div>
               <div class="registration-detail"><small>Time</small><strong>8:30 AM – 1:00 PM</strong></div>
-              <div class="registration-detail"><small>Day</small><strong>Wednesday</strong></div>
-              <div class="registration-detail"><small>Fee</small><strong>RM50 per participant</strong></div>
+              <div class="registration-detail"><small>Venue</small><strong>Bilik Inovasi, PJI · UiTM Perlis Branch</strong></div>
+              <div class="registration-detail"><small>Fee</small><strong>RM35 UiTM Perlis · RM50 Non-UiTM Perlis</strong></div>
             </div>
-            <a class="button button-primary" href="https://shorturl.at/p2puitmps" target="_blank" rel="noopener">
+            <a class="button button-primary" href="https://shorturl.at/BTq4O" target="_blank" rel="noopener noreferrer">
               Open registration form
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                 <path d="M5 12h14M14 7l5 5-5 5"/>
@@ -1537,24 +1600,33 @@
             </a>
           </div>
           <aside class="registration-side">
-            <p class="price">RM50</p>
-            <p class="price-note">Participation fee</p>
+            <div class="price-list" aria-label="Registration fee categories">
+              <div class="price-option">
+                <p class="price">RM35</p>
+                <p class="price-note">UiTM Perlis</p>
+              </div>
+              <div class="price-option">
+                <p class="price">RM50</p>
+                <p class="price-note">Non-UiTM Perlis</p>
+              </div>
+            </div>
+            <span class="capacity-note">Limited to 45 seats</span>
             <div class="contact-list" aria-label="Contact information">
-              <a class="contact-link" href="tel:+6049882094">
+              <a class="contact-link" href="tel:+60195268044">
                 <span aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="M7 3h3l1.2 4-2 1.5a14 14 0 0 0 6.3 6.3l1.5-2 4 1.2v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4z"/>
                   </svg>
                 </span>
-                <span>04-988 2094</span>
+                <span>Dr Azliana Ramli · 019-526 8044</span>
               </a>
-              <a class="contact-link" href="mailto:pjiuitmps@uitm.edu.my">
+              <a class="contact-link" href="mailto:pairtopublishuitm@gmail.com">
                 <span aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="M3 5h18v14H3z"/><path d="m4 7 8 6 8-6"/>
                   </svg>
                 </span>
-                <span>pjiuitmps@uitm.edu.my</span>
+                <span>pairtopublishuitm@gmail.com</span>
               </a>
             </div>
           </aside>
