@@ -1290,6 +1290,215 @@
       text-align: right;
     }
 
+    body.poster-open {
+      overflow: hidden;
+    }
+
+    .poster-launch {
+      position: fixed;
+      z-index: 120;
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      display: grid;
+      gap: 1px;
+      min-width: 132px;
+      padding: 11px 16px 12px;
+      border: 1px solid rgba(255, 212, 109, .58);
+      border-radius: 18px 6px 18px 6px;
+      color: white;
+      background: linear-gradient(140deg, var(--purple-950), var(--purple-700));
+      box-shadow: 0 18px 44px rgba(33, 0, 47, .28);
+      text-align: left;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .poster-launch:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 54px rgba(33, 0, 47, .34);
+    }
+
+    .poster-launch span {
+      color: var(--gold-300);
+      font-size: .59rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .poster-launch strong {
+      font-size: .9rem;
+      line-height: 1.25;
+    }
+
+    .poster-launch:focus-visible,
+    .poster-close:focus-visible,
+    .poster-full-link:focus-visible,
+    .poster-image-link:focus-visible {
+      outline: 4px solid rgba(255, 212, 109, .8);
+      outline-offset: 4px;
+    }
+
+    .poster-modal {
+      width: min(720px, calc(100vw - 28px));
+      max-width: none;
+      max-height: calc(100dvh - 28px);
+      margin: auto;
+      padding: 0;
+      border: 0;
+      color: var(--ink);
+      background: transparent;
+      overflow: visible;
+    }
+
+    .poster-modal::backdrop {
+      background: rgba(22, 0, 31, .82);
+      backdrop-filter: blur(14px) saturate(.72);
+    }
+
+    .poster-modal[open] {
+      display: grid;
+      place-items: center;
+    }
+
+    .poster-dialog {
+      display: grid;
+      width: 100%;
+      max-height: calc(100dvh - 28px);
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: clamp(22px, 3vw, 34px);
+      background: var(--paper);
+      box-shadow: 0 38px 110px rgba(0, 0, 0, .5);
+      overflow: hidden;
+      animation: posterReveal .38s ease both;
+    }
+
+    .poster-dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px 14px 20px;
+      color: white;
+      background: linear-gradient(135deg, var(--purple-950), var(--purple-700));
+    }
+
+    .poster-dialog-title {
+      display: grid;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .poster-dialog-title span {
+      color: var(--gold-300);
+      font-size: .61rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .poster-dialog-title strong {
+      font-size: clamp(.92rem, 2vw, 1.08rem);
+      line-height: 1.25;
+    }
+
+    .poster-close {
+      flex: 0 0 auto;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 999px;
+      color: white;
+      background: rgba(255, 255, 255, .1);
+      font-size: 1.35rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .poster-stage {
+      display: grid;
+      min-height: 0;
+      place-items: center;
+      padding: clamp(10px, 2vw, 18px);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(239, 190, 66, .15), transparent 15rem),
+        linear-gradient(145deg, #f3eaf5, #fff9ea);
+      overflow: auto;
+    }
+
+    .poster-image-link {
+      display: grid;
+      min-width: 0;
+      min-height: 0;
+      place-items: center;
+      border-radius: 10px;
+    }
+
+    .poster-image {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: calc(100dvh - 180px);
+      border-radius: 8px;
+      object-fit: contain;
+      box-shadow: 0 20px 52px rgba(33, 0, 47, .24);
+    }
+
+    .poster-dialog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 13px 18px;
+      border-top: 1px solid var(--line);
+      background: white;
+    }
+
+    .poster-dialog-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .72rem;
+      line-height: 1.45;
+    }
+
+    .poster-full-link {
+      flex: 0 0 auto;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: white;
+      background: var(--purple-800);
+      font-size: .72rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    @keyframes posterReveal {
+      from { opacity: 0; transform: translateY(18px) scale(.97); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 520px) {
+      .poster-launch {
+        right: max(12px, env(safe-area-inset-right));
+        bottom: max(12px, env(safe-area-inset-bottom));
+        min-width: 0;
+        padding: 9px 12px 10px;
+      }
+      .poster-launch span { display: none; }
+      .poster-dialog-footer { align-items: flex-start; flex-direction: column; }
+      .poster-full-link { width: 100%; text-align: center; }
+      .poster-image { max-height: calc(100dvh - 225px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .poster-dialog { animation: none; }
+      .poster-launch { transition: none; }
+    }
     body.gallery-open {
       overflow: hidden;
     }
@@ -3157,6 +3366,30 @@ Gallery image replacement notes for editor only:
 </div>
 </div>
 </footer>
+<button aria-controls="posterModal" aria-haspopup="dialog" class="poster-launch" id="posterLaunch" type="button">
+<span>Official Poster</span>
+<strong>View Poster</strong>
+</button>
+<dialog aria-labelledby="posterModalTitle" class="poster-modal" id="posterModal">
+<div class="poster-dialog">
+<div class="poster-dialog-header">
+<div class="poster-dialog-title">
+<span>Latest Programme Poster</span>
+<strong id="posterModalTitle">UGUN Summer Camp 2026</strong>
+</div>
+<button aria-label="Close poster" class="poster-close" id="posterClose" type="button">×</button>
+</div>
+<div class="poster-stage">
+<a aria-label="Open the UGUN Summer Camp 2026 poster at full size" class="poster-image-link" href="assets/ugun-summer-camp-2026-poster.jpeg" rel="noopener" target="_blank">
+<img alt="Official UGUN Summer Camp 2026 programme poster" class="poster-image" decoding="async" id="posterImage" loading="eager" src="assets/ugun-summer-camp-2026-poster.jpeg"/>
+</a>
+</div>
+<div class="poster-dialog-footer">
+<p>Select the poster to inspect the full-size version.</p>
+<a class="poster-full-link" href="assets/ugun-summer-camp-2026-poster.jpeg" rel="noopener" target="_blank">Open Full Size ↗</a>
+</div>
+</div>
+</dialog>
 <div aria-labelledby="galleryTitle" aria-modal="true" class="gallery-modal" hidden="" id="galleryModal" role="dialog">
 <div class="gallery-dialog">
 <div class="gallery-stage">
@@ -3226,6 +3459,45 @@ Gallery image replacement notes for editor only:
       });
     });
 
+    const posterModal = document.getElementById('posterModal');
+    const posterLaunch = document.getElementById('posterLaunch');
+    const posterClose = document.getElementById('posterClose');
+    let lastFocusedPosterTrigger = null;
+
+    function openPoster(trigger = posterLaunch) {
+      if (!posterModal || posterModal.open) return;
+      lastFocusedPosterTrigger = trigger || posterLaunch;
+      posterModal.showModal();
+      document.body.classList.add('poster-open');
+      posterClose?.focus({ preventScroll: true });
+    }
+
+    function closePoster() {
+      if (!posterModal || !posterModal.open) return;
+      posterModal.close();
+    }
+
+    posterLaunch?.addEventListener('click', () => openPoster(posterLaunch));
+    posterClose?.addEventListener('click', closePoster);
+
+    posterModal?.addEventListener('click', (event) => {
+      const bounds = posterModal.getBoundingClientRect();
+      const outsideDialog = event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom;
+      if (outsideDialog) closePoster();
+    });
+
+    posterModal?.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      closePoster();
+    });
+
+    posterModal?.addEventListener('close', () => {
+      document.body.classList.remove('poster-open');
+      lastFocusedPosterTrigger?.focus({ preventScroll: true });
+    });
+
+    window.setTimeout(() => openPoster(posterLaunch), 420);
     const galleryModal = document.getElementById('galleryModal');
     const galleryImage = document.getElementById('galleryImage');
     const galleryTitle = document.getElementById('galleryTitle');
