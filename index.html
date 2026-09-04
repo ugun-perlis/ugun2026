@@ -1299,6 +1299,92 @@
       font-size: clamp(.98rem, 1.7vw, 1.06rem);
     }
 
+    .getting-here-section { padding-top: clamp(34px, 5vw, 58px); }
+    .travel-route-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 2vw, 18px); }
+
+    .travel-route-card {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      padding: clamp(18px, 2.5vw, 24px);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 38px rgba(31, 0, 48, .07);
+      animation: riseFade .72s ease both;
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+    .travel-route-card:nth-child(2) { animation-delay: .06s; }
+    .travel-route-card:nth-child(3) { animation-delay: .12s; }
+    .travel-route-card:nth-child(4) { animation-delay: .18s; }
+    .travel-route-card:hover { transform: translateY(-3px); border-color: rgba(217, 155, 19, .36); box-shadow: 0 20px 46px rgba(31, 0, 48, .1); }
+
+    .travel-route-icon,
+    .arrival-pin {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: var(--purple-800);
+      background: linear-gradient(145deg, rgba(245,234,248,.98), rgba(255,248,236,.96));
+      border: 1px solid rgba(75, 0, 104, .1);
+    }
+
+    .travel-route-icon { width: 52px; height: 52px; border-radius: 17px; }
+    .travel-route-icon svg,
+    .arrival-pin svg { display: block; width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .travel-route-copy { min-width: 0; }
+    .travel-origin { display: block; color: var(--gold-600); font-size: .7rem; font-weight: 950; letter-spacing: .12em; line-height: 1.4; text-transform: uppercase; }
+    .travel-route { display: block; margin-top: 8px; color: var(--purple-950); font-size: clamp(1.12rem, 2.3vw, 1.42rem); line-height: 1.24; letter-spacing: -.035em; }
+    .travel-method { display: block; margin-top: 7px; color: var(--muted); font-size: .86rem; font-weight: 760; line-height: 1.45; }
+    .travel-method a {
+      color: var(--purple-800);
+      text-decoration-line: underline;
+      text-decoration-color: rgba(75, 0, 104, .28);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color .18s ease, text-decoration-color .18s ease;
+    }
+    .travel-method a:hover { color: var(--gold-600); text-decoration-color: currentColor; }
+    .travel-method a:focus-visible { outline: 3px solid rgba(217, 155, 19, .42); outline-offset: 3px; border-radius: 3px; }
+
+    .arrival-note {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) auto;
+      gap: 15px;
+      align-items: center;
+      margin-top: clamp(16px, 2.5vw, 22px);
+      padding: 16px clamp(16px, 2.5vw, 22px);
+      border-radius: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--purple-950), var(--purple-800));
+      box-shadow: 0 18px 44px rgba(75, 0, 104, .18);
+    }
+
+    .arrival-pin { width: 48px; height: 48px; border-radius: 16px; color: var(--gold-300); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.16); }
+    .arrival-copy { min-width: 0; }
+    .arrival-copy strong { display: block; font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.35; }
+    .arrival-copy span { display: block; margin-top: 3px; color: rgba(255,255,255,.7); font-size: .82rem; line-height: 1.45; }
+
+    .travel-cta { min-height: 42px; padding-inline: 16px; color: var(--purple-950); background: var(--gold-300); border-color: transparent; font-size: .82rem; white-space: nowrap; }
+    .travel-cta:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+    @media (max-width: 600px) {
+      .travel-route-grid { grid-template-columns: minmax(0, 1fr); }
+      .travel-route-card { grid-template-columns: 44px minmax(0, 1fr); gap: 13px; padding: 16px; border-radius: 20px; }
+      .travel-route-icon { width: 44px; height: 44px; border-radius: 14px; }
+      .travel-route-icon svg { width: 23px; height: 23px; }
+      .arrival-note { grid-template-columns: 42px minmax(0, 1fr); gap: 12px; padding: 15px; }
+      .arrival-pin { width: 42px; height: 42px; border-radius: 14px; }
+      .travel-cta { grid-column: 1 / -1; width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .travel-route-card { animation: none; transition: none; }
+    }
+
 
 
     /* Clickable Why Perlis gallery cards */
@@ -3343,6 +3429,38 @@ Gallery image replacement notes for editor only:
 </div>
 </button>
 </article>
+</div>
+</div>
+</section>
+<section aria-labelledby="getting-here-title" class="section getting-here-section" id="getting-here">
+<div class="container">
+<div class="section-header">
+<span class="section-kicker">Getting Here</span>
+<h2 id="getting-here-title">Getting to Perlis</h2>
+<p class="lead">UiTM Cawangan Perlis is located in Arau, Perlis. Here are the simplest ways to reach us.</p>
+</div>
+<div class="travel-route-grid" aria-label="Main routes to Arau, Perlis">
+<article class="travel-route-card">
+<span class="travel-route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="13.5" rx="2"/><path d="M8 7h8M8 12h.01M16 12h.01M8 17l-2 3M16 17l2 3M7 20h10"/></svg></span>
+<div class="travel-route-copy"><span class="travel-origin">From Kuala Lumpur</span><strong class="travel-route">KL Sentral &rarr; Arau</strong><span class="travel-method"><a href="https://online.ktmb.com.my/" rel="noopener noreferrer" target="_blank">Book KTM ETS &#8599;</a></span></div>
+</article>
+<article class="travel-route-card">
+<span class="travel-route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5Z"/></svg></span>
+<div class="travel-route-copy"><span class="travel-origin">From KLIA</span><strong class="travel-route">KLIA &rarr; KL Sentral &rarr; Arau</strong><span class="travel-method"><a href="https://www.kliaekspres.com/" rel="noopener noreferrer" target="_blank">KLIA Ekspres &#8599;</a> + <a href="https://online.ktmb.com.my/" rel="noopener noreferrer" target="_blank">KTM ETS &#8599;</a></span></div>
+</article>
+<article class="travel-route-card">
+<span class="travel-route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="13.5" rx="2"/><path d="M8 7h8M8 12h.01M16 12h.01M8 17l-2 3M16 17l2 3M7 20h10"/></svg></span>
+<div class="travel-route-copy"><span class="travel-origin">From Penang</span><strong class="travel-route">Butterworth &rarr; Arau</strong><span class="travel-method"><a href="https://online.ktmb.com.my/" rel="noopener noreferrer" target="_blank">Book KTM train &#8599;</a></span></div>
+</article>
+<article class="travel-route-card">
+<span class="travel-route-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5Z"/></svg></span>
+<div class="travel-route-copy"><span class="travel-origin">From Penang Airport</span><strong class="travel-route">Airport &rarr; Butterworth &rarr; Arau</strong><span class="travel-method"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Penang+International+Airport&amp;destination=Butterworth+Railway+Station&amp;travelmode=driving" rel="noopener noreferrer" target="_blank">Plan road transfer &#8599;</a> + <a href="https://online.ktmb.com.my/" rel="noopener noreferrer" target="_blank">KTM train &#8599;</a></span></div>
+</article>
+</div>
+<div class="arrival-note">
+<span class="arrival-pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+<div class="arrival-copy"><strong>Your arrival point: Arau, Perlis</strong><span>UiTM Cawangan Perlis, Kampus Arau is a short local transfer from Arau Railway Station.</span></div>
+<a class="button button-secondary travel-cta" href="https://www.ktmb.com.my/traintime.html" rel="noopener noreferrer" target="_blank">Check Train Schedule &#8599;</a>
 </div>
 </div>
 </section>
