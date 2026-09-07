@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local Fruit Processing Workshop with Dr Athifah: learn to create market-ready jam, cordial, candies and dried fruits at UiTM Perlis on 16 October 2026.">
+  <meta name="theme-color" content="#173c27">
+  <title>Local Fruit Processing Workshop | UiTM Perlis</title>
+  <style>
+    :root {
+      --forest-950: #102c1d;
+      --forest-900: #173c27;
+      --forest-800: #24533a;
+      --leaf: #738c2d;
+      --lime: #a9b849;
+      --mango: #f27d18;
+      --pineapple: #f6b92f;
+      --papaya: #ff9f3d;
+      --wood: #4d2818;
+      --wood-dark: #2b160f;
+      --cream: #fff8eb;
+      --paper: #f7edda;
+      --ink: #253125;
+      --muted: #6d7164;
+      --sky: #8bd1e8;
+      --white: #fff;
+      --line: rgba(23, 60, 39, .14);
+      --shadow: 0 28px 80px rgba(37, 49, 37, .15);
+      --container: 1160px;
+      --side: clamp(20px, 4vw, 42px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 94px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0 15%, rgba(169,184,73,.13), transparent 24rem),
+        radial-gradient(circle at 100% 42%, rgba(242,125,24,.11), transparent 28rem),
+        var(--cream);
+      font-family: Inter, Aptos, "Segoe UI", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    body::before {
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      opacity: .18;
+      background-image: radial-gradient(rgba(23,60,39,.24) .8px, transparent .8px);
+      background-size: 20px 20px;
+      content: "";
+      pointer-events: none;
+      mask-image: linear-gradient(90deg, #000, transparent 22%, transparent 78%, #000);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+    sup { position: relative; top: -.38em; font-size: .54em; line-height: 0; vertical-align: baseline; }
+    .container { width: 100%; max-width: calc(var(--container) + var(--side) * 2); margin-inline: auto; padding-inline: var(--side); }
+    .section { padding-block: clamp(72px, 9vw, 118px); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--leaf);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 26px; height: 2px; background: var(--mango); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    h2 { margin-bottom: 16px; color: var(--forest-950); font-size: clamp(2rem, 5vw, 4.1rem); line-height: .98; letter-spacing: -.055em; }
+    .lead { max-width: 680px; margin-bottom: 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.16rem); line-height: 1.75; }
+    .section-heading { margin-bottom: clamp(34px, 5vw, 58px); }
+
+    .site-header {
+      position: sticky;
+      z-index: 40;
+      top: 0;
+      border-bottom: 1px solid rgba(23,60,39,.1);
+      background: rgba(255,248,235,.88);
+      backdrop-filter: blur(18px);
+    }
+    .nav-wrap { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; min-width: 0; align-items: center; gap: 12px; font-weight: 900; }
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 14px 7px 14px 7px;
+      color: var(--cream);
+      background: linear-gradient(145deg, var(--forest-900), var(--leaf));
+      box-shadow: 5px 5px 0 var(--mango);
+    }
+    .brand-mark svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .brand-copy { display: grid; min-width: 0; color: var(--forest-950); line-height: 1.05; }
+    .brand-copy small { margin-top: 5px; color: var(--muted); font-size: .63rem; letter-spacing: .1em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 5px; }
+    .nav-links a { padding: 10px 12px; border-radius: 999px; color: #536053; font-size: .84rem; font-weight: 750; transition: background .2s ease, color .2s ease; }
+    .nav-links a:hover { color: var(--forest-900); background: rgba(23,60,39,.07); }
+    .nav-links .nav-cta { margin-left: 6px; padding-inline: 17px; color: var(--white); background: var(--forest-900); }
+    .nav-links .nav-cta:hover { color: var(--forest-950); background: var(--pineapple); }
+    .menu-button { display: none; width: 42px; height: 42px; border: 0; border-radius: 13px; color: var(--forest-900); background: rgba(23,60,39,.08); cursor: pointer; }
+    .menu-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding-block: clamp(62px, 8vw, 105px) clamp(76px, 10vw, 130px);
+      color: var(--white);
+      background:
+        linear-gradient(120deg, rgba(16,44,29,.98), rgba(23,60,39,.92) 50%, rgba(77,40,24,.88)),
+        repeating-linear-gradient(3deg, transparent 0 15px, rgba(255,255,255,.04) 15px 16px);
+    }
+    .hero::before, .hero::after { position: absolute; z-index: -1; border-radius: 50% 8% 50% 8%; content: ""; pointer-events: none; }
+    .hero::before { width: 430px; height: 430px; top: -230px; left: -130px; border: 1px solid rgba(169,184,73,.35); box-shadow: 0 0 0 35px rgba(169,184,73,.04), 0 0 0 70px rgba(169,184,73,.025); transform: rotate(28deg); }
+    .hero::after { width: 270px; height: 420px; right: -130px; bottom: -250px; border: 1px solid rgba(246,185,47,.38); background: rgba(246,185,47,.05); transform: rotate(-34deg); }
+    .hero-grid { display: flex; gap: clamp(46px, 8vw, 94px); align-items: flex-start; }
+    .hero-grid > *, .hero-copy { min-width: 0; }
+    .hero-copy { position: relative; z-index: 2; flex: 1 1 0; }
+    .hero-kicker { display: block; width: 100%; max-width: 100%; color: var(--pineapple); line-height: 1.55; overflow-wrap: anywhere; }
+    .hero-kicker::before { display: none; }
+    .hero h1 { max-width: 780px; margin: 22px 0 24px; font-size: clamp(3.1rem, 7.6vw, 7rem); line-height: .84; letter-spacing: -.075em; }
+    .hero h1 span { display: block; color: var(--papaya); }
+    .hero-copy > p { max-width: 690px; margin-bottom: 30px; color: rgba(255,255,255,.75); font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.72; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; padding: 13px 19px; border: 1px solid transparent; border-radius: 999px; font-size: .84rem; font-weight: 900; transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--forest-950); background: var(--pineapple); }
+    .button-primary:hover { background: #ffd266; }
+    .button-ghost { color: var(--white); border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.07); }
+    .button-ghost:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.13); }
+    .button:focus-visible, .nav-links a:focus-visible, .brand:focus-visible, .poster-link:focus-visible { outline: 3px solid var(--pineapple); outline-offset: 4px; }
+    .event-facts { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin: 34px 0 0; }
+    .event-facts div { min-width: 0; padding: 14px 15px; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.065); }
+    .event-facts dt { color: var(--lime); font-size: .63rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .event-facts dd { margin: 6px 0 0; color: var(--white); font-size: .92rem; font-weight: 780; line-height: 1.4; }
+
+    .poster-wrap { position: relative; width: 100%; max-width: 360px; flex: 0 1 360px; margin-inline: auto; }
+    .poster-wrap::before { position: absolute; inset: 18px -18px -18px 18px; border-radius: 30px 8px 30px 8px; background: linear-gradient(145deg, var(--mango), var(--pineapple)); content: ""; transform: rotate(2deg); }
+    .poster-link { position: relative; display: block; overflow: hidden; border: 7px solid rgba(255,255,255,.92); border-radius: 24px 7px 24px 7px; box-shadow: 0 32px 70px rgba(0,0,0,.4); transform: rotate(-1.4deg); transition: transform .25s ease; }
+    .poster-link:hover { transform: rotate(0) translateY(-5px); }
+    .poster-link img { width: 100%; object-fit: cover; }
+    .poster-wrap > .poster-link { aspect-ratio: 4 / 3; }
+    .poster-wrap > .poster-link img { height: 100%; object-position: center 18%; }
+    .poster-caption { position: absolute; right: -24px; bottom: 28px; padding: 10px 14px; border-radius: 999px; color: var(--forest-950); background: var(--cream); box-shadow: 0 12px 30px rgba(0,0,0,.22); font-size: .7rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+
+    .fruit-strip { position: relative; z-index: 2; margin-top: -30px; }
+    .fruit-strip-inner { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); align-items: stretch; overflow: hidden; border-radius: 24px 7px 24px 7px; background: var(--white); box-shadow: var(--shadow); }
+    .fruit-chip { position: relative; display: grid; width: 100%; min-width: 0; min-height: 210px; grid-template-rows: 104px auto; align-content: center; justify-items: center; gap: 14px; padding: 20px 14px; border-right: 1px solid var(--line); text-align: center; }
+    .fruit-chip:last-child { border-right: 0; }
+    .fruit-orb { display: grid; width: 104px; height: 104px; overflow: hidden; place-items: center; border: 1px solid rgba(23,60,39,.09); border-radius: 28px 9px 28px 9px; background: #fff8eb; box-shadow: 0 10px 24px rgba(37,49,37,.11); }
+    .fruit-orb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .fruit-chip > div { width: 100%; min-width: 0; text-align: center; }
+    .fruit-chip strong { display: block; color: var(--forest-950); font-size: .9rem; }
+    .fruit-chip span { display: block; margin-top: 3px; color: var(--muted); font-size: .7rem; line-height: 1.35; }
+
+    .learn-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .learn-card { position: relative; min-height: 250px; overflow: hidden; padding: clamp(24px,3vw,34px); border: 1px solid var(--line); border-radius: 9px 30px 9px 30px; background: rgba(255,255,255,.76); box-shadow: 0 16px 44px rgba(37,49,37,.07); }
+    .learn-card::after { position: absolute; width: 140px; height: 140px; right: -62px; bottom: -72px; border: 1px solid rgba(115,140,45,.23); border-radius: 50% 8px 50% 8px; content: ""; transform: rotate(24deg); }
+    .learn-index { display: block; margin-bottom: 34px; color: var(--mango); font-size: .72rem; font-weight: 950; letter-spacing: .16em; }
+    .learn-card h3 { margin-bottom: 12px; color: var(--forest-950); font-size: clamp(1.25rem,2.4vw,1.7rem); letter-spacing: -.025em; }
+    .learn-card p { max-width: 46ch; margin-bottom: 0; color: var(--muted); font-size: .9rem; line-height: 1.68; }
+
+    .expert-section { color: var(--white); background: linear-gradient(135deg, var(--wood-dark), var(--wood)); }
+    .expert-section .eyebrow { color: var(--pineapple); }
+    .expert-section h2 { color: var(--white); }
+    .expert-grid { display: grid; grid-template-columns: minmax(280px,.78fr) minmax(0,1.22fr); gap: clamp(30px,6vw,76px); align-items: center; }
+    .expert-portrait { position: relative; width: min(100%,430px); aspect-ratio: 4 / 5; overflow: hidden; border: 7px solid rgba(255,255,255,.92); border-radius: 36px 10px 36px 10px; background: var(--white); box-shadow: 18px 20px 0 rgba(242,125,24,.78), 0 30px 70px rgba(0,0,0,.26); }
+    .expert-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .expert-portrait::after { position: absolute; inset: auto 0 0; height: 30%; background: linear-gradient(transparent,rgba(16,44,29,.62)); content: ""; pointer-events: none; }
+    .expert-portrait span { position: absolute; z-index: 1; right: 18px; bottom: 16px; padding: 8px 11px; border-radius: 999px; color: var(--forest-950); background: var(--pineapple); font-size: .64rem; font-weight: 950; letter-spacing: .1em; text-transform: uppercase; }
+    .expert-copy { display: flex; flex-direction: column; justify-content: center; }
+    .expert-copy h2 { margin-top: 18px; }
+    .expert-copy .role { max-width: 650px; margin-bottom: 25px; color: rgba(255,255,255,.72); font-size: clamp(1.05rem,2vw,1.28rem); line-height: 1.65; }
+    .expert-note { padding: 19px 20px; border-left: 4px solid var(--mango); border-radius: 0 15px 15px 0; color: rgba(255,255,255,.78); background: rgba(255,255,255,.07); line-height: 1.65; }
+
+    .join-section { position: relative; overflow: hidden; }
+    .join-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(34px,6vw,72px); align-items: start; }
+    .fee-panel { position: sticky; top: 110px; padding: clamp(28px,4vw,45px); border-radius: 34px 9px 34px 9px; color: var(--white); background: linear-gradient(145deg, var(--forest-900), var(--forest-950)); box-shadow: var(--shadow); }
+    .fee-label { display: block; color: var(--lime); font-size: .7rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+    .fee { margin: 12px 0 18px; color: var(--pineapple); font-size: clamp(4.4rem,11vw,7.5rem); font-weight: 950; line-height: .86; letter-spacing: -.08em; }
+    .fee sup { margin-right: 8px; font-size: .28em; letter-spacing: 0; }
+    .fee-panel p { margin-bottom: 0; color: rgba(255,255,255,.68); line-height: 1.65; }
+    .benefit-list { display: grid; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
+    .benefit-list li { display: flex; align-items: center; gap: 10px; font-size: .86rem; font-weight: 760; }
+    .benefit-list li::before { width: 9px; height: 9px; flex: 0 0 auto; border-radius: 50%; background: var(--mango); box-shadow: 0 0 0 4px rgba(242,125,24,.15); content: ""; }
+    .steps { display: grid; gap: 14px; }
+    .step { display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 18px; padding: clamp(22px,3vw,30px); border: 1px solid var(--line); border-radius: 24px 7px 24px 7px; background: rgba(255,255,255,.84); box-shadow: 0 14px 38px rgba(37,49,37,.065); }
+    .step-number { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 19px 7px 19px 7px; color: var(--forest-950); background: var(--pineapple); font-size: 1.15rem; font-weight: 950; }
+    .step h3 { margin: 2px 0 7px; color: var(--forest-950); font-size: 1.25rem; }
+    .step p { margin-bottom: 16px; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+    .step-link { display: inline-flex; align-items: center; gap: 7px; color: var(--forest-800); font-size: .78rem; font-weight: 900; text-decoration: underline; text-decoration-color: rgba(23,60,39,.25); text-underline-offset: 4px; }
+    .step-link:hover { color: var(--mango); text-decoration-color: currentColor; }
+    .step-link:focus-visible { outline: 3px solid rgba(242,125,24,.4); outline-offset: 4px; border-radius: 3px; }
+    .contact-card { grid-template-columns: 58px minmax(0,1fr); border-color: rgba(242,125,24,.28); background: linear-gradient(145deg, rgba(246,185,47,.16), rgba(255,255,255,.9)); }
+    .contact-card .step-number { color: var(--white); background: var(--mango); }
+
+    .poster-section { background: var(--paper); }
+    .poster-layout { display: grid; grid-template-columns: minmax(280px,.72fr) minmax(0,1fr); gap: clamp(36px,7vw,84px); align-items: center; }
+    .poster-frame { width: 100%; aspect-ratio: 16 / 10; padding: 10px; border-radius: 30px 8px 30px 8px; background: var(--white); box-shadow: var(--shadow); transform: none; }
+    .poster-frame:hover { transform: translateY(-4px); }
+    .poster-frame img { width: 100%; height: 100%; border-radius: 21px 4px 21px 4px; object-fit: cover; object-position: center 13%; }
+    .poster-copy h2 { margin-top: 18px; }
+    .poster-copy .lead { margin-bottom: 26px; }
+    .poster-copy .button-ghost { color: var(--forest-900); border-color: rgba(23,60,39,.24); background: rgba(255,255,255,.5); }
+    .poster-copy .button-ghost:hover { background: var(--white); }
+
+    footer { padding-block: 34px; color: rgba(255,255,255,.68); background: var(--forest-950); }
+    .footer-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-wrap strong { display: block; color: var(--white); font-size: .92rem; }
+    .footer-wrap span { display: block; margin-top: 5px; font-size: .75rem; }
+    .back-link { color: var(--pineapple); font-size: .78rem; font-weight: 900; }
+
+    @media (max-width: 900px) {
+      .expert-grid, .join-layout, .poster-layout { grid-template-columns: 1fr; }
+      .hero-grid { flex-direction: column; }
+      .hero-copy { text-align: center; }
+      .hero-copy > p { margin-inline: auto; }
+      .hero-kicker, .hero-actions { justify-content: center; }
+      .hero-kicker { display: block; width: 100%; max-width: 100%; line-height: 1.55; overflow-wrap: anywhere; }
+      .hero-kicker::before { display: none; }
+      .event-facts { max-width: 600px; margin-inline: auto; text-align: left; }
+      .poster-wrap { width: min(390px,86%); margin-top: 18px; }
+      .fruit-strip-inner { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .fruit-chip:nth-child(2) { border-right: 0; }
+      .fruit-chip:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .expert-portrait { margin-inline: auto; }
+      .fee-panel { position: static; }
+      .poster-frame { width: min(480px,100%); margin-inline: auto; }
+    }
+    @media (max-width: 720px) {
+      .menu-button { display: grid; place-items: center; }
+      .nav-links { position: absolute; top: calc(100% + 1px); right: 16px; left: 16px; display: none; padding: 12px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,248,235,.98); box-shadow: 0 20px 50px rgba(37,49,37,.16); }
+      .nav-links.is-open { display: grid; }
+      .nav-links a { width: 100%; padding: 12px 13px; }
+      .nav-links .nav-cta { margin: 4px 0 0; text-align: center; }
+      .learn-grid { grid-template-columns: 1fr; }
+      .footer-wrap { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 520px) {
+      .brand-copy { font-size: .84rem; }
+      .brand-copy small { font-size: .55rem; }
+      .hero h1 { font-size: clamp(3rem,18vw,4.5rem); }
+      .event-facts { grid-template-columns: 1fr; }
+      .poster-caption { right: -10px; bottom: 18px; }
+      .fruit-strip-inner { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .fruit-chip { min-height: 188px; grid-template-rows: 88px auto; padding: 18px 10px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .fruit-orb { width: 88px; height: 88px; border-radius: 23px 8px 23px 8px; }
+      .fruit-chip:nth-child(even) { border-right: 0; }
+      .fruit-chip:nth-child(n+3) { border-bottom: 0; }
+
+      .step, .contact-card { grid-template-columns: 46px minmax(0,1fr); gap: 13px; }
+      .step-number { width: 46px; height: 46px; border-radius: 15px 6px 15px 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Local Fruit Processing Workshop home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21c4-3 6-7 6-11a6 6 0 0 0-12 0c0 4 2 8 6 11Z"/><path d="M12 4c-1-2-3-3-5-3M12 4c1-2 3-3 5-3M9 8c2 1 4 1 6 0M8 12c3 1 5 1 8 0M9 16c2 .7 4 .7 6 0"/></svg></span>
+        <span class="brand-copy">Local Fruit Workshop<small>Commercialization &amp; Entrepreneurship</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav-links" id="siteNav" aria-label="Primary navigation">
+        <a href="#learn">What You Will Learn</a>
+        <a href="#expert">Expert</a>
+        <a href="#poster">Poster</a>
+        <a class="nav-cta" href="#join">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow hero-kicker">Commercialization &amp; Entrepreneurship Module</span>
+          <h1 id="hero-title">Local Fruit <span>Processing Workshop</span></h1>
+          <p>Turn local harvests into market-ready possibilities. Learn practical techniques for making jam, cordial, candies and dried fruits—and discover how food products can grow into a business.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#join">Reserve Your Place <span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="#learn">Explore the Workshop</a>
+          </div>
+          <dl class="event-facts">
+            <div><dt>Date</dt><dd>Friday, 16<sup>th</sup> October 2026</dd></div>
+            <div><dt>Time</dt><dd>8:30 AM – 12:30 PM</dd></div>
+            <div><dt>Venue</dt><dd>Podium, UiTM Perlis</dd></div>
+            <div><dt>Workshop Fee</dt><dd>RM50 per participant</dd></div>
+          </dl>
+        </div>
+        <div class="poster-wrap">
+          <a class="poster-link" href="../../assets/local-fruit-workshop-poster.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open the official Local Fruit Processing Workshop poster at full size">
+            <img src="../../assets/local-fruit-workshop-poster.jpeg" alt="Official poster for the Local Fruit Processing Workshop with Dr Athifah" width="1617" height="2560">
+          </a>
+          <span class="poster-caption">Official poster ↗</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="fruit-strip" aria-label="Workshop product focus">
+      <div class="container">
+        <div class="fruit-strip-inner">
+          <div class="fruit-chip"><span class="fruit-orb" aria-hidden="true"><img src="../../assets/fruit-icon-pineapple.png" alt="" width="420" height="420" decoding="async"></span><div><strong>Pineapple</strong><span>Bright, tropical value</span></div></div>
+          <div class="fruit-chip"><span class="fruit-orb" aria-hidden="true"><img src="../../assets/fruit-icon-banana.png" alt="" width="420" height="420" decoding="async"></span><div><strong>Banana</strong><span>Versatile local staple</span></div></div>
+          <div class="fruit-chip"><span class="fruit-orb" aria-hidden="true"><img src="../../assets/fruit-icon-mango.png" alt="" width="420" height="420" decoding="async"></span><div><strong>Mango</strong><span>Flavour with market appeal</span></div></div>
+          <div class="fruit-chip"><span class="fruit-orb" aria-hidden="true"><img src="../../assets/fruit-icon-products.png" alt="" width="420" height="420" decoding="async"></span><div><strong>Finished Products</strong><span>From processing to positioning</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="learn" aria-labelledby="learn-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Practical Learning</span>
+          <h2 id="learn-title">Make it. Refine it. Build its value.</h2>
+          <p class="lead">A focused, hands-on introduction to transforming local fruits into appealing products with commercial potential.</p>
+        </div>
+        <div class="learn-grid">
+          <article class="learn-card"><span class="learn-index">01 · PROCESS</span><h3>Local fruit processing</h3><p>Explore practical processing techniques for pineapple, banana, mango and other locally available fruits.</p></article>
+          <article class="learn-card"><span class="learn-index">02 · CREATE</span><h3>Jam and cordial</h3><p>Learn the foundations of developing flavourful fruit spreads and drinks beyond high-sugar commercial options.</p></article>
+          <article class="learn-card"><span class="learn-index">03 · DIVERSIFY</span><h3>Candies and dried fruits</h3><p>Discover alternative product formats that can extend a fruit's appeal, usability and potential shelf value.</p></article>
+          <article class="learn-card"><span class="learn-index">04 · COMMERCIALIZE</span><h3>Build a fruit-product business</h3><p>Connect practical production skills with the entrepreneurial thinking needed to shape a marketable product.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section expert-section" id="expert" aria-labelledby="expert-title">
+      <div class="container expert-grid">
+        <div class="expert-portrait"><img src="../../assets/dr-athifah.png" alt="Portrait of Dr Athifah" width="1122" height="1402" loading="lazy"><span>Invited expert</span></div>
+        <div class="expert-copy">
+          <span class="eyebrow">Invited Expert</span>
+          <h2 id="expert-title">Dr Athifah</h2>
+          <p class="role">Founder of AISB, the first start-up company established at UiTM Perlis.</p>
+          <div class="expert-note">Learn directly from an entrepreneur who connects innovation, product development and real-world commercialization.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section join-section" id="join" aria-labelledby="join-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Limited Places</span>
+          <h2 id="join-title">Complete these steps to join.</h2>
+          <p class="lead">Payment and registration use separate forms. Complete them in order, then contact Azalia to confirm your place.</p>
+        </div>
+        <div class="join-layout">
+          <aside class="fee-panel" aria-label="Workshop fee and participant benefits">
+            <span class="fee-label">Workshop fee</span>
+            <div class="fee"><sup>RM</sup>50</div>
+            <p>Your place includes the practical workshop experience and participant entitlements.</p>
+            <ul class="benefit-list">
+              <li>Hands-on learning</li>
+              <li>E-certificate provided</li>
+              <li>Training hours for UiTM staff</li>
+            </ul>
+          </aside>
+          <div class="steps">
+            <article class="step">
+              <span class="step-number" aria-hidden="true">01</span>
+              <div><h3>Make payment</h3><p>Complete the RM50 workshop payment through the UiTM Technoventure training portal.</p><a class="step-link" href="https://training.uitmtechnoventure.com.my/bengkel-buah-buahan-tempatan-bersama-dr-athifah/" target="_blank" rel="noopener noreferrer">Open payment page ↗</a></div>
+            </article>
+            <article class="step">
+              <span class="step-number" aria-hidden="true">02</span>
+              <div><h3>Submit your registration</h3><p>After payment, provide your participant details using the official registration form.</p><a class="step-link" href="https://forms.gle/g4Re8Dn1jstdsNWt6" target="_blank" rel="noopener noreferrer">Open registration form ↗</a></div>
+            </article>
+            <article class="step contact-card">
+              <span class="step-number" aria-hidden="true">03</span>
+              <div><h3>Confirm your place</h3><p>Contact Azalia after completing both steps. Places are limited and confirmation is required.</p><a class="step-link" href="https://wa.me/60135846467" target="_blank" rel="noopener noreferrer">WhatsApp Azalia · +60 13-584 6467 ↗</a></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section poster-section" id="poster" aria-labelledby="poster-title">
+      <div class="container poster-layout">
+        <a class="poster-frame poster-link" href="../../assets/local-fruit-workshop-poster.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View the official workshop poster at full size"><img src="../../assets/local-fruit-workshop-poster.jpeg" alt="Local Fruit Processing Workshop official poster" width="1617" height="2560" loading="lazy"></a>
+        <div class="poster-copy">
+          <span class="eyebrow">Official Announcement</span>
+          <h2 id="poster-title">Keep the workshop details close.</h2>
+          <p class="lead">Open the full-resolution poster for an easy visual reference or share it with colleagues and friends who may want to participate.</p>
+          <a class="button button-ghost" href="../../assets/local-fruit-workshop-poster.jpeg" target="_blank" rel="noopener noreferrer">Open Full Poster ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div><strong>Organised by UPIK</strong><span>Innovation &amp; Expertise Management Unit · UiTM Perlis Branch</span></div>
+      <a class="back-link" href="../../index.html#events">← Back to UGUN Summer Camp 2026</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const siteNav = document.getElementById('siteNav');
+    menuButton?.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      siteNav?.classList.toggle('is-open', !isOpen);
+    });
+    siteNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      menuButton?.setAttribute('aria-expanded', 'false');
+      menuButton?.setAttribute('aria-label', 'Open navigation');
+      siteNav.classList.remove('is-open');
+    }));
+  </script>
+</body>
+</html>

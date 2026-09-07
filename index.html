@@ -3088,6 +3088,24 @@
       filter: saturate(1.15) contrast(1.06);
       pointer-events: none;
     }
+    .event-card.is-enterprise {
+      --event-color: #f6b92f;
+      --event-soft: rgba(169,184,73,.2);
+      border-color: rgba(246,185,47,.44);
+      color: #fff8eb;
+      background:
+        linear-gradient(90deg,#f27d18 0 7px,transparent 7px),
+        radial-gradient(circle at 90% 15%,rgba(169,184,73,.3),transparent 11rem),
+        repeating-linear-gradient(3deg,transparent 0 16px,rgba(255,255,255,.02) 16px 17px),
+        linear-gradient(145deg,#24533a,#102c1d 66%,#4d2818);
+      box-shadow: 0 24px 60px rgba(16,44,29,.24);
+    }
+    .event-card.is-enterprise::before { border-color: rgba(246,185,47,.34); box-shadow: 0 0 0 22px rgba(169,184,73,.055); }
+    .event-card.is-enterprise h3 { color: #fff8eb; }
+    .event-card.is-enterprise p { color: rgba(255,248,235,.68); }
+    .event-card.is-enterprise .event-card-number,
+    .event-card.is-enterprise .event-card-action { color: #f6c75b; }
+    .event-card.is-enterprise .event-card-status { border-color: rgba(246,199,91,.4); color: #fff8eb; background: rgba(242,125,24,.14); }
     .event-card.is-cultural-run { --event-color: #087442; --event-soft: rgba(214,167,69,.2); border-color: rgba(214,167,69,.42); color: #fff8e7; background: linear-gradient(145deg,rgba(8,116,66,.91),rgba(5,20,12,.98)),#07120c; box-shadow: 0 24px 60px rgba(4,35,22,.22); }
     .event-card.is-cultural-run h3 { color: #fff7e6; }
     .event-card.is-cultural-run p { color: rgba(255,247,230,.64); }
@@ -3245,11 +3263,11 @@ Your browser does not support embedded video. <a href="assets/ugun-summer-camp-2
 <div class="event-card-copy"><h3>Symposium on Innovation and Creativity (SIC) 2026</h3><p>Pitch, present, and celebrate emerging ideas across three innovation categories.</p></div>
 <span class="event-card-action">Enter SIC 2026 →</span>
 </a>
-<article class="event-card is-upcoming">
-<div class="event-card-top"><span class="event-card-number">04 · Enterprise</span><span class="event-card-status">In preparation</span></div>
-<div class="event-card-copy"><h3>Commercialization &amp; Entrepreneurship Module</h3><p>A practical introduction to turning ideas into products, positioning, and market value.</p></div>
-<span class="event-card-action">Website coming soon</span>
-</article>
+<a class="event-card is-enterprise" href="events/commercialization-entrepreneurship/index.html">
+<div class="event-card-top"><span class="event-card-number">04 · Enterprise</span><span class="event-card-status">Event site live</span></div>
+<div class="event-card-copy"><h3>Commercialization &amp; Entrepreneurship Module</h3><p>Turn local fruits into distinctive products through hands-on processing and entrepreneurial learning.</p></div>
+<span class="event-card-action">Enter the workshop →</span>
+</a>
 <a class="event-card is-cultural-run" href="events/perlis-cultural-run-2026/index.html">
 <div class="event-card-top"><span class="event-card-number">05 · Public 5KM experience</span><span class="event-card-status">Event site live</span></div>
 <div class="event-card-copy"><h3>Perlis Cultural Run 2026 (Culture Stride)</h3><p>Culture Stride brings movement, community, and Malaysian cultural expression onto one energetic route.</p></div>
