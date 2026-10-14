@@ -1783,19 +1783,14 @@
     .schedule-row strong,
     .schedule-row span {
       display: block;
-    }
-
-    .schedule-row strong {
       color: var(--navy-900);
       font-size: .9rem;
+      font-weight: 700;
       line-height: 1.4;
     }
 
     .schedule-row span {
       margin-top: 4px;
-      color: var(--muted);
-      font-size: .76rem;
-      line-height: 1.45;
     }
 
     .schedule-row.featured {
@@ -2406,6 +2401,102 @@
         transform: none;
       }
     }
+
+    body.poster-open { overflow: hidden; }
+
+    .poster-launch {
+      position: fixed;
+      z-index: 120;
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      display: grid;
+      gap: 3px;
+      padding: 12px 17px;
+      border: 1px solid rgba(129,227,244,.45);
+      border-radius: 18px 6px 18px 6px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy-950), var(--violet-700));
+      box-shadow: 0 16px 40px rgba(7,13,43,.28);
+      text-align: left;
+      cursor: pointer;
+      transition: transform .2s ease;
+    }
+
+    .poster-launch:hover { transform: translateY(-3px); }
+    .poster-launch span { color: var(--cyan-300); font-size: .6rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .poster-launch strong { font-size: .9rem; }
+
+    .poster-launch:focus-visible,
+    .poster-close:focus-visible,
+    .poster-image-link:focus-visible,
+    .poster-full-link:focus-visible {
+      outline: 3px solid var(--cyan-300);
+      outline-offset: 4px;
+    }
+
+    .poster-modal {
+      width: min(1020px, calc(100vw - 28px));
+      max-width: none;
+      max-height: calc(100dvh - 28px);
+      margin: auto;
+      padding: 0;
+      border: 0;
+      color: var(--ink);
+      background: transparent;
+      overflow: visible;
+    }
+
+    .poster-modal::backdrop { background: rgba(7,13,43,.8); backdrop-filter: blur(12px) saturate(.75); }
+    .poster-modal[open] { display: grid; place-items: center; }
+
+    .poster-dialog {
+      display: grid;
+      width: 100%;
+      max-height: calc(100dvh - 28px);
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: 0 32px 100px rgba(0,0,0,.45);
+      animation: posterReveal .3s ease both;
+    }
+
+    .poster-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; color: white; background: linear-gradient(135deg, var(--navy-950), var(--violet-700)); }
+    .poster-dialog-title { display: grid; min-width: 0; gap: 4px; }
+    .poster-dialog-title span { color: var(--cyan-300); font-size: .6rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .poster-dialog-title strong { font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 1.35; }
+    .poster-close { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; padding: 0; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; color: white; background: rgba(255,255,255,.1); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+    .poster-stage { display: grid; min-width: 0; min-height: 0; place-items: center; overflow: auto; padding: clamp(10px, 2vw, 18px); background: linear-gradient(145deg, var(--violet-100), var(--paper)); }
+    .poster-image-link { display: grid; min-width: 0; min-height: 0; max-width: 100%; place-items: center; }
+    .poster-image { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100dvh - 190px); border-radius: 8px; object-fit: contain; box-shadow: 0 16px 40px rgba(7,13,43,.2); }
+    .poster-dialog-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px 18px; border-top: 1px solid var(--line); background: white; }
+    .poster-dialog-footer p { margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.45; }
+    .poster-full-link { flex: 0 0 auto; padding: 10px 14px; border-radius: 999px; color: white; background: var(--navy-900); font-size: .75rem; font-weight: 900; text-align: center; }
+
+    .schedule-download { display: inline-flex; position: relative; z-index: 2; margin-top: 20px; padding: 12px 15px; border: 1px solid rgba(129,227,244,.45); border-radius: 12px; color: white; background: rgba(255,255,255,.1); font-size: .78rem; font-weight: 900; line-height: 1.5; }
+    .schedule-download:hover { background: rgba(255,255,255,.18); }
+    .schedule-download:focus-visible { outline: 3px solid var(--cyan-300); outline-offset: 4px; }
+
+    @keyframes posterReveal {
+      from { opacity: 0; transform: translateY(16px) scale(.98); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 620px) {
+      .poster-launch { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); padding: 10px 13px; }
+      .poster-launch span { display: none; }
+      .poster-dialog-header { padding: 12px 14px; gap: 10px; }
+      .poster-dialog-footer { align-items: stretch; flex-direction: column; gap: 9px; padding: 12px 14px; }
+      .poster-image { max-height: calc(100dvh - 230px); }
+      .schedule-download { width: 100%; justify-content: center; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .poster-dialog { animation: none; }
+      .poster-launch { transition: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -2808,33 +2899,31 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="kicker">Programme Schedule</span>
-          <h2>A focused morning of pitching and recognition.</h2>
-          <!-- Internal reference: The current programme paperwork is the source for this running order. -->
-          <p>Pitching, presentation, and recognition come together in a focused SIC 2026 event programme.</p>
+          <h2>Grand finale and award ceremony.</h2>
+          <!-- Internal reference: Updated from SIC 2026 Programme Schedule.pdf supplied on 14 October 2026. -->
+          <p>Join the closing ceremony of the 16<sup>th</sup> Symposium on Innovation and Creativity 2026 (International Edition), from UGUN pitching to the celebration of this year's innovators.</p>
         </div>
         <div class="tentative-shell reveal">
           <div class="tentative-layout">
             <div class="tentative-overview">
-              <span class="eyebrow">Event day</span>
+              <span class="eyebrow">Closing ceremony</span>
               <h3>Thursday,<br>15<sup>th</sup> October 2026</h3>
-              <p>On-site and online participation come together for pitching, the official launch, and the announcement of symposium results.</p>
+              <p>A morning of innovation, recognition, and celebration, featuring UGUN participant pitching, the announcement of results, and the award ceremony.</p>
               <div class="tentative-meta">
-                <div><span>Programme time</span><strong>8:30 AM–1:30 PM</strong></div>
-                <div><span>Venue</span><strong>Lecture Theatre 6, UiTM Cawangan Perlis (Category A)<br>Google Meet (Category B &amp; C)</strong></div>
+                <div><span>Programme time</span><strong>8:30 AM–12:30 PM</strong></div>
+                <div><span>Venue</span><strong>Lecture Theatre 6 (LT6), STAR Complex<br>UiTM Cawangan Perlis</strong></div>
               </div>
-              <!-- Internal reference: Programme remains tentative and subject to change. -->
+              <a class="schedule-download" href="downloads/sic-2026-programme-schedule.pdf" download>Download Programme Schedule (PDF) &darr;</a>
             </div>
-            <div class="schedule-list" aria-label="SIC 2026 tentative schedule">
-              <div class="schedule-row"><time datetime="2026-10-15T08:30">8:30 AM</time><div><strong>Participant Registration</strong></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T09:00">9:00 AM</time><div><strong>Welcoming Remarks</strong><span>Programme Chair</span></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T09:10">9:10 AM</time><div><strong>Pitching Session I (UGUN participants only)</strong></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T10:15">10:15 AM</time><div><strong>Refreshment Break</strong></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T10:30">10:30 AM</time><div><strong>Pitching Session II (UGUN participants only)</strong></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T12:40">12:40 PM</time><div><strong>Rector’s Arrival</strong></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T12:45">12:45 PM</time><div><strong>Rector’s Address</strong></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T12:55">12:55 PM</time><div><strong>Official Launch of SIC 16</strong></div></div>
-              <div class="schedule-row featured"><time datetime="2026-10-15T13:00">1:00 PM</time><div><strong>Results Announcement</strong><span>Gold, Silver and Bronze awards, plus first-to-third pitching winners across all three categories.</span></div></div>
-              <div class="schedule-row"><time datetime="2026-10-15T13:30">1:30 PM</time><div><strong>Group Photography and Dismissal</strong></div></div>
+            <div class="schedule-list" aria-label="SIC 2026 closing ceremony programme schedule">
+              <div class="schedule-row"><time datetime="2026-10-15T08:30">8:30 AM</time><div><strong>Registration of Participants</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T08:45">8:45 AM</time><div><strong>Arrival of Guests</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T08:55">8:55 AM</time><div><strong>Arrival of the Deputy Rector of RICAEN UiTM Cawangan Perlis</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T09:00">9:00 AM</time><div><strong>Opening by the Emcee</strong><span>Welcoming speech by the Chairperson of SIC 2026</span><span>Ts. Dr. Nor Atikah Husna Ahmad Nasir</span></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T09:15">9:15 AM</time><div><strong>Pitching Session by UGUN Participants</strong></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T10:30">10:30 AM</time><div><strong>Morning Tea</strong></div></div>
+              <div class="schedule-row featured"><time datetime="2026-10-15T11:00">11:00 AM</time><div><strong>Closing Speech by the Deputy Rector of RICAEN</strong><span>YBrs. Assoc. Prof. Dr Wan Izhan Nawawi Wan Ismail</span><span>Video presentation</span><span>Announcement of results</span><span>Award ceremony</span><span>Photography session</span></div></div>
+              <div class="schedule-row"><time datetime="2026-10-15T12:30">12:30 PM</time><div><strong>End of Programme</strong></div></div>
             </div>
           </div>
         </div>
@@ -2927,7 +3016,67 @@
     </div>
   </footer>
 
+
+  <button class="poster-launch" id="posterLaunch" type="button" aria-controls="posterModal" aria-haspopup="dialog">
+    <span>Official SIC Poster</span>
+    <strong>View Poster</strong>
+  </button>
+  <dialog class="poster-modal" id="posterModal" aria-labelledby="posterModalTitle">
+    <div class="poster-dialog">
+      <div class="poster-dialog-header">
+        <div class="poster-dialog-title">
+          <span>International Edition &middot; Official Poster</span>
+          <strong id="posterModalTitle">SIC 2026 &middot; Grand Finale &amp; Award Ceremony</strong>
+        </div>
+        <button class="poster-close" id="posterClose" type="button" aria-label="Close poster" autofocus>&times;</button>
+      </div>
+      <div class="poster-stage">
+        <a class="poster-image-link" href="../../assets/sic-2026-poster.jpeg" target="_blank" rel="noopener" aria-label="Open the official SIC 2026 poster at full size">
+          <img class="poster-image" src="../../assets/sic-2026-poster.jpeg" alt="Official SIC 2026 International Edition grand finale and award ceremony poster: 15 October 2026 at 8:30 AM, Lecture Theatre 6, UiTM Perlis Branch, with Facebook and YouTube livestream QR codes." width="1280" height="905" decoding="async" loading="eager">
+        </a>
+      </div>
+      <div class="poster-dialog-footer">
+        <p>Select the poster to view the full-size version and livestream QR codes.</p>
+        <a class="poster-full-link" href="../../assets/sic-2026-poster.jpeg" target="_blank" rel="noopener">Open Full Size &nearr;</a>
+      </div>
+    </div>
+  </dialog>
+
   <script>
+
+    const posterModal = document.getElementById("posterModal");
+    const posterLaunch = document.getElementById("posterLaunch");
+    const posterClose = document.getElementById("posterClose");
+    let lastFocusedPosterTrigger = null;
+
+    function openPoster(trigger = posterLaunch) {
+      if (!posterModal || posterModal.open) return;
+      lastFocusedPosterTrigger = trigger || posterLaunch;
+      posterModal.showModal();
+      document.body.classList.add("poster-open");
+      posterClose.focus({ preventScroll: true });
+    }
+
+    function closePoster() {
+      if (posterModal?.open) posterModal.close();
+    }
+
+    posterLaunch.addEventListener("click", () => openPoster(posterLaunch));
+    posterClose.addEventListener("click", closePoster);
+
+    posterModal.addEventListener("click", (event) => {
+      const bounds = posterModal.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) closePoster();
+    });
+
+    posterModal.addEventListener("close", () => {
+      document.body.classList.remove("poster-open");
+      lastFocusedPosterTrigger?.focus({ preventScroll: true });
+    });
+
+    window.setTimeout(() => openPoster(posterLaunch), 420);
+
     const revealItems = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver((entries) => {
