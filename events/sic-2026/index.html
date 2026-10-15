@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore SIC 2026, the 16th Symposium on Innovation and Creativity at UiTM Perlis on 15 October. Find categories, submission templates, rules and the schedule.">
+  <meta name="description" content="View the official SIC 2026 results for Category B and Category C. Explore medal awards, programme details and the 16th Symposium on Innovation and Creativity.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ugun-perlis.github.io/ugun2026/events/sic-2026/">
   <title>SIC 2026 | Symposium on Innovation and Creativity</title>
@@ -2497,6 +2497,117 @@
       .poster-launch { transition: none; }
     }
 
+
+    body.results-open { overflow: hidden; }
+
+    .results-announcement {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      scroll-margin-top: 90px;
+      color: white;
+      border-bottom: 1px solid rgba(255,210,118,.35);
+      background:
+        radial-gradient(ellipse at 80% 45%, rgba(207,153,52,.18), transparent 55%),
+        radial-gradient(ellipse at 4% 20%, rgba(111,78,199,.32), transparent 50%),
+        linear-gradient(115deg, #090d29, #191337 60%, #21162a);
+    }
+    .results-announcement::before { position: absolute; z-index: -1; inset: 0; opacity: .25; background-image: radial-gradient(circle, #e9c478 1px, transparent 1.4px); background-size: 34px 34px; mask-image: linear-gradient(100deg, transparent 15%, black); content: ""; }
+    .results-banner-inner { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); gap: clamp(24px,4vw,56px); align-items: center; padding-block: clamp(28px,4vw,46px); }
+    .results-eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 11px; color: #f7d58e; font-size: .68rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+    .results-eyebrow::before { width: 7px; height: 7px; border-radius: 50%; background: #f7d58e; box-shadow: 0 0 14px #f7d58e; content: ""; }
+    .results-banner-copy h2 { margin: 0; color: white; font-size: clamp(1.9rem,3.5vw,3rem); line-height: 1.05; letter-spacing: -.045em; }
+    .results-banner-copy h2 em { color: #f7d58e; font-style: normal; }
+    .results-banner-copy p { max-width: 48ch; margin: 13px 0 0; color: #c7c3d4; font-size: .88rem; line-height: 1.6; }
+    .results-banner-action { display: grid; justify-items: center; gap: 11px; min-width: 0; }
+    .results-reveal { position: relative; display: flex; align-items: center; gap: 15px; width: 100%; max-width: 480px; min-height: 112px; overflow: hidden; padding: 17px 22px; border: 1px solid #ffedbd; border-radius: 24px 8px 24px 8px; color: #281b20; background: linear-gradient(120deg, #b47a24 -15%, #ffdf8b 26%, #fff0bd 49%, #edbc54 76%, #b77a28 120%); box-shadow: 0 5px 0 #97651f, 0 17px 44px rgba(237,188,84,.22); cursor: pointer; text-align: left; animation: resultsGlow 4s ease-in-out infinite; transition: transform .25s ease, box-shadow .25s ease; }
+    .results-reveal::after { position: absolute; inset: -80% -40%; background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,.7) 48%, transparent 56%); transform: translateX(-130%); pointer-events: none; content: ""; animation: resultsSweep 6s ease-in-out infinite; }
+    .results-reveal:hover { transform: translateY(-4px); box-shadow: 0 8px 0 #97651f, 0 24px 60px rgba(237,188,84,.35); }
+    .results-reveal:active { transform: translateY(2px); }
+    .results-button-emblem { display: grid; width: 70px; height: 76px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(255,237,189,.3); border-radius: 19px 5px 19px 5px; background: linear-gradient(145deg, #222447, #090d29); box-shadow: inset 0 1px 10px rgba(255,255,255,.1), 0 5px 15px rgba(87,53,16,.17); }
+    .results-button-emblem svg { display: block; width: 47px; height: 54px; filter: drop-shadow(0 3px 5px rgba(0,0,0,.3)); }
+    .results-button-copy { position: relative; z-index: 1; display: grid; min-width: 0; gap: 5px; }
+    .results-button-copy small { font-size: .59rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .results-button-copy strong { font-size: clamp(1.1rem,2vw,1.48rem); font-weight: 950; line-height: 1.12; letter-spacing: -.035em; }
+    .results-button-arrow { position: relative; z-index: 1; display: grid; width: 31px; height: 31px; flex: 0 0 auto; margin-left: auto; place-items: center; border: 1px solid rgba(40,27,32,.28); border-radius: 50%; font-size: 1.2rem; }
+    .results-effects-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 30px; padding: 5px 9px; border: 0; border-radius: 999px; color: #d4c6a4; background: transparent; font-size: .66rem; cursor: pointer; }
+    .results-effects-toggle:hover { color: white; background: rgba(255,255,255,.08); }
+    .results-effects-toggle::before { font-size: .6rem; content: "Ⅱ"; }
+    .results-effects-toggle[aria-pressed="true"]::before { content: "▶"; }
+    .results-reveal:focus-visible, .results-effects-toggle:focus-visible, .results-close:focus-visible, .result-open:focus-visible, .result-download:focus-visible, .results-poster-link:focus-visible { outline: 3px solid var(--cyan-300); outline-offset: 5px; }
+    .nav-links a { padding-inline: 9px; font-size: .78rem; white-space: nowrap; }
+    .brand-copy strong, .brand-copy span { white-space: nowrap; }
+    .nav-links .nav-results { color: #ffe2a1; border: 1px solid rgba(255,210,118,.4); background: rgba(255,210,118,.09); }
+    .results-poster-link { padding: 10px 14px; border: 1px solid #e9bc59; border-radius: 999px; color: #35220d; background: linear-gradient(110deg,#ffe3a0,#efbd5b); font-size: .75rem; font-weight: 900; cursor: pointer; }
+
+    .results-modal { width: min(920px, calc(100vw - 28px)); max-width: none; max-height: calc(100dvh - 28px); margin: auto; overflow: auto; padding: 0; border: 1px solid rgba(255,214,135,.5); border-radius: 28px; color: white; background: #0c102e; box-shadow: 0 38px 120px rgba(0,0,0,.65); }
+    .results-modal::backdrop { background: rgba(4,7,25,.88); backdrop-filter: blur(16px) saturate(.65); }
+    .results-modal[open] { animation: resultsEnter .5s cubic-bezier(.2,.8,.2,1) both; }
+    .results-dialog { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse at 50% -20%, rgba(221,174,79,.22), transparent 65%), radial-gradient(ellipse at 0 100%, rgba(111,78,199,.22), transparent 60%), #0c102e; }
+    .results-close { position: sticky; z-index: 3; top: 16px; display: grid; width: 42px; height: 42px; margin: 16px 16px -58px auto; place-items: center; padding: 0; border: 1px solid rgba(255,223,158,.3); border-radius: 50%; color: white; background: #20213a; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+    .results-dialog-heading { position: relative; z-index: 1; padding: 36px 66px 25px; text-align: center; }
+    .results-award-seal { display: grid; width: 58px; height: 58px; margin: 0 auto 15px; place-items: center; border: 1px solid rgba(255,210,118,.4); border-radius: 50%; color: #f8d787; background: radial-gradient(circle at 30% 25%,rgba(255,219,137,.23),transparent 80%); font-size: 1.8rem; box-shadow: 0 0 0 6px rgba(255,210,118,.04), 0 0 35px rgba(255,210,118,.12); }
+    .results-dialog-heading .results-eyebrow { display: block; margin-bottom: 9px; font-size: .64rem; line-height: 1.7; letter-spacing: .1em; }
+    .results-dialog-heading .results-eyebrow::before { display: none; }
+    .results-dialog-heading h2 { margin: 0; color: #fff1cb; font-size: clamp(2rem,4.4vw,3.1rem); line-height: 1.05; letter-spacing: -.055em; }
+    .results-dialog-heading p { max-width: 48ch; margin: 13px auto 0; color: #c6c4d3; font-size: .9rem; line-height: 1.65; }
+    .results-category-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; padding: 0 clamp(20px,4vw,38px) 30px; }
+    .result-card { position: relative; display: flex; min-width: 0; flex-direction: column; padding: 25px; overflow: hidden; border: 1px solid rgba(255,219,145,.23); border-radius: 22px; background: linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02)); }
+    .result-card::before { position: absolute; top: 0; right: 22px; left: 22px; height: 2px; background: linear-gradient(90deg,transparent,#e9bc59,transparent); content: ""; }
+    .result-card-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 22px; }
+    .result-category-letter { display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid rgba(255,219,145,.4); border-radius: 15px 5px 15px 5px; color: #ffe2a1; background: linear-gradient(145deg,rgba(238,185,75,.2),rgba(238,185,75,.02)); font-size: 1.55rem; font-weight: 950; }
+    .result-file-meta { color: #c6c4d3; font-size: .67rem; }
+    .result-category-label { margin-bottom: 7px; color: #f7d58e; font-size: .62rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .result-card h3 { margin: 0; color: white; font-size: clamp(1.4rem,2.7vw,1.9rem); line-height: 1.15; letter-spacing: -.035em; }
+    .result-card p { margin: 13px 0 23px; color: #c6c4d3; font-size: .83rem; line-height: 1.65; }
+    .result-card-actions { display: grid; gap: 10px; margin-top: auto; }
+    .result-open { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 13px 16px; border: 1px solid #ffe6ac; border-radius: 12px; color: #291c15; background: linear-gradient(115deg,#ffe3a0,#edbd5c); font-size: .85rem; font-weight: 900; transition: filter .2s ease; }
+    .result-open:hover { filter: brightness(1.08); }
+    .result-download { padding: 7px; color: #e8dfc8; font-size: .73rem; font-weight: 800; text-align: center; text-decoration: underline; text-underline-offset: 4px; }
+    .results-dialog-footnote { position: relative; z-index: 1; margin: 0; padding: 17px 26px; border-top: 1px solid rgba(255,219,145,.12); color: #b6b3c7; background: rgba(255,255,255,.02); font-size: .72rem; line-height: 1.5; text-align: center; }
+    .results-confetti { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+    .results-confetti i { position: absolute; top: -12px; left: var(--x); width: 5px; height: 11px; border-radius: 1px; opacity: 0; background: #f8d787; }
+    .results-confetti i:nth-child(3n) { background: #a4e5f1; }
+    .results-confetti i:nth-child(3n+1) { width: 4px; height: 4px; border-radius: 50%; background: #fff1cb; }
+    .results-modal[open] .results-confetti i { animation: resultsConfetti 1.8s ease-out var(--delay) both; }
+    .results-effects-paused .results-reveal, .results-effects-paused .results-reveal::after, .results-effects-paused .results-confetti i { animation-play-state: paused; }
+
+    @keyframes resultsGlow { 0%,100% { box-shadow: 0 5px 0 #97651f,0 17px 44px rgba(237,188,84,.18); } 50% { box-shadow: 0 5px 0 #97651f,0 17px 55px rgba(237,188,84,.35); } }
+    @keyframes resultsSweep { 0%,48% { transform: translateX(-130%); } 72%,100% { transform: translateX(130%); } }
+    @keyframes resultsEnter { from { opacity: 0; transform: translateY(22px) scale(.96); } to { opacity: 1; transform: none; } }
+    @keyframes resultsConfetti { 0% { opacity: 0; transform: translateY(0) rotate(0); } 12% { opacity: .8; } 100% { opacity: 0; transform: translate(var(--drift),430px) rotate(250deg); } }
+
+    @media (max-width: 1100px) and (min-width: 921px) {
+      .nav { gap: 12px; }
+      .nav-links { gap: 2px; }
+      .nav-links a { padding-inline: 7px; font-size: .76rem; }
+    }
+    @media (max-width: 760px) {
+      .results-banner-inner { grid-template-columns: minmax(0,1fr); gap: 23px; padding-block: 30px 24px; text-align: center; }
+      .results-banner-copy p { margin-inline: auto; }
+      .results-reveal { max-width: 440px; }
+      .results-category-grid { grid-template-columns: minmax(0,1fr); gap: 14px; }
+      .results-dialog-heading { padding: 30px 52px 24px; }
+      .result-card { padding: 22px; }
+      .results-poster-link { width: 100%; }
+    }
+    @media (max-width: 380px) {
+      .results-reveal { gap: 11px; min-height: 100px; padding: 14px; }
+      .results-button-emblem { width: 53px; height: 64px; }
+      .results-button-emblem svg { width: 38px; height: 47px; }
+      .results-button-copy small { font-size: .5rem; letter-spacing: .09em; }
+      .results-button-copy strong { font-size: 1.06rem; }
+      .results-button-arrow { width: 26px; height: 26px; }
+      .results-dialog-heading { padding-inline: 45px; }
+      .result-card { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .results-reveal, .results-reveal::after, .results-modal[open], .results-modal[open] .results-confetti i { animation: none; }
+      .results-confetti, .results-effects-toggle { display: none; }
+      .results-reveal, .result-open { transition: none; }
+      .results-reveal:hover { transform: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -2510,6 +2621,7 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="SIC page navigation">
+        <a class="nav-results" href="#results" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">Results</a>
         <a href="#overview">Overview</a>
         <a href="#past-editions">Past editions</a>
         <a href="#journey">How to join</a>
@@ -2525,6 +2637,25 @@
   </header>
 
   <main>
+
+    <section class="results-announcement" id="results" aria-labelledby="resultsBannerTitle">
+      <div class="container results-banner-inner">
+        <div class="results-banner-copy">
+          <span class="results-eyebrow">SIC 2026 &middot; Official medal results</span>
+          <h2 id="resultsBannerTitle">Big ideas.<br><em>Well-earned recognition.</em></h2>
+          <p>The results are in. Discover the medal awards for Category B and Category C, and celebrate this year's innovators.</p>
+        </div>
+        <div class="results-banner-action">
+          <button class="results-reveal" type="button" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">
+            <span class="results-button-emblem" aria-hidden="true"><svg viewBox="0 0 80 88" aria-hidden="true" focusable="false"><defs><linearGradient id="resultsTrophyGold" x1="0" x2="1"><stop stop-color="#a96915"/><stop offset=".28" stop-color="#ffe7a0"/><stop offset=".58" stop-color="#eeb94b"/><stop offset=".8" stop-color="#fff2bf"/><stop offset="1" stop-color="#bc7a16"/></linearGradient></defs><path d="M20 15H9v10c0 15 10 23 24 24M60 15h11v10c0 15-10 23-24 24" fill="none" stroke="url(#resultsTrophyGold)" stroke-width="6"/><path d="M19 8h42v22c0 16-10 25-21 25S19 46 19 30Z" fill="url(#resultsTrophyGold)"/><path d="M39 52h2v17H28v7h24v-7H41V52" fill="url(#resultsTrophyGold)" stroke="url(#resultsTrophyGold)" stroke-width="5"/><path d="M23 77h34v7H23Z" fill="url(#resultsTrophyGold)"/><path d="m40 16 3.7 7.6 8.3 1.2-6 5.9 1.4 8.3-7.4-3.9-7.4 3.9 1.4-8.3-6-5.9 8.3-1.2Z" fill="#9c651b"/><path d="M24 12h4v17c0 7 2 12 6 16" fill="none" stroke="#fff5ca" stroke-width="2" opacity=".7"/></svg></span>
+            <span class="results-button-copy"><small>Your moment to shine</small><strong>Reveal the Results</strong></span>
+            <span class="results-button-arrow" aria-hidden="true">&nearr;</span>
+          </button>
+          <button class="results-effects-toggle" id="resultsEffectsToggle" type="button" aria-pressed="false">Pause effects</button>
+        </div>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -2695,9 +2826,9 @@
             <div class="journey-card">
               <span class="journey-step-label">Results</span>
               <h3>Winner Announcement</h3>
-              <p>Results and award recipients will be announced during the SIC 2026 Grand Final.</p>
+              <p>The official Category B and Category C medal results are now available.</p>
               <time class="journey-deadline" datetime="2026-10-15">15<sup>th</sup> October 2026</time>
-              <span class="journey-action is-pending">Announcement link will be provided soon</span>
+              <a class="journey-action" href="#results" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">View official results &rarr;</a>
             </div>
           </li>
           <li class="journey-step is-post-event reveal">
@@ -3037,12 +3168,90 @@
       </div>
       <div class="poster-dialog-footer">
         <p>Select the poster to view the full-size version and livestream QR codes.</p>
+        <button class="results-poster-link" type="button" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">View SIC 2026 Results &nearr;</button>
         <a class="poster-full-link" href="../../assets/sic-2026-poster.jpeg" target="_blank" rel="noopener">Open Full Size &nearr;</a>
       </div>
     </div>
   </dialog>
 
+
+  <dialog class="results-modal" id="resultsModal" aria-labelledby="resultsModalTitle" aria-describedby="resultsModalDescription">
+    <button class="results-close" id="resultsClose" type="button" aria-label="Close results">&times;</button>
+    <div class="results-dialog">
+      <div class="results-confetti" aria-hidden="true">
+        <i style="--x:5%;--delay:0s;--drift:25px"></i><i style="--x:10.1%;--delay:0.07s;--drift:-25px"></i><i style="--x:15.2%;--delay:0.14s;--drift:25px"></i><i style="--x:20.299999999999997%;--delay:0.21000000000000002s;--drift:-25px"></i><i style="--x:25.4%;--delay:0.28s;--drift:25px"></i><i style="--x:30.5%;--delay:0.35000000000000003s;--drift:-25px"></i><i style="--x:35.599999999999994%;--delay:0s;--drift:25px"></i><i style="--x:40.699999999999996%;--delay:0.07s;--drift:-25px"></i><i style="--x:45.8%;--delay:0.14s;--drift:25px"></i><i style="--x:50.9%;--delay:0.21000000000000002s;--drift:-25px"></i><i style="--x:56%;--delay:0.28s;--drift:25px"></i><i style="--x:61.099999999999994%;--delay:0.35000000000000003s;--drift:-25px"></i><i style="--x:66.19999999999999%;--delay:0s;--drift:25px"></i><i style="--x:71.3%;--delay:0.07s;--drift:-25px"></i><i style="--x:76.39999999999999%;--delay:0.14s;--drift:25px"></i><i style="--x:81.5%;--delay:0.21000000000000002s;--drift:-25px"></i><i style="--x:86.6%;--delay:0.28s;--drift:25px"></i><i style="--x:91.69999999999999%;--delay:0.35000000000000003s;--drift:-25px"></i>
+      </div>
+      <div class="results-dialog-heading">
+        <div class="results-award-seal" aria-hidden="true">&#10022;</div>
+        <span class="results-eyebrow">The 16<sup>th</sup> Symposium on Innovation and Creativity</span>
+        <h2 id="resultsModalTitle">SIC 2026 Results</h2>
+        <p id="resultsModalDescription">Congratulations to our innovators. Select your category to view the official product and medal results.</p>
+      </div>
+      <div class="results-category-grid">
+        <article class="result-card" aria-labelledby="resultCategoryB">
+          <div class="result-card-top"><span class="result-category-letter" aria-hidden="true">B</span><span class="result-file-meta">PDF &middot; 9 pages</span></div>
+          <span class="result-category-label">Category B</span>
+          <h3 id="resultCategoryB">Novice Innovation</h3>
+          <p>Explore the official Gold, Silver, and Bronze medal results for Category B.</p>
+          <div class="result-card-actions">
+            <a class="result-open" href="downloads/sic-2026-results-category-b.pdf" target="_blank" rel="noopener" aria-label="View Category B Novice Innovation results PDF, opens in a new tab">View Category B Results <span aria-hidden="true">&nearr;</span></a>
+            <a class="result-download" href="downloads/sic-2026-results-category-b.pdf" download>Download Category B PDF &darr;</a>
+          </div>
+        </article>
+        <article class="result-card" aria-labelledby="resultCategoryC">
+          <div class="result-card-top"><span class="result-category-letter" aria-hidden="true">C</span><span class="result-file-meta">PDF &middot; 2 pages</span></div>
+          <span class="result-category-label">Category C</span>
+          <h3 id="resultCategoryC">Advanced Innovation</h3>
+          <p>Explore the official Gold, Silver, and Bronze medal results for Category C.</p>
+          <div class="result-card-actions">
+            <a class="result-open" href="downloads/sic-2026-results-category-c.pdf" target="_blank" rel="noopener" aria-label="View Category C Advanced Innovation results PDF, opens in a new tab">View Category C Results <span aria-hidden="true">&nearr;</span></a>
+            <a class="result-download" href="downloads/sic-2026-results-category-c.pdf" download>Download Category C PDF &darr;</a>
+          </div>
+        </article>
+      </div>
+      <p class="results-dialog-footnote">Official SIC 2026 results &middot; PDFs open in a new tab, or download a copy to keep.</p>
+    </div>
+  </dialog>
+
   <script>
+
+    const resultsModal = document.getElementById("resultsModal");
+    const resultsClose = document.getElementById("resultsClose");
+    const resultsTriggers = document.querySelectorAll("[data-results-open]");
+    const resultsEffectsToggle = document.getElementById("resultsEffectsToggle");
+    let lastFocusedResultsTrigger = null;
+
+    function openResults(event) {
+      if (resultsModal.open) return;
+      lastFocusedResultsTrigger = event.currentTarget;
+      closePoster();
+      resultsModal.showModal();
+      document.body.classList.add("results-open");
+      resultsClose.focus({ preventScroll: true });
+    }
+
+    function closeResults() {
+      if (resultsModal.open) resultsModal.close();
+    }
+
+    resultsTriggers.forEach(trigger => trigger.addEventListener("click", openResults));
+    resultsClose.addEventListener("click", closeResults);
+    resultsModal.addEventListener("click", (event) => {
+      const bounds = resultsModal.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) closeResults();
+    });
+    resultsModal.addEventListener("close", () => {
+      document.body.classList.remove("results-open");
+      const trigger = lastFocusedResultsTrigger?.closest("dialog") ? document.querySelector(".results-reveal") : lastFocusedResultsTrigger;
+      trigger?.focus({ preventScroll: true });
+    });
+    resultsEffectsToggle.addEventListener("click", () => {
+      const paused = document.body.classList.toggle("results-effects-paused");
+      resultsEffectsToggle.setAttribute("aria-pressed", String(paused));
+      resultsEffectsToggle.textContent = paused ? "Play effects" : "Pause effects";
+    });
+
 
     const posterModal = document.getElementById("posterModal");
     const posterLaunch = document.getElementById("posterLaunch");
@@ -3072,10 +3281,8 @@
 
     posterModal.addEventListener("close", () => {
       document.body.classList.remove("poster-open");
-      lastFocusedPosterTrigger?.focus({ preventScroll: true });
+      if (!resultsModal.open) lastFocusedPosterTrigger?.focus({ preventScroll: true });
     });
-
-    window.setTimeout(() => openPoster(posterLaunch), 420);
 
     const revealItems = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
