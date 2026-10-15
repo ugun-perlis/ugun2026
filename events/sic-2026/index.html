@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="View the official SIC 2026 results for Category B and Category C. Explore medal awards, programme details and the 16th Symposium on Innovation and Creativity.">
+  <meta name="description" content="Watch SIC 2026 first-, second- and third-place winner announcements for Novice and Advanced Innovation. View the official Category B and C medal results.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ugun-perlis.github.io/ugun2026/events/sic-2026/">
   <title>SIC 2026 | Symposium on Innovation and Creativity</title>
@@ -2560,6 +2560,17 @@
     .result-category-label { margin-bottom: 7px; color: #f7d58e; font-size: .62rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
     .result-card h3 { margin: 0; color: white; font-size: clamp(1.4rem,2.7vw,1.9rem); line-height: 1.15; letter-spacing: -.035em; }
     .result-card p { margin: 13px 0 23px; color: #c6c4d3; font-size: .83rem; line-height: 1.65; }
+
+    .result-video { min-width: 0; margin: 0 0 25px; padding-top: 17px; border-top: 1px solid rgba(255,219,145,.17); }
+    .result-video-heading { display: grid; gap: 6px; margin-bottom: 13px; }
+    .result-video-heading > span { color: #f7d58e; font-size: .58rem; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+    .result-video-heading strong { color: white; font-size: .94rem; line-height: 1.4; }
+    .result-video-embed { position: relative; width: 100%; min-width: 0; min-height: 240px; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(255,219,145,.24); border-radius: 13px; background: #050719; box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+    .result-video-frame { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; }
+    .result-video-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 11px; padding-block: 4px; color: #e8dfc8; font-size: .7rem; font-weight: 750; line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
+    .result-video-link:hover { color: white; }
+    .result-video-link:focus-visible { outline: 3px solid var(--cyan-300); outline-offset: 4px; }
+
     .result-card-actions { display: grid; gap: 10px; margin-top: auto; }
     .result-open { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 13px 16px; border: 1px solid #ffe6ac; border-radius: 12px; color: #291c15; background: linear-gradient(115deg,#ffe3a0,#edbd5c); font-size: .85rem; font-weight: 900; transition: filter .2s ease; }
     .result-open:hover { filter: brightness(1.08); }
@@ -2643,7 +2654,7 @@
         <div class="results-banner-copy">
           <span class="results-eyebrow">SIC 2026 &middot; Official medal results</span>
           <h2 id="resultsBannerTitle">Big ideas.<br><em>Well-earned recognition.</em></h2>
-          <p>The results are in. Discover the medal awards for Category B and Category C, and celebrate this year's innovators.</p>
+          <p>The results are in. Watch the top three winner announcements and explore the full medal results for Category B and Category C.</p>
         </div>
         <div class="results-banner-action">
           <button class="results-reveal" type="button" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">
@@ -3185,7 +3196,7 @@
         <div class="results-award-seal" aria-hidden="true">&#10022;</div>
         <span class="results-eyebrow">The 16<sup>th</sup> Symposium on Innovation and Creativity</span>
         <h2 id="resultsModalTitle">SIC 2026 Results</h2>
-        <p id="resultsModalDescription">Congratulations to our innovators. Select your category to view the official product and medal results.</p>
+        <p id="resultsModalDescription">Watch the first-, second-, and third-place winner announcements below, then explore the complete medal results for your category.</p>
       </div>
       <div class="results-category-grid">
         <article class="result-card" aria-labelledby="resultCategoryB">
@@ -3193,6 +3204,16 @@
           <span class="result-category-label">Category B</span>
           <h3 id="resultCategoryB">Novice Innovation</h3>
           <p>Explore the official Gold, Silver, and Bronze medal results for Category B.</p>
+          <figure class="result-video" aria-labelledby="resultVideoBTitle">
+            <figcaption class="result-video-heading">
+              <span>Top 3 Winner Announcement</span>
+              <strong id="resultVideoBTitle">1<sup>st</sup>, 2<sup>nd</sup> &amp; 3<sup>rd</sup> Place</strong>
+            </figcaption>
+            <div class="result-video-embed">
+              <iframe class="result-video-frame" src="about:blank" data-src="https://drive.google.com/file/d/1Rc5jrQ5RcMJqGjlm4PtFbek6FHcvsKyJ/preview" title="Category B, Novice Innovation: first-, second-, and third-place winner announcement video" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a class="result-video-link" href="https://drive.google.com/file/d/1Rc5jrQ5RcMJqGjlm4PtFbek6FHcvsKyJ/view?usp=sharing" target="_blank" rel="noopener">Open video in Google Drive <span aria-hidden="true">&nearr;</span></a>
+          </figure>
           <div class="result-card-actions">
             <a class="result-open" href="downloads/sic-2026-results-category-b.pdf" target="_blank" rel="noopener" aria-label="View Category B Novice Innovation results PDF, opens in a new tab">View Category B Results <span aria-hidden="true">&nearr;</span></a>
             <a class="result-download" href="downloads/sic-2026-results-category-b.pdf" download>Download Category B PDF &darr;</a>
@@ -3203,13 +3224,23 @@
           <span class="result-category-label">Category C</span>
           <h3 id="resultCategoryC">Advanced Innovation</h3>
           <p>Explore the official Gold, Silver, and Bronze medal results for Category C.</p>
+          <figure class="result-video" aria-labelledby="resultVideoCTitle">
+            <figcaption class="result-video-heading">
+              <span>Top 3 Winner Announcement</span>
+              <strong id="resultVideoCTitle">1<sup>st</sup>, 2<sup>nd</sup> &amp; 3<sup>rd</sup> Place</strong>
+            </figcaption>
+            <div class="result-video-embed">
+              <iframe class="result-video-frame" src="about:blank" data-src="https://drive.google.com/file/d/1RPQNHV6PJDqjL3pYS8YzRlNjXQpsDtMk/preview" title="Category C, Advanced Innovation: first-, second-, and third-place winner announcement video" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a class="result-video-link" href="https://drive.google.com/file/d/1RPQNHV6PJDqjL3pYS8YzRlNjXQpsDtMk/view?usp=sharing" target="_blank" rel="noopener">Open video in Google Drive <span aria-hidden="true">&nearr;</span></a>
+          </figure>
           <div class="result-card-actions">
             <a class="result-open" href="downloads/sic-2026-results-category-c.pdf" target="_blank" rel="noopener" aria-label="View Category C Advanced Innovation results PDF, opens in a new tab">View Category C Results <span aria-hidden="true">&nearr;</span></a>
             <a class="result-download" href="downloads/sic-2026-results-category-c.pdf" download>Download Category C PDF &darr;</a>
           </div>
         </article>
       </div>
-      <p class="results-dialog-footnote">Official SIC 2026 results &middot; PDFs open in a new tab, or download a copy to keep.</p>
+      <p class="results-dialog-footnote">Play the winner announcement videos here. If a player cannot load, use its Google Drive link. Full medal results are available as PDFs.</p>
     </div>
   </dialog>
 
@@ -3219,6 +3250,7 @@
     const resultsClose = document.getElementById("resultsClose");
     const resultsTriggers = document.querySelectorAll("[data-results-open]");
     const resultsEffectsToggle = document.getElementById("resultsEffectsToggle");
+    const resultVideoFrames = document.querySelectorAll(".result-video-frame");
     let lastFocusedResultsTrigger = null;
 
     function openResults(event) {
@@ -3226,6 +3258,9 @@
       lastFocusedResultsTrigger = event.currentTarget;
       closePoster();
       resultsModal.showModal();
+      resultVideoFrames.forEach(frame => {
+        frame.src = frame.dataset.src;
+      });
       document.body.classList.add("results-open");
       resultsClose.focus({ preventScroll: true });
     }
@@ -3242,6 +3277,9 @@
           event.clientY < bounds.top || event.clientY > bounds.bottom) closeResults();
     });
     resultsModal.addEventListener("close", () => {
+      resultVideoFrames.forEach(frame => {
+        frame.src = "about:blank";
+      });
       document.body.classList.remove("results-open");
       const trigger = lastFocusedResultsTrigger?.closest("dialog") ? document.querySelector(".results-reveal") : lastFocusedResultsTrigger;
       trigger?.focus({ preventScroll: true });
