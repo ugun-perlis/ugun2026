@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Watch SIC 2026 first-, second- and third-place winner announcements for Novice and Advanced Innovation. View the official Category B and C medal results.">
+  <meta name="description" content="Watch SIC 2026 winner announcement videos for UGUN, Novice Innovation and Advanced Innovation. View the official Category B and C medal results.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ugun-perlis.github.io/ugun2026/events/sic-2026/">
   <title>SIC 2026 | Symposium on Innovation and Creativity</title>
@@ -2522,6 +2522,9 @@
     .results-category-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; padding: 0 clamp(20px,4vw,38px) 30px; }
     .result-card { position: relative; display: flex; min-width: 0; flex-direction: column; padding: 25px; overflow: hidden; border: 1px solid rgba(255,219,145,.23); border-radius: 22px; background: linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02)); }
     .result-card::before { position: absolute; top: 0; right: 22px; left: 22px; height: 2px; background: linear-gradient(90deg,transparent,#e9bc59,transparent); content: ""; }
+    .result-card-ugun { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 28px; align-items: center; }
+    .result-ugun-intro { min-width: 0; }
+    .result-card-ugun .result-video { margin-bottom: 0; }
     .result-card-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 22px; }
     .result-category-letter { display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid rgba(255,219,145,.4); border-radius: 15px 5px 15px 5px; color: #ffe2a1; background: linear-gradient(145deg,rgba(238,185,75,.2),rgba(238,185,75,.02)); font-size: 1.55rem; font-weight: 950; }
     .result-file-meta { color: #c6c4d3; font-size: .67rem; }
@@ -2566,6 +2569,7 @@
       .results-banner-copy p { margin-inline: auto; }
       .results-reveal { max-width: 440px; }
       .results-category-grid { grid-template-columns: minmax(0,1fr); gap: 14px; }
+      .result-card-ugun { grid-template-columns: minmax(0,1fr); gap: 0; }
       .results-dialog-heading { padding: 30px 52px 24px; }
       .result-card { padding: 22px; }
       .results-poster-link { width: 100%; }
@@ -2622,7 +2626,7 @@
         <div class="results-banner-copy">
           <span class="results-eyebrow">SIC 2026 &middot; Official medal results</span>
           <h2 id="resultsBannerTitle">Big ideas.<br><em>Well-earned recognition.</em></h2>
-          <p>The results are in. Watch the top three winner announcements and explore the full medal results for Category B and Category C.</p>
+          <p>The results are in. Watch the UGUN, Novice Innovation, and Advanced Innovation winner announcements. Full medal results are also available for Categories B and C.</p>
         </div>
         <div class="results-banner-action">
           <button class="results-reveal" type="button" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">
@@ -2805,7 +2809,7 @@
             <div class="journey-card">
               <span class="journey-step-label">Results</span>
               <h3>Winner Announcement</h3>
-              <p>The official Category B and Category C medal results are now available.</p>
+              <p>Winner announcement videos are available for all three categories, alongside the Category B and Category C medal results.</p>
               <time class="journey-deadline" datetime="2026-10-15">15<sup>th</sup> October 2026</time>
               <a class="journey-action" href="#results" data-results-open aria-controls="resultsModal" aria-haspopup="dialog">View official results &rarr;</a>
             </div>
@@ -3160,9 +3164,27 @@
         <div class="results-award-seal" aria-hidden="true">&#10022;</div>
         <span class="results-eyebrow">The 16<sup>th</sup> Symposium on Innovation and Creativity</span>
         <h2 id="resultsModalTitle">SIC 2026 Results</h2>
-        <p id="resultsModalDescription">Watch the first-, second-, and third-place winner announcements below, then explore the complete medal results for your category.</p>
+        <p id="resultsModalDescription">Watch the winner announcement videos for all three categories. Complete medal results are also available for Categories B and C.</p>
       </div>
       <div class="results-category-grid">
+        <article class="result-card result-card-ugun" aria-labelledby="resultCategoryA">
+          <div class="result-ugun-intro">
+            <div class="result-card-top"><span class="result-category-letter" aria-hidden="true">A</span><span class="result-file-meta">Video announcement</span></div>
+            <span class="result-category-label">Category A</span>
+            <h3 id="resultCategoryA">UGUN</h3>
+            <p>Watch the winner announcement for the UiTM-Global University Network category.</p>
+          </div>
+          <figure class="result-video" aria-labelledby="resultVideoATitle">
+            <figcaption class="result-video-heading">
+              <span>Category A</span>
+              <strong id="resultVideoATitle">UGUN Winner Announcement</strong>
+            </figcaption>
+            <div class="result-video-embed">
+              <iframe class="result-video-frame" src="about:blank" data-src="https://drive.google.com/file/d/1CqOUsQ-H_QotUZdX6vka4NFrveOTGlBm/preview" title="Category A, UGUN: winner announcement video" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a class="result-video-link" href="https://drive.google.com/file/d/1CqOUsQ-H_QotUZdX6vka4NFrveOTGlBm/view?usp=sharing" target="_blank" rel="noopener">Open video in Google Drive <span aria-hidden="true">&nearr;</span></a>
+          </figure>
+        </article>
         <article class="result-card" aria-labelledby="resultCategoryB">
           <div class="result-card-top"><span class="result-category-letter" aria-hidden="true">B</span><span class="result-file-meta">PDF &middot; 9 pages</span></div>
           <span class="result-category-label">Category B</span>
@@ -3204,7 +3226,7 @@
           </div>
         </article>
       </div>
-      <p class="results-dialog-footnote">Play the winner announcement videos here. If a player cannot load, use its Google Drive link. Full medal results are available as PDFs.</p>
+      <p class="results-dialog-footnote">Play the winner announcement videos here. If a player cannot load, use its Google Drive link. Category B and Category C medal results are available as PDFs.</p>
     </div>
   </dialog>
 
